@@ -12,10 +12,10 @@ function Header() {
                 <a href="#projetos" className='px-4 py-2 rounded-lg text-gray-400 hover:bg-zinc-800 hover:text-white transition-colors duration-300'>Projetos</a>
               </li>
               <li>
-                <a href="#tecnologias" className='px-4 py-2 rounded-lg text-gray-400 hover:bg-zinc-800 hover:text-white transition-colors duration-300'>Tecnologias</a>
+                <a href="#habilidades" className='px-4 py-2 rounded-lg text-gray-400 hover:bg-zinc-800 hover:text-white transition-colors duration-300'>Habilidades</a>
               </li>
               <li>
-                <a href="#sobre-mim" className='px-4 py-2 rounded-lg text-gray-400 hover:bg-zinc-800 hover:text-white transition-colors duration-300'>Sobre mim</a>
+                <a href="#sobre-mim" className='px-4 py-2 rounded-lg text-gray-400 hover:bg-zinc-800 hover:text-white transition-colors duration-300'>Sobre-mim</a>
               </li>
             </ul>
           </div>

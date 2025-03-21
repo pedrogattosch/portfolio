@@ -1,0 +1,41 @@
+---< Cabeçalho >---
+Projetos
+Habilidades
+Sobre mim
+
+Entrar em contato
+
+---< Introdução >---
+Olá, eu sou o Pedro Miguel!
+LinkedIn - https://linkedIn.com/in/pedrogattosch
+GitHub - https://github.com/pedrogattosch
+Baixar o currículo
+
+Estudante de Engenharia de Computação na UTFPR, com experiência em desenvolvimento front-end e conhecimento em Python. Possuo certificações na área, além de habilidades em manutenção de hardware e software, redes e suporte técnico. Estou sempre em busca de novos desafios e oportunidades para aplicar tecnologia de forma inovadora.
+
+---< Sobre mim >---
+2023 - Movido por uma curiosidade inata e uma paixão crescente pela tecnologia, dei meus primeiros passos na programação front-end, explorando as intricadas nuances do HTML, CSS e JavaScript.
+
+2023, março - Dei o próximo passo em minha jornada ingressando na faculdade para estudar Engenharia de Computação na UTFPR. Aqui, mergulhei em um mundo de desafios e oportunidades, expandindo meus horizontes além da programação front-end. Durante os primeiros semestres, concentrei-me em disciplinas introdutórias, incluindo meu primeiro contato com a linguagem C, o que me proporcionou uma base sólida em programação.
+
+2024 - Encarei a oportunidade de ingressar no Exército Brasileiro, onde atuei na seção de informática. Nesse período, pude aplicar meus conhecimentos técnicos ao realizar manutenção de equipamentos essenciais para o funcionamento da unidade. Esse período me permitiu não apenas fortalecer minhas habilidades técnicas, mas também aprimorar qualidades como disciplina, resiliência e capacidade de trabalho sob pressão, essenciais tanto no ambiente militar quanto no mercado de trabalho.
+
+2025, março - Após concluir meu período no Exército Brasileiro, decidi retornar à faculdade de Engenharia de Computação na UTFPR com uma visão mais clara sobre minhas metas profissionais e acadêmicas. O retorno à universidade me proporciona a chance de integrar o aprendizado teórico com a prática, buscando sempre me atualizar e aprimorar minhas competências para enfrentar os desafios do mercado de tecnologia.
+
+---< Projetos >---
+Em construção...
+Ainda estou desenvolvendo, aguarde um pouco.
+Visualizar o código
+
+---< Habilidades >---
+• HTML, CSS e JavaScript
+• C
+• Python
+• Git & GitHub
+• React
+• Tailwind CSS
+• Redes de computadores
+• WordPress
+
+---< Rodapé >---
+Copyright © Pedro Miguel 2025

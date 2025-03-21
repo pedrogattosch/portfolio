@@ -3,8 +3,7 @@ import './App.css'
 import Header from "./components/Header";
 import Introduction from "./components/Introduction";
 import Projects from "./components/Projects";
-import Technologies from "./components/Technologies";
-import Others from "./components/Others";
+import Skills from "./components/Skills";
 import AboutMe from "./components/AboutMe";
 import Footer from "./components/Footer";
 import UseScrollToTop from "./hooks/useScrollToTop"
@@ -21,10 +20,8 @@ function App() {
           <Introduction/>
           {/* Componente de projetos */}
           <Projects id="projetos"/>
-          {/* Componente de tecnologias */}
-          <Technologies id="tecnologias"/>
-          {/* Componente de outras tecnologias e habilidades */}
-          <Others/>
+          {/* Componente de habilidades */}
+          <Skills id="habilidades"/>
           {/* Componente de sobre mim */}
           <AboutMe id="sobre-mim"/>
         </main>

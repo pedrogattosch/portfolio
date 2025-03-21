@@ -9,8 +9,7 @@ function Introduction() {
     <section>
       <div className='container m-auto px-5 py-10 flex gap-6'>
         <div className='max-w-xl'>
-          <h1 className='font-semibold text-4xl'>Olá, eu sou Pedro Miguel</h1>
-          <h1 className='font-black text-4xl mt-1'>Desenvolvedor Front-End</h1>
+          <h1 className='font-semibold text-4xl'>Olá, eu sou o Pedro Miguel!</h1>
           <div className='flex gap-2 mt-5'>
             <a href="https://www.linkedin.com/in/pedrogattosch/" target='_blank'>                 
               <button className='px-3 py-3 flex border rounded-full hover:scale-105 transition-transform'>
@@ -29,7 +28,7 @@ function Introduction() {
               </button>
             </a>
           </div>
-          <p className='mt-4 text-gray-400'>Sou um apaixonado estudante de engenharia de computação nascido em 2005 com um olhar voltado para o futuro da tecnologia. Atualmente, estou imerso no universo da programação front-end, buscando constantemente aprimorar minhas habilidades e criar experiências memoráveis. Conheça meu portfólio e descubra como posso contribuir para seus projetos e objetivos.</p>
+          <p className='mt-4 text-gray-400'>Estudante de Engenharia de Computação na UTFPR, com experiência em desenvolvimento front-end e conhecimento em Python. Possuo certificações na área, além de habilidades em manutenção de hardware e software, redes e suporte técnico. Estou sempre em busca de novos desafios e oportunidades para aplicar tecnologia de forma inovadora.</p>
         </div>
       </div>
     </section>
