@@ -41,7 +41,7 @@ function Introduction({ menuOpen }) {
             </a>
           </div>
           <p className="mt-4">
-           Me chamo Pedro Miguel, tenho 19 anos, sou estudante de Engenharia de Computação na UTFPR, com experiência em desenvolvimento front-end e conhecimento em Python. Possuo certificações na área, além de habilidades em manutenção de hardware e software, redes, suporte técnico e computação em nuvem. Estou sempre em busca de novos desafios e oportunidades para aplicar tecnologia de forma inovadora.
+            Me chamo Pedro Miguel, tenho 19 anos e sou estudante de Engenharia de Computação na UTFPR. Tenho experiência em desenvolvimento front-end e conhecimento sólido em Python. Concluí cursos de Machine Learning e de computação em nuvem com Microsoft Azure, e possuo certificações na área. Também tenho habilidades em manutenção de hardware e software, redes e suporte técnico. Atualmente, estou focado na área de análise e ciência de dados, buscando constantemente novos desafios para aplicar tecnologia de forma inovadora e orientada por dados.
           </p>
         </div>
       </div>
