@@ -8,10 +8,11 @@ import Skills from "./components/Skills";
 import AboutMe from "./components/AboutMe";
 import Footer from "./components/Footer";
 import UseScrollToTop from "./hooks/useScrollToTop"
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
   return (
-    <>
+    <LanguageProvider>
       <div className='max-w-3xl m-auto relative'>
         {/* Cabeçalho */}
         <Header/>
@@ -32,7 +33,7 @@ function App() {
         <Footer/>
         <UseScrollToTop/>
       </div>
-    </>
+    </LanguageProvider>
   )
 }
 

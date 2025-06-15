@@ -3,13 +3,21 @@ import React from "react";
 import LinkedIn from "../assets/icons/linkedin.svg";
 import GitHub from "../assets/icons/github.svg";
 import Download from "../assets/icons/download.svg";
+import { useLanguage } from "../hooks/useLanguage";
+
+const content = {
+  pt: { titulo: "Olá, Mundo!" },
+  en: { titulo: "Hello, World!" }
+};
 
 function Introduction({ menuOpen }) {
+  const { lang } = useLanguage();
+  
   return (
     <section>
       <div className="container m-auto px-5 py-10 flex gap-6">
         <div className="max-w-xl">
-          <h1 className="font-bold text-5xl">Olá, Mundo!</h1>
+          <h1 className="font-bold text-5xl">{content[lang].titulo}</h1>
           <div
             className={`flex gap-2 mt-5 transition-opacity duration-300 ${
               menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
