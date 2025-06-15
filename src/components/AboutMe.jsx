@@ -61,17 +61,14 @@ function AboutMe() {
     <section id="sobre-mim">
       <div className="container m-auto px-5 py-10">
         <h2 className="text-xl font-semibold">{content[lang].titulo}</h2>
-        <div className="mt-12 relative">
-          {content[lang].eventos.map((evento, idx, arr) => (
+        <div className="mt-12 relative before:absolute before:top-2 before:left-[100px] before:rounded-full before:bottom-1 before:w-[2px] before:bg-white">
+          {content[lang].eventos.map((evento, idx) => (
             <div
               key={idx}
-              className={`mt-${idx === 0 ? "0" : "14"} pl-[120px] relative`}
+              className={`mt-${
+                idx === 0 ? "0" : "14"
+              } pl-[120px] relative before:top-2 before:w-2 before:h-2 before:bg-white before:absolute before:rounded-full before:left-[97px]`}
             >
-              {idx !== arr.length - 1 && (
-                <span className="absolute left-[100px] top-2 w-0.5 h-[calc(100%+3.5rem)] bg-white z-0"></span>
-              )}
-              {/* Bolinha */}
-              <span className="absolute left-[97px] top-2 w-2 h-2 bg-white rounded-full z-10"></span>
               <h3 className="absolute top-0 left-0 font-thin">{evento.data}</h3>
               <p>{evento.texto}</p>
             </div>
