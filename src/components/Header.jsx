@@ -2,20 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useToggleMenu from "../hooks/toggleMenu";
 import LanguageSwitcher from "../hooks/languagueSwitcher";
+import { useLanguage } from "../hooks/useLanguage";
+
+const content = {
+  pt: {
+    projetos: "Projetos",
+    certificacoes: "Certificações",
+    habilidades: "Habilidades",
+    sobre: "Sobre mim",
+    contato: "Contato",
+    fechar: "Fechar"
+  },
+  en: {
+    projetos: "Projects",
+    certificacoes: "Certifications",
+    habilidades: "Skills",
+    sobre: "About me",
+    contato: "Contact",
+    fechar: "Close"
+  }
+};
 
 function Header() {
   const { menuOpen, toggleMenu } = useToggleMenu();
+  const { lang } = useLanguage();
 
   return (
     <header>
       <div className="container m-auto px-5 py-5">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-2 sm:hidden">
           <button
             className="sm:hidden text-gray-400 hover:text-white hover:underline transition-colors duration-300"
             onClick={toggleMenu}
           >
-            {menuOpen ? "Fechar" : "Menu"}
+            {menuOpen ? content[lang].fechar : "Menu"}
           </button>
+          <LanguageSwitcher/>
         </div>
         <nav
           className={`overflow-hidden transition-all duration-300 ${
@@ -29,7 +51,7 @@ function Header() {
                 className="px-4 py-2 text-gray-400 hover:text-white hover:underline transition-colors duration-300"
                 onClick={() => menuOpen && toggleMenu()}
               >
-                Projetos
+                {content[lang].projetos}
               </a>
             </li>
             <li>
@@ -38,7 +60,7 @@ function Header() {
                 className="px-4 py-2 text-gray-400 hover:text-white hover:underline transition-colors duration-300"
                 onClick={() => menuOpen && toggleMenu()}
               >
-                Certificações
+                {content[lang].certificacoes}
               </a>
             </li>
             <li>
@@ -47,7 +69,7 @@ function Header() {
                 className="px-4 py-2 text-gray-400 hover:text-white hover:underline transition-colors duration-300"
                 onClick={() => menuOpen && toggleMenu()}
               >
-                Habilidades
+                {content[lang].habilidades}
               </a>
             </li>
             <li>
@@ -56,7 +78,7 @@ function Header() {
                 className="px-4 py-2 text-gray-400 hover:text-white hover:underline transition-colors duration-300"
                 onClick={() => menuOpen && toggleMenu()}
               >
-                Sobre mim
+                {content[lang].sobre}
               </a>
             </li>
             <li>
@@ -65,10 +87,12 @@ function Header() {
                 className="px-4 py-2 text-gray-400 hover:text-white hover:underline transition-colors duration-300"
                 onClick={() => menuOpen && toggleMenu()}
               >
-                Entrar em contato
+                {content[lang].contato}
               </Link>
             </li>
-            <LanguageSwitcher/>
+            <li className="hidden sm:block">
+              <LanguageSwitcher/>
+            </li>
           </ul>
         </nav>
       </div>

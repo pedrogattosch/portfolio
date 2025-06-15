@@ -1,10 +1,18 @@
 import React from "react";
+import { useLanguage } from "../hooks/useLanguage";
+
+const content = {
+  pt: { titulo: "Certificações", botao: "Visualizar o certificado" },
+  en: { titulo: "Certifications", botao: "View certificate" },
+};
 
 function Certifications() {
+  const { lang } = useLanguage();
+
   return (
     <section id="certificacoes">
       <div className="container m-auto px-5 py-10">
-        <h2 className="text-xl font-semibold">Certificações</h2>
+        <h2 className="text-xl font-semibold">{content[lang].titulo}</h2>
         <div className="flex flex-col gap-10 mt-10">
           <div className="border border-gray-500 rounded-md p-5 flex-1">
             <div className="flex items-center gap-3">
@@ -21,7 +29,7 @@ function Certifications() {
               target="_blank"
               className="mt-4 underline hover:scale-105 transition-transform inline-block"
             >
-              Visualizar o certificado
+              {content[lang].botao}
             </a>
           </div>
           {/* Udemy */}
@@ -40,7 +48,7 @@ function Certifications() {
               target="_blank"
               className="mt-4 underline hover:scale-105 transition-transform inline-block"
             >
-              Visualizar o certificado
+              {content[lang].botao}
             </a>
           </div>
           <div className="border border-gray-500 rounded-md p-5 flex-1">
@@ -50,16 +58,14 @@ function Certifications() {
                 alt="Cisco logo"
                 className="w-8 h-8"
               />
-              <h3 className="text-xl font-semibold">
-                Python Essentials 1
-              </h3>
+              <h3 className="text-xl font-semibold">Python Essentials 1</h3>
             </div>
             <a
               href="https://www.credly.com/badges/087b5de7-6835-4f8e-9863-f39217dbec37/linked_in_profile"
               target="_blank"
               className="mt-4 underline hover:scale-105 transition-transform inline-block"
             >
-              Visualizar o certificado
+              {content[lang].botao}
             </a>
           </div>
           <div className="border border-gray-500 rounded-md p-5 flex-1">
@@ -69,9 +75,7 @@ function Certifications() {
                 alt="Cisco logo"
                 className="w-8 h-8"
               />
-              <h3 className="text-xl font-semibold">
-                Python Essentials 2
-              </h3>
+              <h3 className="text-xl font-semibold">Python Essentials 2</h3>
             </div>
             <a
               href="https://www.credly.com/badges/dcec3e6c-c9a8-467e-9d69-d54904df97fb/linked_in_profile"
@@ -79,7 +83,7 @@ function Certifications() {
               rel="noopener noreferrer"
               className="mt-4 underline hover:scale-105 transition-transform inline-block"
             >
-              Visualizar o certificado
+              {content[lang].botao}
             </a>
           </div>
         </div>
