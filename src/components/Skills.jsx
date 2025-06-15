@@ -19,8 +19,6 @@ function Skills() {
           <ul className="list-disc flex flex-col gap-5 ml-5 sm:flex-row sm:gap-20">
               <li>Python</li>
               <li>SQL</li>
-              <li>Power BI</li>
-              <li>TensorFlow</li>
               <li>Azure</li>
           </ul>
         </div>

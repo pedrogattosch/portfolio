@@ -3,6 +3,7 @@ import './App.css'
 import Header from "./components/Header";
 import Introduction from "./components/Introduction";
 import Projects from "./components/Projects";
+import Certifications from './components/Certifications';
 import Skills from "./components/Skills";
 import AboutMe from "./components/AboutMe";
 import Footer from "./components/Footer";
@@ -20,6 +21,8 @@ function App() {
           <Introduction/>
           {/* Componente de projetos */}
           <Projects id="projetos"/>
+          {/* Componente de certificações */}
+          <Certifications id="certificacoes"/>
           {/* Componente de habilidades */}
           <Skills id="habilidades"/>
           {/* Componente de sobre mim */}

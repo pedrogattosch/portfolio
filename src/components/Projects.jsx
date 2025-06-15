@@ -7,10 +7,10 @@ function Projects() {
         <h2 className="text-xl font-semibold">Projetos</h2>
         <div className="flex flex-col sm:flex-row gap-10 mt-10">
           <div className="border border-gray-500 rounded-md p-5 flex-1">
-            <h3 className="text-2xl font-semibold mt-8">
+            <h3 className="text-2xl font-semibold mt-5">
               Classificador de gatos e cachorros
             </h3>
-            <p className="text-gray-400 text-sm mt-4">
+            <p className="text-gray-400 text-sm mt-5">
               Este projeto é uma solução de um exercício de Machine Learning da
               freeCodeCamp. O objetivo é treinar um modelo que identifica se uma
               imagem contém um gato ou um cachorro, utilizando redes neurais
@@ -19,16 +19,16 @@ function Projects() {
             <a
               href="https://github.com/pedrogattosch/cat-dog"
               target="_blank"
-              className="mt-5 underline hover:scale-105 transition-transform"
+              className="mt-5 underline hover:scale-105 transition-transform inline-block"
             >
-              Visualizar o código
+              Visualizar o projeto
             </a>
           </div>
           <div className="border border-gray-500 rounded-md p-5 flex-1">
-            <h3 className="text-2xl font-semibold mt-8">
+            <h3 className="text-2xl font-semibold mt-5">
               Pedra, papel e tesoura
             </h3>
-            <p className="text-gray-400 text-sm mt-4">
+            <p className="text-gray-400 text-sm mt-5">
               Este projeto é uma solução para um exercício de Machine Learning
               da freeCodeCamp. O objetivo é criar um jogador inteligente que
               consiga vencer adversários baseados em padrões com pelo menos 60%
@@ -37,9 +37,9 @@ function Projects() {
             <a
               href="https://github.com/pedrogattosch/rock-paper-scissors"
               target="_blank"
-              className="mt-5 underline hover:scale-105 transition-transform"
+              className="mt-5 underline hover:scale-105 transition-transform inline-block"
             >
-              Visualizar o código
+              Visualizar o projeto
             </a>
           </div>
         </div>
