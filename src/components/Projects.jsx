@@ -8,7 +8,7 @@ function Projects() {
         <div className="flex flex-col sm:flex-row gap-10 mt-10">
           <div className="border border-gray-500 rounded-md p-5 flex-1">
             <h3 className="text-2xl font-semibold mt-5">
-              Classificador de gatos e cachorros
+              🐱🐶 Classificador de gatos e cachorros
             </h3>
             <p className="text-gray-400 text-sm mt-5">
               Este projeto é uma solução de um exercício de Machine Learning da
@@ -26,7 +26,7 @@ function Projects() {
           </div>
           <div className="border border-gray-500 rounded-md p-5 flex-1">
             <h3 className="text-2xl font-semibold mt-5">
-              Pedra, papel e tesoura
+              ✊🖐️✌️ Pedra, papel e tesoura
             </h3>
             <p className="text-gray-400 text-sm mt-5">
               Este projeto é uma solução para um exercício de Machine Learning
