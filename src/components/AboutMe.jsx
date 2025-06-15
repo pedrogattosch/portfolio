@@ -70,7 +70,7 @@ function AboutMe() {
               } pl-[120px] relative before:top-2 before:w-2 before:h-2 before:bg-white before:absolute before:rounded-full before:left-[97px]`}
             >
               <h3 className="absolute top-0 left-0 font-thin">{evento.data}</h3>
-              <p>{evento.texto}</p>
+              <p className="mb-6">{evento.texto}</p>
             </div>
           ))}
         </div>
