@@ -9,13 +9,13 @@ const content = {
   pt: {
     titulo: "Olá, Mundo!",
     descricao:
-      "Me chamo Pedro Miguel, tenho 19 anos e sou estudante de Engenharia de Computação na UTFPR. Tenho experiência em desenvolvimento front-end e conhecimento sólido em Python. Concluí cursos de Machine Learning e de computação em nuvem com Microsoft Azure, e possuo certificações na área. Também tenho habilidades em manutenção de hardware e software, redes e suporte técnico. Atualmente, estou focado na área de análise e ciência de dados, buscando constantemente novos desafios para aplicar tecnologia de forma inovadora e orientada por dados.",
+      "Me chamo Pedro Miguel, tenho 20 anos e sou estudante de Engenharia de Computação na UTFPR, apaixonado por tecnologia e desenvolvimento de software. Estou sempre em busca de novos aprendizados e constantemente envolvido em projetos que me desafiam e contribuem para meu crescimento profissional e pessoal.",
     baixarCV: "Baixar CV",
   },
   en: {
     titulo: "Hello, World!",
     descricao:
-      "My name is Pedro Miguel, I’m 19 years old and a Computer Engineering student at UTFPR. I have experience in front-end development and strong proficiency in Python. I’ve completed courses in Machine Learning and Microsoft Azure cloud computing, and I hold certifications in the field. I also have skills in hardware and software maintenance, networking, and technical support. Currently, I'm focusing on data analysis and data science, always seeking new challenges to apply technology in innovative, data-driven ways.",
+      "My name is Pedro Miguel, I’m 20 years old and a Computer Engineering student at UTFPR. I’m passionate about technology and software development, always seeking new knowledge and constantly involved in projects that challenge me and contribute to my professional and personal growth.",
     baixarCV: "Download CV",
   },
 };

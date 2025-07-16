@@ -15,19 +15,20 @@ function Skills() {
         <h2 className="text-xl font-semibold">{content[lang].titulo}</h2>
         <div className="mt-12">
           <ul className="list-disc flex flex-col gap-5 ml-5 sm:flex-row sm:gap-20">
+            <li>C</li>
+            <li>C++</li>
+            <li>Python</li>
+            <li>JavaScript</li>
             <li>HTML</li>
             <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Tailwind CSS</li>
           </ul>
         </div>
         <div className="mt-5">
           <ul className="list-disc flex flex-col gap-5 ml-5 sm:flex-row sm:gap-20">
-            <li>C</li>
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Azure</li>
+            <li>Sass</li>
+            <li>Tailwind CSS</li>
+            <li>React</li>
+            <li>Flutter</li>
           </ul>
         </div>
       </div>
