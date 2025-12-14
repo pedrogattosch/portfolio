@@ -1,5 +1,8 @@
 import React from "react";
 import { useLanguage } from "../hooks/useLanguage";
+import FreeCodeCamp from "../assets/images/free_code_camp_logo.jpg";
+import Udemy from "../assets/images/udemy_logo.jpg";
+import Cisco from "../assets/images/cisco_logo.jpg";
 
 const content = {
   pt: { titulo: "Certificações", botao: "Visualizar o certificado" },
@@ -17,7 +20,7 @@ function Certifications() {
           <div className="border border-gray-500 rounded-md p-5 flex-1">
             <div className="flex items-center gap-3">
               <img
-                src="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+                src={FreeCodeCamp}
                 className="w-8 h-8"
               />
               <h3 className="text-xl font-semibold">
@@ -36,7 +39,7 @@ function Certifications() {
           <div className="border border-gray-500 rounded-md p-5 flex-1">
             <div className="flex items-center gap-3">
               <img
-                src="https://media.licdn.com/dms/image/v2/D560BAQEf_NHzN2yVQg/company-logo_100_100/company-logo_100_100/0/1723593046388/udemy_logo?e=1755734400&v=beta&t=va3LHyk5EydeolsQbuyaZ8OMwbY6kCkQIRLPXryxYjw"
+                src={Udemy}
                 className="w-8 h-8"
               />
               <h3 className="text-xl font-semibold">
@@ -54,7 +57,7 @@ function Certifications() {
           <div className="border border-gray-500 rounded-md p-5 flex-1">
             <div className="flex items-center gap-3">
               <img
-                src="https://media.licdn.com/dms/image/v2/D560BAQGo0LANKsqgCg/company-logo_100_100/B56ZaSzDOOGoAQ-/0/1746219578583/cisco_logo?e=1755734400&v=beta&t=aPyu0YKdkHrOOtnhmHOtJU_3V9S8YD6mF3PlYXKvFtg"
+                src={Cisco}
                 alt="Cisco logo"
                 className="w-8 h-8"
               />
@@ -71,7 +74,7 @@ function Certifications() {
           <div className="border border-gray-500 rounded-md p-5 flex-1">
             <div className="flex items-center gap-3">
               <img
-                src="https://media.licdn.com/dms/image/v2/D560BAQGo0LANKsqgCg/company-logo_100_100/B56ZaSzDOOGoAQ-/0/1746219578583/cisco_logo?e=1755734400&v=beta&t=aPyu0YKdkHrOOtnhmHOtJU_3V9S8YD6mF3PlYXKvFtg"
+                src={Cisco}
                 alt="Cisco logo"
                 className="w-8 h-8"
               />
