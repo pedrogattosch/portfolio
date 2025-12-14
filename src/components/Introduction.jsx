@@ -26,7 +26,7 @@ function Introduction({ menuOpen }) {
 
   return (
     <section>
-      <div className="container m-auto px-5 py-10 flex gap-6">
+      <div className="container m-auto px-5 py-10 flex flex-col sm:flex-row gap-6">
         <img
           src={Foto}
           alt="Foto de perfil"
