@@ -6,17 +6,10 @@ const content = {
     titulo: "Projetos",
     projetos: [
       {
-        titulo: "🐱🐶 Classificador de gatos e cachorros",
+        titulo: "⛪ Aplicativo Paróquia Menino Deus",
         descricao:
-          "Este projeto é uma solução de um exercício de Machine Learning da freeCodeCamp. O objetivo é treinar um modelo que identifica se uma imagem contém um gato ou um cachorro, utilizando redes neurais convolucionais.",
-        link: "https://github.com/pedrogattosch/cat-dog",
-        botao: "Visualizar o projeto",
-      },
-      {
-        titulo: "✊🖐️✌️ Pedra, papel e tesoura",
-        descricao:
-          "Este projeto é uma solução para um exercício de Machine Learning da freeCodeCamp. O objetivo é criar um jogador inteligente que consiga vencer adversários baseados em padrões com pelo menos 60% de aproveitamento no jogo de pedra, papel e tesoura.",
-        link: "https://github.com/pedrogattosch/rock-paper-scissors",
+          "Este é um aplicativo desenvolvido para que a comunidade da Paróquia Menino Deus consiga acompanhar as notícias, eventos, horários das missas, e tenha acesso à liturgia diária e outros serviços. O aplicativo foi projetado para rodar em diversas plataformas, incluindo dispositivos móveis.",
+        link: "https://github.com/pedrogattosch/paroquia-app",
         botao: "Visualizar o projeto",
       },
     ],
@@ -25,17 +18,10 @@ const content = {
     titulo: "Projects",
     projetos: [
       {
-        titulo: "🐱🐶 Cat and dog classifier",
+        titulo: "⛪ Menino Deus Parish App",
         descricao:
-          "This project is a solution to a freeCodeCamp Machine Learning exercise. The goal is to train a model that identifies whether an image contains a cat or a dog, using convolutional neural networks.",
+          "This is an application developed so that the Menino Deus Parish community can follow news, events, mass schedules, and access the daily liturgy and other services. The app was designed to run on multiple platforms, including mobile devices.",
         link: "https://github.com/pedrogattosch/cat-dog",
-        botao: "View project",
-      },
-      {
-        titulo: "✊🖐️✌️ Rock, paper and scissors",
-        descricao:
-          "This project is a solution to a freeCodeCamp Machine Learning exercise. The goal is to create an intelligent player that can defeat pattern-based opponents with at least a 60% win rate in the game of rock, paper and scissors.",
-        link: "https://github.com/pedrogattosch/rock-paper-scissors",
         botao: "View project",
       },
     ],
