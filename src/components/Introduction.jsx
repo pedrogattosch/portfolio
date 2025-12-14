@@ -3,19 +3,20 @@ import React from "react";
 import LinkedIn from "../assets/icons/linkedin.svg";
 import GitHub from "../assets/icons/github.svg";
 import Download from "../assets/icons/download.svg";
+import Foto from "../assets/images/foto-perfil.jpeg";
 import { useLanguage } from "../hooks/useLanguage";
 
 const content = {
   pt: {
     titulo: "Olá, Mundo!",
     descricao:
-      "Me chamo Pedro Miguel, tenho 20 anos e sou estudante de Engenharia de Computação na UTFPR, apaixonado por tecnologia e desenvolvimento de software. Estou sempre em busca de novos aprendizados e constantemente envolvido em projetos que me desafiam e contribuem para meu crescimento profissional e pessoal.",
+      "Me chamo Pedro Miguel, tenho 20 anos e sou estudante de Engenharia de Computação na UTFPR, apaixonado por tecnologia e desenvolvimento de software e hardware. Estou sempre em busca de novos aprendizados e constantemente envolvido em projetos que me desafiam e contribuem para meu crescimento profissional e pessoal.",
     baixarCV: "Baixar CV",
   },
   en: {
     titulo: "Hello, World!",
     descricao:
-      "My name is Pedro Miguel, I’m 20 years old and a Computer Engineering student at UTFPR. I’m passionate about technology and software development, always seeking new knowledge and constantly involved in projects that challenge me and contribute to my professional and personal growth.",
+      "My name is Pedro Miguel, I’m 20 years old and a Computer Engineering student at UTFPR. I’m passionate about technology and software and hardware development, always seeking new knowledge and constantly involved in projects that challenge me and contribute to my professional and personal growth.",
     baixarCV: "Download CV",
   },
 };
@@ -26,6 +27,11 @@ function Introduction({ menuOpen }) {
   return (
     <section>
       <div className="container m-auto px-5 py-10 flex gap-6">
+        <img
+          src={Foto}
+          alt="Foto de perfil"
+          className="w-60 h-60 rounded-full border object-cover"
+        />
         <div className="max-w-xl">
           <h1 className="font-bold text-5xl">{content[lang].titulo}</h1>
           <div
