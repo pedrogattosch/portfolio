@@ -11,7 +11,7 @@ import UseScrollToTop from "./hooks/useScrollToTop"
 
 function App() {
   return (
-      <div className='max-w-3xl m-auto relative'>
+      <div className='max-w-5xl m-auto relative'>
         {/* Cabeçalho */}
         <Header/>
         {/* Conteúdo principal */}
