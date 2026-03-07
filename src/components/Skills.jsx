@@ -21,7 +21,7 @@ function Skills() {
             <li>JavaScript</li>
             <li>HTML</li>
             <li>CSS</li>
-            <li>Sass</li>
+            <li>SASS</li>
             <li>Tailwind CSS</li>
             <li>React</li>
             <li>Flutter</li>

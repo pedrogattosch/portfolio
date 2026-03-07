@@ -8,7 +8,7 @@ const content = {
       {
         titulo: "⛪ Aplicativo Paróquia Menino Deus",
         descricao:
-          "Este é um aplicativo desenvolvido para que a comunidade da Paróquia Menino Deus consiga acompanhar as notícias, eventos, horários das missas, e tenha acesso à liturgia diária e outros serviços. O aplicativo foi projetado para rodar em diversas plataformas, incluindo dispositivos móveis.",
+          "Este é um aplicativo desenvolvido para que a comunidade da Paróquia Menino Deus consiga acompanhar as notícias, eventos, horários das missas, e tenha acesso à liturgia diária e outros serviços.",
         link: "https://github.com/pedrogattosch/paroquia-app",
         botao: "Visualizar o projeto",
       },
@@ -20,7 +20,7 @@ const content = {
       {
         titulo: "⛪ Menino Deus Parish App",
         descricao:
-          "This is an application developed so that the Menino Deus Parish community can follow news, events, mass schedules, and access the daily liturgy and other services. The app was designed to run on multiple platforms, including mobile devices.",
+          "This is an application developed so that the Menino Deus Parish community can follow news, events, mass schedules, and access the daily liturgy and other services.",
         link: "https://github.com/pedrogattosch/cat-dog",
         botao: "View project",
       },

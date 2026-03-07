@@ -20,43 +20,6 @@ function Certifications() {
           <div className="border border-gray-500 rounded-md p-5 flex-1">
             <div className="flex items-center gap-3">
               <img
-                src={FreeCodeCamp}
-                className="w-8 h-8"
-              />
-              <h3 className="text-xl font-semibold">
-                Machine learning with Python - freeCodeCamp
-              </h3>
-            </div>
-            <a
-              href="https://www.freecodecamp.org/certification/fccdfba9584-cb95-4efa-8072-dc4ac32eb2b6/machine-learning-with-python-v7"
-              target="_blank"
-              className="mt-4 underline hover:scale-105 transition-transform inline-block"
-            >
-              {content[lang].botao}
-            </a>
-          </div>
-          {/* Udemy */}
-          <div className="border border-gray-500 rounded-md p-5 flex-1">
-            <div className="flex items-center gap-3">
-              <img
-                src={Udemy}
-                className="w-8 h-8"
-              />
-              <h3 className="text-xl font-semibold">
-                Microsoft Azure Architect AZ-303 e AZ-305
-              </h3>
-            </div>
-            <a
-              href="https://www.udemy.com/certificate/UC-80b7856f-b4d2-4605-97b4-00dacba19328/"
-              target="_blank"
-              className="mt-4 underline hover:scale-105 transition-transform inline-block"
-            >
-              {content[lang].botao}
-            </a>
-          </div>
-          <div className="border border-gray-500 rounded-md p-5 flex-1">
-            <div className="flex items-center gap-3">
-              <img
                 src={Cisco}
                 alt="Cisco logo"
                 className="w-8 h-8"

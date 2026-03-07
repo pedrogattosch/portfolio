@@ -3,20 +3,20 @@ import React from "react";
 import LinkedIn from "../assets/icons/linkedin.svg";
 import GitHub from "../assets/icons/github.svg";
 import Download from "../assets/icons/download.svg";
-import Foto from "../assets/images/foto-perfil.jpeg";
+import Foto from "../assets/images/foto-perfil.png";
 import { useLanguage } from "../hooks/useLanguage";
 
 const content = {
   pt: {
     titulo: "Olá, Mundo!",
     descricao:
-      "Me chamo Pedro Miguel, tenho 20 anos e sou estudante de Engenharia de Computação na UTFPR, apaixonado por tecnologia e desenvolvimento de software e hardware. Estou sempre em busca de novos aprendizados e constantemente envolvido em projetos que me desafiam e contribuem para meu crescimento profissional e pessoal.",
+      "Sou o Pedro Miguel, estudante de Engenharia de Computação na UTFPR e um apaixonado por tecnologia. Atualmente, divido minha rotina entre o estágio na Inside Sistemas e meus projetos como freelance na Landingfy. No dia a dia, uso minha organização, gestão de tempo e foco em resolução de problemas para desenvolver projetos, transitando entre o desenvolvimento web e mobile.",
     baixarCV: "Baixar CV",
   },
   en: {
     titulo: "Hello, World!",
     descricao:
-      "My name is Pedro Miguel, I’m 20 years old and a Computer Engineering student at UTFPR. I’m passionate about technology and software and hardware development, always seeking new knowledge and constantly involved in projects that challenge me and contribute to my professional and personal growth.",
+      "I am Pedro Miguel, a Computer Engineering student at UTFPR and passionate about technology. Currently, I balance my routine between my internship at Inside Sistemas and my freelance projects at Landingfy. On a daily basis, I use my organization, time management, and focus on problem-solving to develop projects, working across both web and mobile development.",
     baixarCV: "Download CV",
   },
 };

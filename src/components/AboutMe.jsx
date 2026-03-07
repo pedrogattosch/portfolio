@@ -6,6 +6,11 @@ const content = {
     titulo: "Sobre mim",
     eventos: [
       {
+        data: "2026",
+        texto:
+          "Dei um grande passo na minha carreira ao iniciar meu estágio na Inside Sistemas, minha primeira oportunidade profissional em uma empresa de tecnologia. Essa experiência tem sido fundamental para aplicar na prática os conhecimentos da faculdade e dos projetos paralelos, me inserindo de vez no mercado.",
+      },
+      {
         data: "2025, março",
         texto:
           "Após concluir meu período no Exército Brasileiro, decidi retornar à faculdade de Engenharia de Computação na UTFPR com uma visão mais clara sobre minhas metas profissionais e acadêmicas. O retorno à universidade me proporciona a chance de integrar o aprendizado teórico com a prática, buscando sempre me atualizar e aprimorar minhas competências para enfrentar os desafios do mercado de tecnologia.",
@@ -30,6 +35,11 @@ const content = {
   en: {
     titulo: "About me",
     eventos: [
+          {
+        data: "2026",
+        texto:
+          "I took a major step in my career by starting my internship at Inside Sistemas, my first professional opportunity in a tech company. This experience has been essential to put into practice the knowledge gained from college and side projects, fully immersing me in the job market.",
+      },
       {
         data: "March, 2025",
         texto:
