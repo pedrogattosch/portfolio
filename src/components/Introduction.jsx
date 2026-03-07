@@ -10,13 +10,13 @@ const content = {
   pt: {
     titulo: "Olá, Mundo!",
     descricao:
-      "Sou o Pedro Miguel, estudante de Engenharia de Computação na UTFPR e um apaixonado por tecnologia. Atualmente, divido minha rotina entre o estágio na Inside Sistemas e meus projetos como freelance na Landingfy. No dia a dia, uso minha organização, gestão de tempo e foco em resolução de problemas para desenvolver projetos, transitando entre o desenvolvimento web e mobile.",
+      "Sou o Pedro Miguel, estudante de Engenharia de Computação na UTFPR. Atualmente na Inside Sistemas, atuo com foco na análise e documentação de funcionalidades do software. Em paralelo, dedico meus estudos ao ecossistema .NET, aplicando a base teórica da engenharia na construção de soluções robustas.",
     baixarCV: "Baixar CV",
   },
   en: {
     titulo: "Hello, World!",
     descricao:
-      "I am Pedro Miguel, a Computer Engineering student at UTFPR and passionate about technology. Currently, I balance my routine between my internship at Inside Sistemas and my freelance projects at Landingfy. On a daily basis, I use my organization, time management, and focus on problem-solving to develop projects, working across both web and mobile development.",
+      "I am Pedro Miguel, a Computer Engineering student at UTFPR. Currently, at Inside Sistemas, I focus on the analysis and documentation of software features. Parallel to my professional role, I am deeply invested in mastering the .NET ecosystem, applying my engineering background to build robust, scalable solutions.",
     baixarCV: "Download CV",
   },
 };

@@ -23,12 +23,12 @@ const content = {
       {
         data: "2023, março",
         texto:
-          "Dei o próximo passo em minha jornada ingressando na faculdade para estudar Engenharia de Computação na UTFPR. Aqui, mergulhei em um mundo de desafios e oportunidades, expandindo meus horizontes além da programação front-end. Durante os primeiros semestres, concentrei-me em disciplinas introdutórias, incluindo meu primeiro contato com a linguagem C, o que me proporcionou uma base sólida em programação.",
+          "Dei o próximo passo em minha jornada ingressando na faculdade para estudar Engenharia de Computação na UTFPR. Aqui, mergulhei em um mundo de desafios e oportunidades, expandindo meus horizontes além da programação front-end. Durante os primeiros semestres, concentrei-me em disciplinas introdutórias, o que me proporcionou uma base sólida em programação.",
       },
       {
         data: "2023",
         texto:
-          "Movido por uma curiosidade inata e uma paixão crescente pela tecnologia, dei meus primeiros passos na programação front-end, explorando as intricadas nuances do HTML, CSS e JavaScript.",
+          "Movido por uma curiosidade inata e uma paixão crescente pela tecnologia, dei meus primeiros passos na programação front-end, explorando as intricadas nuances do front-end.",
       },
     ],
   },
@@ -53,12 +53,12 @@ const content = {
       {
         data: "March, 2023",
         texto:
-          "I took the next step in my journey by enrolling in Computer Engineering at UTFPR. Here, I immersed myself in a world of challenges and opportunities, expanding my horizons beyond front-end programming. During the first semesters, I focused on introductory subjects, including my first contact with the C language, which gave me a solid foundation in programming.",
+          "I took the next step in my journey by enrolling in Computer Engineering at UTFPR. Here, I immersed myself in a world of challenges and opportunities, expanding my horizons beyond front-end programming. During the first semesters, I focused on introductory subjects, which gave me a solid foundation in programming.",
       },
       {
         data: "2023",
         texto:
-          "Driven by innate curiosity and a growing passion for technology, I took my first steps in front-end programming, exploring the intricate nuances of HTML, CSS, and JavaScript.",
+          "Driven by innate curiosity and a growing passion for technology, I took my first steps in front-end programming, exploring the intricate nuances of the front-end.",
       },
     ],
   },
