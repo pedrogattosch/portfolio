@@ -10,13 +10,13 @@ const content = {
   pt: {
     titulo: "Olá, Mundo!",
     descricao:
-      "Sou o Pedro Miguel, estudante de Engenharia de Computação na UTFPR. Atualmente na Inside Sistemas, atuo com foco na análise e documentação de funcionalidades do software. Em paralelo, dedico meus estudos ao ecossistema .NET, aplicando a base teórica da engenharia na construção de soluções robustas.",
+      "Sou o Pedro Miguel, estudante de Engenharia de Computação na UTFPR. Atualmente na Inside Sistemas, atuo com foco na análise e documentação de funcionalidades do software. Em paralelo, dedico meus estudos ao ecossistema .NET, aplicando a base teórica da engenharia na construção de soluções robustas. Possuo também forte base em Python, análise de dados e visão computacional.",
     baixarCV: "Baixar CV",
   },
   en: {
     titulo: "Hello, World!",
     descricao:
-      "I am Pedro Miguel, a Computer Engineering student at UTFPR. Currently, at Inside Sistemas, I focus on the analysis and documentation of software features. Parallel to my professional role, I am deeply invested in mastering the .NET ecosystem, applying my engineering background to build robust, scalable solutions.",
+      "I am Pedro Miguel, a Computer Engineering student at UTFPR. Currently, at Inside Sistemas, I focus on the analysis and documentation of software features. Parallel to my professional role, I am deeply invested in mastering the .NET ecosystem, applying my engineering background to build robust, scalable solutions. I also have a strong foundation in Python, data analysis, and computer vision.",
     baixarCV: "Download CV",
   },
 };
