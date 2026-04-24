@@ -35,7 +35,7 @@ const content = {
   en: {
     titulo: "About me",
     eventos: [
-          {
+      {
         data: "2026",
         texto:
           "I took a major step in my career by starting my internship at Inside Sistemas, my first professional opportunity in a tech company. This experience has been essential to put into practice the knowledge gained from college and side projects, fully immersing me in the job market.",
@@ -69,20 +69,26 @@ function AboutMe() {
 
   return (
     <section id="sobre-mim">
-      <div className="container m-auto px-5 py-10">
-        <h2 className="text-xl font-semibold">{content[lang].titulo}</h2>
-        <div className="mt-12 relative before:absolute before:top-2 before:left-[100px] before:rounded-full before:bottom-1 before:w-[2px] before:bg-white">
-          {content[lang].eventos.map((evento, idx) => (
-            <div
-              key={idx}
-              className={`mt-${
-                idx === 0 ? "0" : "14"
-              } pl-[120px] relative before:top-2 before:w-2 before:h-2 before:bg-white before:absolute before:rounded-full before:left-[97px]`}
-            >
-              <h3 className="absolute top-0 left-0 font-thin">{evento.data}</h3>
-              <p className="mb-6">{evento.texto}</p>
-            </div>
-          ))}
+      <div className="section-panel px-6 py-8 sm:px-8 sm:py-10">
+        <h2 className="section-heading">{content[lang].titulo}</h2>
+        <div className="mt-8">
+          <div className="space-y-5">
+            {content[lang].eventos.map((evento, idx) => (
+              <div
+                key={idx}
+                className="grid gap-4 sm:grid-cols-[7rem_minmax(0,1fr)] sm:items-start sm:gap-6"
+              >
+                <div className="pr-2 sm:pt-5 sm:text-right">
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
+                    {evento.data}
+                  </h3>
+                </div>
+                <div className="glass-card p-5 sm:p-6">
+                  <p className="section-copy">{evento.texto}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

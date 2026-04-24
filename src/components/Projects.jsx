@@ -33,21 +33,27 @@ function Projects() {
 
   return (
     <section id="projetos">
-      <div className="container m-auto px-5 py-5">
-        <h2 className="text-xl font-semibold">{content[lang].titulo}</h2>
-        <div className="flex flex-col sm:flex-row gap-10 mt-10">
+      <div className="section-panel px-6 py-8 sm:px-8 sm:py-10">
+        <h2 className="section-heading">{content[lang].titulo}</h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
           {content[lang].projetos.map((projeto, idx) => (
             <div
               key={idx}
-              className="border border-gray-500 rounded-md p-5 flex-1"
+              className="glass-card glass-card-hover flex h-full flex-col justify-between p-6 sm:p-7"
             >
-              <h3 className="text-2xl font-semibold mt-5">{projeto.titulo}</h3>
-              <p className="text-gray-400 text-sm mt-5">{projeto.descricao}</p>
+              <div>
+                <h3 className="text-2xl font-semibold tracking-tight text-white">
+                  {projeto.titulo}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">
+                  {projeto.descricao}
+                </p>
+              </div>
               <a
                 href={projeto.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 underline hover:scale-105 transition-transform inline-block"
+                className="mt-8 inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-100 transition duration-300 hover:border-cyan-400/35 hover:bg-white/10"
               >
                 {projeto.botao}
               </a>
