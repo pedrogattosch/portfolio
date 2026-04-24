@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useToggleMenu from "../hooks/toggleMenu";
 import LanguageSwitcher from "../hooks/languagueSwitcher";
+import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "../hooks/useLanguage";
 
 const content = {
@@ -30,6 +31,7 @@ function Header() {
   const { lang } = useLanguage();
 
   const navItemClass = "rounded-full px-4 py-2 text-sm text-slate-300 transition duration-300 hover:bg-white/8 hover:text-white";
+  const controlWrapperClass = "rounded-full border border-white/10 bg-white/5 px-3 py-2";
 
   return (
     <header className="sticky top-0 z-30 py-4 sm:py-6">
@@ -41,8 +43,13 @@ function Header() {
           >
             {menuOpen ? content[lang].fechar : "Menu"}
           </button>
-          <div className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-lg">
-            <LanguageSwitcher />
+          <div className="flex items-center gap-2">
+            <div className={controlWrapperClass}>
+              <ThemeToggle />
+            </div>
+            <div className={controlWrapperClass}>
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
         <nav
@@ -108,8 +115,13 @@ function Header() {
               </Link>
             </li>
             <li className="hidden sm:block">
-              <div className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-lg">
-                <LanguageSwitcher />
+              <div className="flex items-center gap-2">
+                <div className={controlWrapperClass}>
+                  <ThemeToggle />
+                </div>
+                <div className={controlWrapperClass}>
+                  <LanguageSwitcher />
+                </div>
               </div>
             </li>
           </ul>

@@ -160,9 +160,6 @@ function Projects() {
               </div>
 
               <div className="rounded-[1.75rem] border border-white/10 bg-black/20 p-5">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-300">
-                  Stack
-                </p>
                 <div className="mt-4 flex flex-wrap gap-2.5">
                   {featuredProject.tecnologias.map((tecnologia) => (
                     <span
