@@ -2,37 +2,48 @@ import React from "react";
 
 import LinkedIn from "../assets/icons/linkedin.svg";
 import GitHub from "../assets/icons/github.svg";
-import Download from "../assets/icons/download.svg";
 import Foto from "../assets/images/foto-perfil.png";
 import { useLanguage } from "../hooks/useLanguage";
 
 const content = {
   pt: {
-    titulo: "Olá, Mundo!",
+    icon: "Olá, mundo! 👋",
+    titulo: "Pedro Miguel",
+    subtitulo: "Desenvolvedor .NET",
     descricao:
-      "Sou o Pedro Miguel, estudante de Engenharia de Computação na UTFPR. Atualmente na Inside Sistemas, atuo com foco na análise e documentação de funcionalidades do software. Em paralelo, dedico meus estudos ao ecossistema .NET, aplicando a base teórica da engenharia na construção de soluções robustas. Possuo também forte base em Python, análise de dados e visão computacional.",
-    baixarCV: "Baixar CV",
+      "Sou estudante de Engenharia de Computação na UTFPR e estagiário na Inside Sistemas. Estou direcionando minha evolução profissional ao ecossistema .NET, com foco em construir software bem estruturado, confiável e pronto para crescer com o produto.",
+    linkedin: "LinkedIn",
+    github: "GitHub",
   },
   en: {
-    titulo: "Hello, World!",
+    icon: "Hello, world! 👋",
+    titulo: "Pedro Miguel",
+    subtitulo: ".NET Developer",
     descricao:
-      "I am Pedro Miguel, a Computer Engineering student at UTFPR. Currently, at Inside Sistemas, I focus on the analysis and documentation of software features. Parallel to my professional role, I am deeply invested in mastering the .NET ecosystem, applying my engineering background to build robust, scalable solutions. I also have a strong foundation in Python, data analysis, and computer vision.",
-    baixarCV: "Download CV",
+      "I am a Computer Engineering student at UTFPR and an intern at Inside Sistemas. I am focusing my professional growth on the .NET ecosystem, aiming to build well-structured, reliable software ready to evolve with the product.",
+    linkedin: "LinkedIn",
+    github: "GitHub",
   },
 };
 
 function Introduction({ menuOpen }) {
   const { lang } = useLanguage();
-  const iconButtonClass = "inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 shadow-[0_12px_30px_rgba(2,6,23,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-white/10";
+  const actionButtonClass = "inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-100 shadow-[0_12px_30px_rgba(2,6,23,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-white/10";
 
   return (
     <section>
       <div className="section-panel overflow-hidden px-6 py-10 sm:px-8 sm:py-12 lg:px-10">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,360px)]">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(280px,360px)] lg:gap-12">
           <div className="order-2 lg:order-1">
-            <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <div className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
+              {content[lang].icon}
+            </div>
+            <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
               {content[lang].titulo}
             </h1>
+            <p className="mt-4 max-w-2xl text-lg font-medium text-slate-100 sm:text-xl">
+              {content[lang].subtitulo}
+            </p>
             <p className="section-copy mt-6 max-w-3xl text-base sm:text-lg">
               {content[lang].descricao}
             </p>
@@ -45,31 +56,19 @@ function Introduction({ menuOpen }) {
                 href="https://www.linkedin.com/in/pedrogattosch/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={iconButtonClass}
+                className={`${actionButtonClass} bg-cyan-400/10 text-cyan-50`}
               >
                 <img src={LinkedIn} className="w-5 invert" alt="LinkedIn" />
+                {content[lang].linkedin}
               </a>
               <a
                 href="https://github.com/pedrogattosch"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={iconButtonClass}
+                className={actionButtonClass}
               >
                 <img src={GitHub} className="w-5 invert" alt="GitHub" />
-              </a>
-              <a
-                href="Currículo.docx"
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${iconButtonClass} bg-cyan-400/10 text-cyan-50`}
-              >
-                <img
-                  src={Download}
-                  className="w-5 invert"
-                  alt="Download"
-                />
-                {content[lang].baixarCV}
+                {content[lang].github}
               </a>
             </div>
           </div>
