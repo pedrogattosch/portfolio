@@ -10,6 +10,7 @@ const content = {
     certificacoes: "Certificações",
     habilidades: "Habilidades",
     sobre: "Sobre mim",
+    blog: "Blog",
     contato: "Contato",
     fechar: "Fechar"
   },
@@ -18,6 +19,7 @@ const content = {
     certificacoes: "Certifications",
     habilidades: "Skills",
     sobre: "About me",
+    blog: "Blog",
     contato: "Contact",
     fechar: "Close"
   }
@@ -83,6 +85,17 @@ function Header() {
                 onClick={() => menuOpen && toggleMenu()}
               >
                 {content[lang].sobre}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://pedrogattosch.hashnode.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={navItemClass}
+                onClick={() => menuOpen && toggleMenu()}
+              >
+                {content[lang].blog}
               </a>
             </li>
             <li>
