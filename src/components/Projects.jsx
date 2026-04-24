@@ -12,7 +12,7 @@ const content = {
           "Aplicação full stack de gerenciamento de tarefas com arquitetura em camadas, autenticação JWT, API em ASP.NET Core, testes automatizados e interface web integrada. É o projeto mais alinhado ao meu foco em back-end e ecossistema .NET.",
         link: "https://github.com/pedrogattosch/TaskFlow",
         tecnologias: [
-          ".NET 10",
+          ".NET",
           "ASP.NET Core",
           "C#",
           "SQL Server",

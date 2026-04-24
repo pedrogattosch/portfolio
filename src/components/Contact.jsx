@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ArrowLeft from "../assets/icons/arrowleft.svg";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "../hooks/useLanguage";
+import { useTheme } from "../hooks/useTheme";
 
 const content = {
   pt: {
@@ -27,6 +28,7 @@ const content = {
 
 function Contact() {
   const { lang } = useLanguage();
+  const { theme } = useTheme();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -75,7 +77,11 @@ function Contact() {
                 to="/"
                 className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium text-slate-100 transition duration-300 hover:border-cyan-400/35 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/30"
               >
-                <img src={ArrowLeft} className="h-4 w-4 invert" alt="" />
+                <img
+                  src={ArrowLeft}
+                  className={`h-4 w-4 ${theme === "light" ? "invert" : ""}`}
+                  alt=""
+                />
                 <span>{content[lang].voltar}</span>
               </Link>
             </div>

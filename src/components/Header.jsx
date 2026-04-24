@@ -9,28 +9,32 @@ const content = {
     projetos: "Projetos",
     certificacoes: "Certificações",
     habilidades: "Habilidades",
+    experiencia: "Experiência",
     sobre: "Sobre mim",
     blog: "Blog",
     contato: "Contato",
-    fechar: "Fechar"
+    fechar: "Fechar",
   },
   en: {
     projetos: "Projects",
     certificacoes: "Certifications",
     habilidades: "Skills",
+    experiencia: "Experience",
     sobre: "About me",
     blog: "Blog",
     contato: "Contact",
-    fechar: "Close"
-  }
+    fechar: "Close",
+  },
 };
 
 function Header() {
   const { menuOpen, toggleMenu } = useToggleMenu();
   const { lang } = useLanguage();
 
-  const navItemClass = "rounded-full px-4 py-2 text-sm text-slate-300 transition duration-300 hover:bg-white/8 hover:text-white";
-  const controlWrapperClass = "rounded-full border border-white/10 bg-white/5 px-3 py-2";
+  const navItemClass =
+    "rounded-full px-4 py-2 text-sm text-slate-300 transition duration-300 hover:bg-white/8 hover:text-white";
+  const controlWrapperClass =
+    "rounded-full border border-white/10 bg-white/5 px-3 py-2";
 
   return (
     <header className="sticky top-0 z-30 py-4 sm:py-6">
@@ -82,6 +86,15 @@ function Header() {
                 onClick={() => menuOpen && toggleMenu()}
               >
                 {content[lang].habilidades}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#experiencia"
+                className={navItemClass}
+                onClick={() => menuOpen && toggleMenu()}
+              >
+                {content[lang].experiencia}
               </a>
             </li>
             <li>

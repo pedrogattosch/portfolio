@@ -5,6 +5,7 @@ import Introduction from "./components/Introduction";
 import Projects from "./components/Projects";
 import Certifications from './components/Certifications';
 import Skills from "./components/Skills";
+import Experience from "./components/Experience";
 import AboutMe from "./components/AboutMe";
 import Footer from "./components/Footer";
 import UseScrollToTop from "./hooks/useScrollToTop"
@@ -23,8 +24,9 @@ function App() {
         <main className="space-y-8 pb-6 sm:space-y-10">
           <Introduction />
           <Projects id="projetos" />
-          <Certifications id="certificacoes" />
           <Skills id="habilidades" />
+          <Experience id="experiencia" />
+          <Certifications id="certificacoes" />
           <AboutMe id="sobre-mim" />
         </main>
         <Footer />
