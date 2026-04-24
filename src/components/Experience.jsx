@@ -1,4 +1,7 @@
 import { useLanguage } from "../hooks/useLanguage";
+import GlassCard from "./ui/GlassCard";
+import Section from "./ui/Section";
+import { insetPanelClass } from "./ui/styles";
 
 const content = {
   pt: {
@@ -49,45 +52,43 @@ function Experience() {
   const { lang } = useLanguage();
 
   return (
-    <section id="experiencia">
-      <div className="section-panel px-6 py-8 sm:px-8 sm:py-10">
-        <h2 className="section-heading">{content[lang].titulo}</h2>
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          {content[lang].experiencias.map((experiencia) => (
-            <article
-              key={`${experiencia.empresa}-${experiencia.cargo}`}
-              className="glass-card glass-card-hover flex h-full flex-col p-6 sm:p-7"
-            >
+    <Section id="experiencia" title={content[lang].titulo}>
+      <div className="grid gap-5 lg:grid-cols-2">
+        {content[lang].experiencias.map((experience) => (
+          <GlassCard
+            key={`${experience.empresa}-${experience.cargo}`}
+            hover
+            as="article"
+            className="flex h-full flex-col p-6 sm:p-7"
+          >
+            <h3 className="text-2xl font-semibold tracking-tight text-white">
+              {experience.empresa}
+            </h3>
 
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white">
-                {experiencia.empresa}
-              </h3>
-
-              <div className="mt-5 space-y-3 rounded-[1.5rem] border border-white/10 bg-black/20 p-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
-                    {content[lang].cargo}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-slate-100">
-                    {experiencia.cargo}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
-                    {content[lang].periodo}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-slate-100">
-                    {experiencia.periodo}
-                  </p>
-                </div>
+            <div className={`${insetPanelClass} mt-5 space-y-3`}>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+                  {content[lang].cargo}
+                </p>
+                <p className="mt-1 text-sm font-medium text-slate-100">
+                  {experience.cargo}
+                </p>
               </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+                  {content[lang].periodo}
+                </p>
+                <p className="mt-1 text-sm font-medium text-slate-100">
+                  {experience.periodo}
+                </p>
+              </div>
+            </div>
 
-              <p className="section-copy mt-5">{experiencia.descricao}</p>
-            </article>
-          ))}
-        </div>
+            <p className="section-copy mt-5">{experience.descricao}</p>
+          </GlassCard>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
 

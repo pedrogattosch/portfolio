@@ -3,9 +3,9 @@ import { useState } from "react";
 function useToggleMenu(initialState = false) {
   const [menuOpen, setMenuOpen] = useState(initialState);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  function toggleMenu() {
+    setMenuOpen((currentState) => !currentState);
+  }
 
   return { menuOpen, toggleMenu };
 }

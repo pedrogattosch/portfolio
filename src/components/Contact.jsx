@@ -1,9 +1,18 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
 import ArrowLeft from "../assets/icons/arrowleft.svg";
-import emailjs from "@emailjs/browser";
 import { useLanguage } from "../hooks/useLanguage";
 import { useTheme } from "../hooks/useTheme";
+import PageShell from "./layout/PageShell";
+import GlassCard from "./ui/GlassCard";
+import {
+  inputFieldClass,
+  primaryActionClass,
+  secondaryActionClass,
+  sectionPanelClass,
+  textAreaFieldClass,
+} from "./ui/styles";
 
 const content = {
   pt: {
@@ -29,54 +38,58 @@ const content = {
 function Contact() {
   const { lang } = useLanguage();
   const { theme } = useTheme();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  function sendEmail(e) {
-    e.preventDefault();
+  function updateField(field) {
+    return (event) => {
+      const { value } = event.target;
 
-    if (name === "" || email === "" || message === "") {
+      setFormData((currentData) => ({
+        ...currentData,
+        [field]: value,
+      }));
+    };
+  }
+
+  function sendEmail(event) {
+    event.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
       alert(content[lang].alerta);
       return;
     }
-
-    const templateParms = {
-      from_name: name,
-      email: email,
-      message: message,
-    };
 
     emailjs
       .send(
         "service_9hij8yk",
         "template_doh40yy",
-        templateParms,
+        {
+          from_name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
         "kRbXfO-nzqPm2yryh"
       )
       .then(() => {
-        setName("");
-        setEmail("");
-        setMessage("");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
       });
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[-8rem] top-[-6rem] h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
-        <div className="absolute right-[-6rem] top-40 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
-        <div className="absolute bottom-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-sky-300/10 blur-3xl" />
-      </div>
-
-      <section className="relative mx-auto max-w-6xl px-4 pb-10 pt-8 sm:px-6 sm:pt-10 lg:px-8">
-        <div className="section-panel overflow-hidden px-6 py-8 sm:px-8 sm:py-10">
+    <PageShell>
+      <section className="pt-8 sm:pt-10">
+        <div className={`${sectionPanelClass} overflow-hidden`}>
           <div className="flex flex-col gap-5">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <Link
-                to="/"
-                className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium text-slate-100 transition duration-300 hover:border-cyan-400/35 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/30"
-              >
+              <Link to="/" className={secondaryActionClass}>
                 <img
                   src={ArrowLeft}
                   className={`h-4 w-4 ${theme === "light" ? "invert" : ""}`}
@@ -94,7 +107,7 @@ function Contact() {
           </div>
 
           <div className="mt-8">
-            <div className="glass-card mx-auto w-full max-w-3xl p-6 sm:p-8">
+            <GlassCard className="mx-auto w-full max-w-3xl p-6 sm:p-8">
               <form className="grid gap-5 sm:gap-6" onSubmit={sendEmail}>
                 <div>
                   <label
@@ -108,12 +121,13 @@ function Contact() {
                     id="name"
                     name="name"
                     autoComplete="name"
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 transition duration-300 focus:outline-none focus-visible:border-cyan-400/40 focus-visible:ring-2 focus-visible:ring-cyan-400/20"
+                    className={inputFieldClass}
                     placeholder="Fulano"
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
+                    onChange={updateField("name")}
+                    value={formData.name}
                   />
                 </div>
+
                 <div>
                   <label
                     htmlFor="email"
@@ -126,12 +140,13 @@ function Contact() {
                     id="email"
                     name="email"
                     autoComplete="email"
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 transition duration-300 focus:outline-none focus-visible:border-cyan-400/40 focus-visible:ring-2 focus-visible:ring-cyan-400/20"
+                    className={inputFieldClass}
                     placeholder="fulano@ciclano.com"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
+                    onChange={updateField("email")}
+                    value={formData.email}
                   />
                 </div>
+
                 <div>
                   <label
                     htmlFor="message"
@@ -143,25 +158,26 @@ function Contact() {
                     id="message"
                     name="message"
                     rows={6}
-                    className="min-h-[180px] w-full rounded-[1.5rem] border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 transition duration-300 focus:outline-none focus-visible:border-cyan-400/40 focus-visible:ring-2 focus-visible:ring-cyan-400/20"
-                    onChange={(e) => setMessage(e.target.value)}
-                    value={message}
+                    className={textAreaFieldClass}
+                    onChange={updateField("message")}
+                    value={formData.message}
                   />
                 </div>
+
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center rounded-full border border-cyan-400/25 bg-cyan-400/10 px-5 py-3 text-sm font-medium text-cyan-50 transition duration-300 hover:border-cyan-300/40 hover:bg-cyan-400/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/30"
+                    className={`${primaryActionClass} w-full`}
                   >
                     {content[lang].enviar}
                   </button>
                 </div>
               </form>
-            </div>
+            </GlassCard>
           </div>
         </div>
       </section>
-    </div>
+    </PageShell>
   );
 }
 

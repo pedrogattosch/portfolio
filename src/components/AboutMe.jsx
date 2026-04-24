@@ -1,4 +1,6 @@
 import { useLanguage } from "../hooks/useLanguage";
+import GlassCard from "./ui/GlassCard";
+import Section from "./ui/Section";
 
 const content = {
   pt: {
@@ -67,30 +69,25 @@ function AboutMe() {
   const { lang } = useLanguage();
 
   return (
-    <section id="sobre-mim">
-      <div className="section-panel px-6 py-8 sm:px-8 sm:py-10">
-        <h2 className="section-heading">{content[lang].titulo}</h2>
-        <div className="mt-8">
-          <div className="space-y-5">
-            {content[lang].eventos.map((evento, idx) => (
-              <div
-                key={idx}
-                className="grid gap-4 sm:grid-cols-[7rem_minmax(0,1fr)] sm:items-start sm:gap-6"
-              >
-                <div className="pr-2 sm:pt-5 sm:text-right">
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
-                    {evento.data}
-                  </h3>
-                </div>
-                <div className="glass-card p-5 sm:p-6">
-                  <p className="section-copy">{evento.texto}</p>
-                </div>
-              </div>
-            ))}
+    <Section id="sobre-mim" title={content[lang].titulo}>
+      <div className="space-y-5">
+        {content[lang].eventos.map((event) => (
+          <div
+            key={`${event.data}-${event.texto}`}
+            className="grid gap-4 sm:grid-cols-[7rem_minmax(0,1fr)] sm:items-start sm:gap-6"
+          >
+            <div className="pr-2 sm:pt-5 sm:text-right">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
+                {event.data}
+              </h3>
+            </div>
+            <GlassCard className="p-5 sm:p-6">
+              <p className="section-copy">{event.texto}</p>
+            </GlassCard>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
 

@@ -1,5 +1,8 @@
-import { useLanguage } from "../hooks/useLanguage";
 import Cisco from "../assets/images/cisco_logo.jpg";
+import { useLanguage } from "../hooks/useLanguage";
+import GlassCard from "./ui/GlassCard";
+import Section from "./ui/Section";
+import { secondaryActionClass } from "./ui/styles";
 
 const content = {
   pt: { titulo: "Certificações", botao: "Visualizar o certificado" },
@@ -25,40 +28,38 @@ function Certifications() {
   const { lang } = useLanguage();
 
   return (
-    <section id="certificacoes">
-      <div className="section-panel px-6 py-8 sm:px-8 sm:py-10">
-        <h2 className="section-heading">{content[lang].titulo}</h2>
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          {certifications.map((item, index) => (
-            <div
-              key={index}
-              className="glass-card glass-card-hover flex h-full flex-col justify-between p-6"
-            >
-              <div className="flex items-center gap-4">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    className="h-10 w-10 rounded-lg object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold tracking-tight text-white">
-                  {item.title}
-                </h3>
+    <Section id="certificacoes" title={content[lang].titulo}>
+      <div className="grid gap-5 lg:grid-cols-2">
+        {certifications.map((item) => (
+          <GlassCard
+            key={item.href}
+            hover
+            className="flex h-full flex-col justify-between p-6"
+          >
+            <div className="flex items-center gap-4">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="h-10 w-10 rounded-lg object-cover"
+                />
               </div>
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-100 transition duration-300 hover:border-cyan-400/35 hover:bg-white/10"
-              >
-                {content[lang].botao}
-              </a>
+              <h3 className="text-xl font-semibold tracking-tight text-white">
+                {item.title}
+              </h3>
             </div>
-          ))}
-        </div>
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${secondaryActionClass} mt-6 w-fit`}
+            >
+              {content[lang].botao}
+            </a>
+          </GlassCard>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
 

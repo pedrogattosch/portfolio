@@ -15,6 +15,7 @@ const content = {
 function ThemeToggle() {
   const { lang } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const icon = theme === "dark" ? "☀" : "☾";
 
   return (
     <button
@@ -23,7 +24,7 @@ function ThemeToggle() {
       title={content[lang][theme]}
       className="text-lg leading-none text-slate-200 transition duration-300 hover:text-white"
     >
-      {theme === "dark" ? "☀" : "☾"}
+      {icon}
     </button>
   );
 }
