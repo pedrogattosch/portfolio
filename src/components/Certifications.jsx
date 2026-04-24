@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../hooks/useLanguage";
 import Cisco from "../assets/images/cisco_logo.jpg";
 

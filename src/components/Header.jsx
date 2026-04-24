@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import useToggleMenu from "../hooks/toggleMenu";
 import LanguageSwitcher from "../hooks/languagueSwitcher";

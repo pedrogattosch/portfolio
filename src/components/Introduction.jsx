@@ -1,5 +1,3 @@
-import React from "react";
-
 import LinkedIn from "../assets/icons/linkedin.svg";
 import GitHub from "../assets/icons/github.svg";
 import Foto from "../assets/images/foto-perfil.png";
