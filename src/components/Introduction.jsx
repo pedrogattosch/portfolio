@@ -1,6 +1,6 @@
 import GitHub from "../assets/icons/github.svg";
 import LinkedIn from "../assets/icons/linkedin.svg";
-import Foto from "../assets/images/foto-perfil.png";
+import Foto from "../assets/images/foto-perfil.jpg";
 import { useLanguage } from "../hooks/useLanguage";
 import { cn } from "../utils/cn";
 import {
