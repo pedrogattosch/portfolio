@@ -12,18 +12,18 @@ const content = {
   pt: {
     icon: "Olá, mundo! 👋",
     titulo: "Pedro Miguel",
-    subtitulo: "Desenvolvedor .NET",
+    subtitulo: "Engenharia de Computação (UTFPR)",
     descricao:
-      "Sou estudante de Engenharia de Computação na UTFPR e estagiário na Inside Sistemas. Estou direcionando minha evolução profissional ao ecossistema .NET, com foco em construir software bem estruturado, confiável e pronto para crescer com o produto.",
+      "Sou estudante de Engenharia de Computação na UTFPR, com foco em desenvolvimento de software, automação de processos e análise de dados. Busco unir visão técnica, organização e entendimento de negócio para criar soluções úteis, bem estruturadas, confiáveis e alinhadas às necessidades do produto e do usuário.",
     linkedin: "LinkedIn",
     github: "GitHub",
   },
   en: {
     icon: "Hello, world! 👋",
     titulo: "Pedro Miguel",
-    subtitulo: ".NET Developer",
+    subtitulo: "Computer Engineering (UTFPR)",
     descricao:
-      "I am a Computer Engineering student at UTFPR and an intern at Inside Sistemas. I am focusing my professional growth on the .NET ecosystem, aiming to build well-structured, reliable software ready to evolve with the product.",
+      "I am a Computer Engineering student at UTFPR, focused on software development, process automation, and data analysis. I strive to combine technical vision, organization, and business understanding to create useful, well-structured, reliable solutions that align with product and user needs.",
     linkedin: "LinkedIn",
     github: "GitHub",
   },
