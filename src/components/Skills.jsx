@@ -10,23 +10,27 @@ const content = {
     categorias: [
       {
         titulo: "Back-end",
-        skills: ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "JWT", "xUnit", "REST APIs"],
+        skills: ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "JWT", "API REST", "xUnit"],
       },
       {
         titulo: "Front-end",
-        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Sass", "Vite"],
+        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
       },
       {
         titulo: "Banco de dados",
-        skills: ["SQL Server", "PostgreSQL", "MySQL", "SQLite"],
+        skills: ["SQL Server", "SQL", "SQLite"],
+      },
+      {
+        titulo: "Dados e automacao",
+        skills: ["Python", "Pandas", "NumPy", "Matplotlib", "OpenCV"],
+      },
+      {
+        titulo: "Mobile",
+        skills: ["Flutter", "Dart"],
       },
       {
         titulo: "Ferramentas",
-        skills: ["Git", "GitHub", "Docker", "Swagger", "Postman", "Figma", "CI/CD"],
-      },
-      {
-        titulo: "Outros",
-        skills: ["Python", "Flutter", "C", "C++"],
+        skills: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Figma"],
       },
     ],
   },
@@ -35,23 +39,27 @@ const content = {
     categorias: [
       {
         titulo: "Back-end",
-        skills: ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "JWT", "xUnit", "REST APIs"],
+        skills: ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "JWT", "REST API", "xUnit"],
       },
       {
         titulo: "Front-end",
-        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Sass", "Vite"],
+        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
       },
       {
         titulo: "Databases",
-        skills: ["SQL Server", "PostgreSQL", "MySQL", "SQLite"],
+        skills: ["SQL Server", "SQL", "SQLite"],
+      },
+      {
+        titulo: "Data and Automation",
+        skills: ["Python", "Pandas", "NumPy", "Matplotlib", "OpenCV"],
+      },
+      {
+        titulo: "Mobile",
+        skills: ["Flutter", "Dart"],
       },
       {
         titulo: "Tools",
-        skills: ["Git", "GitHub", "Docker", "Swagger", "Postman", "Figma", "CI/CD"],
-      },
-      {
-        titulo: "Others",
-        skills: ["Python", "Flutter", "C", "C++"],
+        skills: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Figma"],
       },
     ],
   },
