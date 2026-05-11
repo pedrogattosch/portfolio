@@ -14,11 +14,11 @@ const content = {
       },
       {
         titulo: "Front-end",
-        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
+        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
       },
       {
         titulo: "Banco de dados",
-        skills: ["SQL Server", "SQL", "SQLite"],
+        skills: ["SQL Server", "SQLite"],
       },
       {
         titulo: "Dados e automacao",
@@ -30,7 +30,7 @@ const content = {
       },
       {
         titulo: "Ferramentas",
-        skills: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Figma"],
+        skills: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Figma", "Codex", "Claude Code"],
       },
     ],
   },
@@ -43,11 +43,11 @@ const content = {
       },
       {
         titulo: "Front-end",
-        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
+        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
       },
       {
         titulo: "Databases",
-        skills: ["SQL Server", "SQL", "SQLite"],
+        skills: ["SQL Server", "SQLite"],
       },
       {
         titulo: "Data and Automation",
@@ -59,7 +59,7 @@ const content = {
       },
       {
         titulo: "Tools",
-        skills: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Figma"],
+        skills: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Figma", "Codex", "Claude Code"],
       },
     ],
   },
