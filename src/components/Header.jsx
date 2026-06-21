@@ -13,7 +13,7 @@ const content = {
     menu: "Menu",
     projetos: "Projetos",
     certificacoes: "Certificações",
-    habilidades: "Habilidades",
+    tecnologias: "Tecnologias",
     experiencia: "Experiência",
     sobre: "Sobre mim",
     blog: "Blog",
@@ -24,7 +24,7 @@ const content = {
     menu: "Menu",
     projetos: "Projects",
     certificacoes: "Certifications",
-    habilidades: "Skills",
+    tecnologias: "Technologies",
     experiencia: "Experience",
     sobre: "About me",
     blog: "Blog",
@@ -39,7 +39,7 @@ function Header() {
 
   const navigationItems = [
     { href: "#projetos", label: content[lang].projetos },
-    { href: "#habilidades", label: content[lang].habilidades },
+    { href: "#tecnologias", label: content[lang].tecnologias },
     { href: "#experiencia", label: content[lang].experiencia },
     { href: "#certificacoes", label: content[lang].certificacoes },
     { href: "#sobre-mim", label: content[lang].sobre },

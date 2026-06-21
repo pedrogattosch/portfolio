@@ -14,7 +14,7 @@ const content = {
     titulo: "Pedro Miguel",
     subtitulo: "Engenharia de Computação (UTFPR)",
     descricao:
-      "Sou estudante de Engenharia de Computação na UTFPR, com foco em desenvolvimento de software, automação de processos e análise de dados. Busco unir visão técnica, organização e entendimento de negócio para criar soluções úteis, bem estruturadas, confiáveis e alinhadas às necessidades do produto e do usuário.",
+      "Estudante de Engenharia de Computação na UTFPR, com foco em inteligência artificial e automação de processos. Atuo no desenvolvimento de soluções com Python, criando fluxos multiagentes. Também possuo experiência prática com desenvolvimento web e mobile, análise de dados e visão computacional.",
     linkedin: "LinkedIn",
     github: "GitHub",
   },
@@ -23,7 +23,7 @@ const content = {
     titulo: "Pedro Miguel",
     subtitulo: "Computer Engineering (UTFPR)",
     descricao:
-      "I am a Computer Engineering student at UTFPR, focused on software development, process automation, and data analysis. I strive to combine technical vision, organization, and business understanding to create useful, well-structured, reliable solutions that align with product and user needs.",
+      "Computer Engineering student at UTFPR, focused on artificial intelligence and process automation. I work on developing solutions with Python, creating multi-agent workflows. I also have practical experience with web and mobile development, data analysis, and computer vision.",
     linkedin: "LinkedIn",
     github: "GitHub",
   },

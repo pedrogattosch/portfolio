@@ -9,7 +9,7 @@ import Introduction from "./components/Introduction";
 import PageShell from "./components/layout/PageShell";
 import Projects from "./components/Projects";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import Skills from "./components/Skills";
+import Technologies from "./components/Technologies";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <main className="space-y-8 pb-6 sm:space-y-10">
         <Introduction />
         <Projects />
-        <Skills />
+        <Technologies />
         <Experience />
         <Certifications />
         <AboutMe />

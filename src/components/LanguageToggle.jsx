@@ -10,9 +10,9 @@ function LanguageToggle() {
       onClick={() => setLang(lang === "pt" ? "en" : "pt")}
       aria-label={nextLanguageLabel}
       title={nextLanguageLabel}
-      className="text-sm font-semibold tracking-[0.2em] text-slate-200 transition duration-300 hover:text-white"
+      className="inline-flex h-9 min-w-11 items-center justify-center rounded-full px-2 text-xl leading-none transition duration-300 hover:bg-white/10"
     >
-      {lang === "pt" ? "EN" : "PT"}
+      <span aria-hidden="true">{lang === "pt" ? "🇺🇸" : "🇧🇷"}</span>
     </button>
   );
 }

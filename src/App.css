@@ -29,6 +29,7 @@
   --accent-soft: rgba(34, 211, 238, 0.1);
   --accent-border: rgba(34, 211, 238, 0.2);
   --accent-text-soft: #e0f2fe;
+  --timeline-dot-bg: #202534;
 }
 
 html {
@@ -78,6 +79,7 @@ body.light {
   --accent-soft: rgba(8, 145, 178, 0.14);
   --accent-border: rgba(8, 145, 178, 0.26);
   --accent-text-soft: #0f172a;
+  --timeline-dot-bg: #ffffff;
 }
 
 #root {

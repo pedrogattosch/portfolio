@@ -17,6 +17,14 @@ const content = {
     destaque: "Projeto principal",
     projetos: [
       {
+        titulo: "AquaMetria — Sistema TilapIA",
+        descricao:
+          "Dashboard interativo para biometria aquícola e monitoramento estimado de tilápias em viveiro escavado. MVP campeão do Start Farm 2026, com indicadores de peso médio, biomassa, qualidade da água, ração recomendada e previsão de abate.",
+        link: "https://start-farm.vercel.app/",
+        tecnologias: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+        principal: true,
+      },
+      {
         titulo: "TaskFlow",
         descricao:
           "Aplicação full stack de gerenciamento de tarefas com arquitetura em camadas, autenticação JWT, API em ASP.NET Core, testes automatizados e interface web integrada. É o projeto mais alinhado ao meu foco em back-end e ecossistema .NET.",
@@ -33,14 +41,6 @@ const content = {
           "Docker",
           "xUnit",
         ],
-        principal: true,
-      },
-      {
-        titulo: "Aplicativo Paróquia Menino Deus",
-        descricao:
-          "Aplicativo para a comunidade da Paróquia Menino Deus acompanhar notícias, eventos, horários de missas, liturgia diária e outros serviços em uma experiência mobile estruturada.",
-        link: "https://github.com/pedrogattosch/paroquia-app",
-        tecnologias: ["Flutter", "Dart"],
       },
       {
         titulo: "Modelagem do crescimento populacional de Toledo-PR",
@@ -64,6 +64,14 @@ const content = {
     destaque: "Main project",
     projetos: [
       {
+        titulo: "AquaMetria — TilapIA system",
+        descricao:
+          "Interactive dashboard for aquaculture biometrics and estimated tilapia monitoring in an excavated pond. MVP winner of Start Farm 2026, featuring average weight, biomass, water quality, recommended feed, and harvest forecast indicators.",
+        link: "https://start-farm.vercel.app/",
+        tecnologias: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+        principal: true,
+      },
+      {
         titulo: "TaskFlow",
         descricao:
           "Full stack task management application with layered architecture, JWT authentication, ASP.NET Core API, automated tests, and an integrated web interface. It is the project most aligned with my back-end and .NET focus.",
@@ -80,14 +88,6 @@ const content = {
           "Docker",
           "xUnit",
         ],
-        principal: true,
-      },
-      {
-        titulo: "Menino Deus Parish App",
-        descricao:
-          "Application built for the Menino Deus Parish community to follow news, events, mass schedules, daily liturgy, and other services through a structured mobile experience.",
-        link: "https://github.com/pedrogattosch/paroquia-app",
-        tecnologias: ["Flutter", "Dart"],
       },
       {
         titulo: "Toledo-PR population growth modeling",

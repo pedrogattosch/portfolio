@@ -6,23 +6,27 @@ import { techTagClass } from "./ui/styles";
 
 const content = {
   pt: {
-    titulo: "Habilidades",
+    titulo: "Tecnologias",
     categorias: [
       {
+        titulo: "IA",
+        skills: ["Python", "LLM", "RAG", "Paperclip"],
+      },
+      {
         titulo: "Back-end",
-        skills: ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "JWT", "API REST", "xUnit"],
+        skills: ["FastAPI", "C#", ".NET", "ASP.NET Core", "Entity Framework Core", "APIs REST", "JWT"],
       },
       {
         titulo: "Front-end",
-        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
+        skills: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
+      },
+      {
+        titulo: "Dados e visão computacional",
+        skills: ["Pandas", "NumPy", "Matplotlib", "OpenCV", "Dash"],
       },
       {
         titulo: "Banco de dados",
-        skills: ["SQL Server", "SQLite"],
-      },
-      {
-        titulo: "Dados e automacao",
-        skills: ["Python", "Pandas", "NumPy", "Matplotlib", "OpenCV"],
+        skills: ["SQL Server", "SQLite",],
       },
       {
         titulo: "Mobile",
@@ -30,28 +34,32 @@ const content = {
       },
       {
         titulo: "Ferramentas",
-        skills: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Figma", "Codex", "Claude Code"],
+        skills: ["Git", "GitHub", "GitLab", "Docker", "Postman", "Swagger", "Figma", "Codex", "Claude Code"],
       },
     ],
   },
   en: {
-    titulo: "Skills",
+    titulo: "Technologies",
     categorias: [
       {
+        titulo: "AI",
+        skills: ["Python", "LLM", "RAG", "Paperclip"],
+      },
+      {
         titulo: "Back-end",
-        skills: ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "JWT", "REST API", "xUnit"],
+        skills: ["FastAPI", "C#", ".NET", "ASP.NET Core", "Entity Framework Core", "REST APIs", "JWT"],
       },
       {
         titulo: "Front-end",
-        skills: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
+        skills: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
+      },
+      {
+        titulo: "Data and computer vision",
+        skills: ["Pandas", "NumPy", "Matplotlib", "OpenCV", "Dash"],
       },
       {
         titulo: "Databases",
         skills: ["SQL Server", "SQLite"],
-      },
-      {
-        titulo: "Data and Automation",
-        skills: ["Python", "Pandas", "NumPy", "Matplotlib", "OpenCV"],
       },
       {
         titulo: "Mobile",
@@ -59,17 +67,17 @@ const content = {
       },
       {
         titulo: "Tools",
-        skills: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Figma", "Codex", "Claude Code"],
+        skills: ["Git", "GitHub", "GitLab", "Docker", "Postman", "Swagger", "Figma", "Codex", "Claude Code"],
       },
     ],
   },
 };
 
-function Skills() {
+function Technologies() {
   const { lang } = useLanguage();
 
   return (
-    <Section id="habilidades" title={content[lang].titulo}>
+    <Section id="tecnologias" title={content[lang].titulo}>
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {content[lang].categorias.map((category) => (
           <GlassCard key={category.titulo} hover className="p-6 sm:p-7">
@@ -88,4 +96,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default Technologies;
