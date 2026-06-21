@@ -30,6 +30,16 @@
   --accent-border: rgba(34, 211, 238, 0.2);
   --accent-text-soft: #e0f2fe;
   --timeline-dot-bg: #202534;
+  --action-primary-bg: rgba(34, 211, 238, 0.1);
+  --action-primary-bg-hover: rgba(34, 211, 238, 0.15);
+  --action-primary-border: rgba(34, 211, 238, 0.25);
+  --action-primary-border-hover: rgba(103, 232, 249, 0.4);
+  --action-primary-text: #ecfeff;
+  --action-secondary-bg: rgba(255, 255, 255, 0.05);
+  --action-secondary-bg-hover: rgba(255, 255, 255, 0.1);
+  --action-secondary-border: rgba(255, 255, 255, 0.1);
+  --action-secondary-border-hover: rgba(34, 211, 238, 0.35);
+  --action-secondary-text: #f1f5f9;
 }
 
 html {
@@ -80,6 +90,16 @@ body.light {
   --accent-border: rgba(8, 145, 178, 0.26);
   --accent-text-soft: #0f172a;
   --timeline-dot-bg: #ffffff;
+  --action-primary-bg: rgba(14, 165, 233, 0.12);
+  --action-primary-bg-hover: rgba(14, 165, 233, 0.18);
+  --action-primary-border: rgba(14, 165, 233, 0.28);
+  --action-primary-border-hover: rgba(8, 145, 178, 0.42);
+  --action-primary-text: #0c4a6e;
+  --action-secondary-bg: rgba(248, 250, 252, 0.96);
+  --action-secondary-bg-hover: #ffffff;
+  --action-secondary-border: rgba(100, 116, 139, 0.24);
+  --action-secondary-border-hover: rgba(14, 165, 233, 0.32);
+  --action-secondary-text: #0f172a;
 }
 
 #root {
@@ -133,6 +153,29 @@ body.light {
   box-shadow: var(--card-hover-shadow);
 }
 
+.action-primary {
+  border-color: var(--action-primary-border);
+  background: var(--action-primary-bg);
+  color: var(--action-primary-text);
+}
+
+.action-primary:hover {
+  border-color: var(--action-primary-border-hover);
+  background: var(--action-primary-bg-hover);
+}
+
+.action-secondary,
+.control-surface {
+  border-color: var(--action-secondary-border);
+  background: var(--action-secondary-bg);
+  color: var(--action-secondary-text);
+}
+
+.action-secondary:hover {
+  border-color: var(--action-secondary-border-hover);
+  background: var(--action-secondary-bg-hover);
+}
+
 body.light .text-white,
 body.light [class~="text-white"] {
   color: var(--heading-color) !important;
@@ -171,7 +214,8 @@ body.light [class~="bg-white/5"],
 body.light [class~="bg-white/[0.05]"],
 body.light [class~="bg-white/[0.045]"],
 body.light [class~="bg-white/[0.04]"],
-body.light [class~="bg-black/20"] {
+body.light [class~="bg-black/20"],
+body.light [class~="bg-slate-950/35"] {
   background: var(--soft-surface) !important;
 }
 
@@ -199,6 +243,15 @@ body.light [class~="border-cyan-400/20"] {
 body.light [class~="text-cyan-50"],
 body.light [class~="text-cyan-100"] {
   color: var(--accent-text-soft) !important;
+}
+
+body.light .action-primary {
+  color: var(--action-primary-text) !important;
+}
+
+body.light .action-secondary,
+body.light .control-surface {
+  color: var(--action-secondary-text) !important;
 }
 
 body.light [class~="invert"] {

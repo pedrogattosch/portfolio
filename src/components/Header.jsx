@@ -56,7 +56,7 @@ function Header() {
       <div className="section-panel px-4 py-4 sm:px-6">
         <div className="flex items-center justify-between gap-4 sm:hidden">
           <button
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition duration-300 hover:border-cyan-400/40 hover:text-white"
+            className="action-secondary rounded-full border px-4 py-2 text-sm transition duration-300"
             onClick={toggleMenu}
           >
             {menuOpen ? content[lang].fechar : content[lang].menu}
@@ -102,7 +102,7 @@ function Header() {
             <li>
               <Link
                 to="/contato"
-                className={`${navItemClass} inline-flex items-center border border-cyan-400/20 bg-cyan-400/10 text-cyan-100 hover:border-cyan-300/40 hover:bg-cyan-400/15`}
+                className={`${navItemClass} action-secondary inline-flex items-center border`}
                 onClick={handleNavItemClick}
               >
                 {content[lang].contato}

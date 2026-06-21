@@ -5,7 +5,6 @@ import TagList from "./ui/TagList";
 import {
   accentBadgeCompactClass,
   compactTechTagClass,
-  primaryActionClass,
   secondaryActionClass,
   techTagClass,
 } from "./ui/styles";
@@ -129,7 +128,7 @@ function Projects() {
                 href={featuredProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${primaryActionClass} mt-6 w-fit`}
+                className={`${secondaryActionClass} mt-6 w-fit`}
               >
                 {content[lang].botao}
               </a>

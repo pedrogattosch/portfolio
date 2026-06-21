@@ -2,7 +2,6 @@ import GitHub from "../assets/icons/github.svg";
 import LinkedIn from "../assets/icons/linkedin.svg";
 import Foto from "../assets/images/foto-perfil.jpg";
 import { useLanguage } from "../hooks/useLanguage";
-import { cn } from "../utils/cn";
 import {
   accentBadgeClass,
   elevatedSecondaryActionClass,
@@ -35,7 +34,6 @@ const socialLinks = [
     icon: LinkedIn,
     alt: "LinkedIn",
     labelKey: "linkedin",
-    highlighted: true,
   },
   {
     href: "https://github.com/pedrogattosch",
@@ -70,10 +68,7 @@ function Introduction() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={cn(
-                    elevatedSecondaryActionClass,
-                    link.highlighted && "bg-cyan-400/10 text-cyan-50"
-                  )}
+                  className={elevatedSecondaryActionClass}
                 >
                   <img src={link.icon} className="w-5 invert" alt={link.alt} />
                   {content[lang][link.labelKey]}

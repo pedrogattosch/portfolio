@@ -26,7 +26,7 @@ const content = {
       },
       {
         titulo: "Banco de dados",
-        skills: ["SQL Server", "SQLite",],
+        skills: ["SQL Server", "SQLite", "SQL"],
       },
       {
         titulo: "Mobile",
@@ -59,7 +59,7 @@ const content = {
       },
       {
         titulo: "Databases",
-        skills: ["SQL Server", "SQLite"],
+        skills: ["SQL Server", "SQLite", "SQL"],
       },
       {
         titulo: "Mobile",
