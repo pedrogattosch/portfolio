@@ -16,7 +16,6 @@ const content = {
     tecnologias: "Tecnologias",
     experiencia: "Experiência",
     sobre: "Sobre mim",
-    blog: "Blog",
     contato: "Contato",
     fechar: "Fechar",
   },
@@ -27,7 +26,6 @@ const content = {
     tecnologias: "Technologies",
     experiencia: "Experience",
     sobre: "About me",
-    blog: "Blog",
     contato: "Contact",
     fechar: "Close",
   },
@@ -88,17 +86,6 @@ function Header() {
                 </a>
               </li>
             ))}
-            <li>
-              <a
-                href="https://pedrogattosch.hashnode.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={navItemClass}
-                onClick={handleNavItemClick}
-              >
-                {content[lang].blog}
-              </a>
-            </li>
             <li>
               <Link
                 to="/contato"
