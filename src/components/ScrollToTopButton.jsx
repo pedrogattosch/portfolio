@@ -1,41 +1,8 @@
 import { useEffect, useState } from "react";
 import ArrowUp from "../assets/icons/arrowup.svg";
-import { cn } from "../utils/cn";
-
 function ScrollToTopButton() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    function handleScroll() {
-      setIsVisible(window.pageYOffset > 400);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-
-  return (
-    <button
-      className={cn(
-        "fixed bottom-8 left-1/2 -translate-x-1/2 rounded-full bg-white p-2",
-        isVisible ? "visible" : "hidden"
-      )}
-      onClick={scrollToTop}
-      aria-label="Scroll to top"
-    >
-      <img src={ArrowUp} className="h-5 w-5" alt="" />
-    </button>
-  );
+  const [visible, setVisible] = useState(false);
+  useEffect(() => { const onScroll = () => setVisible(window.scrollY > 500); window.addEventListener("scroll", onScroll); return () => window.removeEventListener("scroll", onScroll); }, []);
+  return <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Voltar ao topo" className={`fixed bottom-7 right-7 z-50 flex h-11 w-11 items-center justify-center rounded-xl border border-lineStrong bg-panel transition duration-200 ${visible ? "opacity-100" : "pointer-events-none opacity-0"}`}><img src={ArrowUp} alt="" className="h-[18px] w-[18px]" style={{ filter: "var(--icon-filter)" }} /></button>;
 }
-
 export default ScrollToTopButton;

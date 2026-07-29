@@ -1,184 +1,29 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Link } from "react-router-dom";
-import ArrowLeft from "../assets/icons/arrowleft.svg";
+import GitHub from "../assets/icons/github.svg";
+import LinkedIn from "../assets/icons/linkedin.svg";
 import { useLanguage } from "../hooks/useLanguage";
-import { useTheme } from "../hooks/useTheme";
-import PageShell from "./layout/PageShell";
-import GlassCard from "./ui/GlassCard";
-import {
-  inputFieldClass,
-  primaryActionClass,
-  secondaryActionClass,
-  sectionPanelClass,
-  textAreaFieldClass,
-} from "./ui/styles";
-
-const content = {
-  pt: {
-    titulo: "Contato",
-    voltar: "Voltar para o portfólio",
-    nome: "Seu nome:",
-    email: "Seu e-mail:",
-    mensagem: "Mensagem:",
-    enviar: "Enviar",
-    alerta: "Preencha todos os campos",
-  },
-  en: {
-    titulo: "Contact",
-    voltar: "Back to portfolio",
-    nome: "Your name:",
-    email: "Your email:",
-    mensagem: "Message:",
-    enviar: "Send",
-    alerta: "Please fill in all fields",
-  },
-};
+import Section from "./ui/Section";
+import { cardClass, fieldClass, labelClass, primaryActionClass } from "./ui/styles";
 
 function Contact() {
   const { lang } = useLanguage();
-  const { theme } = useTheme();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  function updateField(field) {
-    return (event) => {
-      const { value } = event.target;
-
-      setFormData((currentData) => ({
-        ...currentData,
-        [field]: value,
-      }));
-    };
-  }
-
-  function sendEmail(event) {
+  const [sent, setSent] = useState(false);
+  async function sendEmail(event) {
     event.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.message) {
-      alert(content[lang].alerta);
-      return;
-    }
-
-    emailjs
-      .send(
-        "service_9hij8yk",
-        "template_doh40yy",
-        {
-          from_name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-        "kRbXfO-nzqPm2yryh"
-      )
-      .then(() => {
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
-      });
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    await emailjs.send("service_9hij8yk", "template_doh40yy", { from_name: data.get("name"), email: data.get("email"), message: data.get("message") }, "kRbXfO-nzqPm2yryh");
+    form.reset();
+    setSent(true);
   }
-
-  return (
-    <PageShell>
-      <section className="pt-8 sm:pt-10">
-        <div className={`${sectionPanelClass} overflow-hidden`}>
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <Link to="/" className={secondaryActionClass}>
-                <img
-                  src={ArrowLeft}
-                  className={`h-4 w-4 ${theme === "light" ? "invert" : ""}`}
-                  alt=""
-                />
-                <span>{content[lang].voltar}</span>
-              </Link>
-            </div>
-
-            <div className="max-w-2xl">
-              <h1 className="section-heading text-3xl sm:text-4xl">
-                {content[lang].titulo}
-              </h1>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <GlassCard className="mx-auto w-full max-w-3xl p-6 sm:p-8">
-              <form className="grid gap-5 sm:gap-6" onSubmit={sendEmail}>
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block text-sm font-medium text-slate-200"
-                  >
-                    {content[lang].nome}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    autoComplete="name"
-                    className={inputFieldClass}
-                    placeholder="Fulano"
-                    onChange={updateField("name")}
-                    value={formData.name}
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block text-sm font-medium text-slate-200"
-                  >
-                    {content[lang].email}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autoComplete="email"
-                    className={inputFieldClass}
-                    placeholder="fulano@ciclano.com"
-                    onChange={updateField("email")}
-                    value={formData.email}
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="mb-2 block text-sm font-medium text-slate-200"
-                  >
-                    {content[lang].mensagem}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    className={textAreaFieldClass}
-                    onChange={updateField("message")}
-                    value={formData.message}
-                  />
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    className={`${primaryActionClass} w-full`}
-                  >
-                    {content[lang].enviar}
-                  </button>
-                </div>
-              </form>
-            </GlassCard>
-          </div>
-        </div>
-      </section>
-    </PageShell>
-  );
+  const channels = [
+    ["E-mail", "mailto:pedrogattosch@gmail.com", "pedrogattosch@gmail.com", null],
+    ["LinkedIn", "https://linkedin.com/in/pedrogattosch", "pedrogattosch", LinkedIn],
+    ["GitHub", "https://github.com/pedrogattosch", "pedrogattosch", GitHub],
+    [lang === "pt" ? "Telefone" : "Phone", "tel:+5545991544402", "(45) 99154-4402", null],
+    [lang === "pt" ? "Cidade" : "Location", null, lang === "pt" ? "Toledo, Paraná" : "Toledo, Paraná, Brazil", null],
+  ];
+  return <Section id="contato" title={lang === "pt" ? "Contato" : "Contact"} index="06"><div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]"><form onSubmit={sendEmail}><div className="grid gap-4 sm:grid-cols-2"><label className={labelClass}>{lang === "pt" ? "Nome" : "Name"}<input required name="name" className={`${fieldClass} mt-2 font-sans normal-case tracking-normal`} /></label><label className={labelClass}>E-mail<input required type="email" name="email" className={`${fieldClass} mt-2 font-sans normal-case tracking-normal`} /></label></div><label className={`${labelClass} mt-4 block`}>{lang === "pt" ? "Mensagem" : "Message"}<textarea required name="message" className={`${fieldClass} mt-2 min-h-[150px] resize-y font-sans normal-case tracking-normal`} /></label><div className="mt-4 flex items-center gap-4"><button className={primaryActionClass}>{lang === "pt" ? "Enviar mensagem" : "Send message"}</button>{sent && <span className="text-sm text-accentSoft">{lang === "pt" ? "Mensagem enviada com sucesso." : "Message sent successfully."}</span>}</div></form><aside className={`${cardClass} p-[22px]`}><h3 className="text-base font-semibold">{lang === "pt" ? "Canais diretos" : "Direct channels"}</h3><div className="mt-5 space-y-4">{channels.map(([label, href, value, icon]) => <div key={label}><div className={labelClass}>{label}</div>{href ? <a href={href} className="mt-1.5 flex items-center gap-2 break-all text-sm text-muted hover:text-text">{icon && <img src={icon} alt="" className="h-4 w-4" style={{ filter: "var(--icon-filter)" }} />}{value}</a> : <p className="mt-1.5 text-sm text-muted">{value}</p>}</div>)}</div></aside></div></Section>;
 }
-
 export default Contact;

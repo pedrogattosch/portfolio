@@ -2,6 +2,7 @@ import "./App.css";
 
 import AboutMe from "./components/AboutMe";
 import Certifications from "./components/Certifications";
+import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -15,13 +16,14 @@ function App() {
   return (
     <PageShell>
       <Header />
-      <main className="space-y-8 pb-6 sm:space-y-10">
+      <main>
         <Introduction />
         <Projects />
         <Technologies />
         <Experience />
         <Certifications />
         <AboutMe />
+        <Contact />
       </main>
       <Footer />
       <ScrollToTopButton />

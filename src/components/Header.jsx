@@ -1,112 +1,40 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "../hooks/useLanguage";
 import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
-import { useLanguage } from "../hooks/useLanguage";
-import useToggleMenu from "../hooks/useToggleMenu";
-import {
-  controlWrapperClass,
-  navItemClass,
-} from "./ui/styles";
 
 const content = {
-  pt: {
-    menu: "Menu",
-    projetos: "Projetos",
-    certificacoes: "Certificações",
-    tecnologias: "Tecnologias",
-    experiencia: "Experiência",
-    sobre: "Sobre mim",
-    contato: "Contato",
-    fechar: "Fechar",
-  },
-  en: {
-    menu: "Menu",
-    projetos: "Projects",
-    certificacoes: "Certifications",
-    tecnologias: "Technologies",
-    experiencia: "Experience",
-    sobre: "About me",
-    contato: "Contact",
-    fechar: "Close",
-  },
+  pt: { projetos: "Projetos", tecnologias: "Tecnologias", experiencia: "Experiência", certificacoes: "Certificações", sobre: "Sobre", contato: "Contato", curriculo: "Currículo ↗" },
+  en: { projetos: "Projects", tecnologias: "Technologies", experiencia: "Experience", certificacoes: "Certifications", sobre: "About", contato: "Contact", curriculo: "Resume ↗" },
 };
 
 function Header() {
-  const { menuOpen, toggleMenu } = useToggleMenu();
   const { lang } = useLanguage();
-
-  const navigationItems = [
-    { href: "#projetos", label: content[lang].projetos },
-    { href: "#tecnologias", label: content[lang].tecnologias },
-    { href: "#experiencia", label: content[lang].experiencia },
-    { href: "#certificacoes", label: content[lang].certificacoes },
-    { href: "#sobre-mim", label: content[lang].sobre },
+  const items = [
+    ["#projetos", content[lang].projetos],
+    ["#tecnologias", content[lang].tecnologias],
+    ["#experiencia", content[lang].experiencia],
+    ["#certificacoes", content[lang].certificacoes],
+    ["#sobre-mim", content[lang].sobre],
+    ["#contato", content[lang].contato],
   ];
 
-  function handleNavItemClick() {
-    if (menuOpen) {
-      toggleMenu();
-    }
-  }
-
   return (
-    <header className="sticky top-0 z-30 py-4 sm:py-6">
-      <div className="section-panel px-4 py-4 sm:px-6">
-        <div className="flex items-center justify-between gap-4 sm:hidden">
-          <button
-            className="action-secondary rounded-full border px-4 py-2 text-sm transition duration-300"
-            onClick={toggleMenu}
-          >
-            {menuOpen ? content[lang].fechar : content[lang].menu}
-          </button>
-          <div className="flex items-center gap-2">
-            <div className={controlWrapperClass}>
-              <ThemeToggle />
-            </div>
-            <div className={controlWrapperClass}>
-              <LanguageToggle />
-            </div>
-          </div>
-        </div>
-
-        <nav
-          className={`overflow-hidden transition-all duration-300 ${
-            menuOpen ? "mt-4 max-h-96 opacity-100" : "max-h-0 opacity-0"
-          } sm:mt-0 sm:max-h-full sm:opacity-100`}
-        >
-          <ul className="flex flex-col gap-2 pt-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-3 sm:pt-0">
-            {navigationItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className={navItemClass}
-                  onClick={handleNavItemClick}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-            <li>
-              <Link
-                to="/contato"
-                className={`${navItemClass} action-secondary inline-flex items-center border`}
-                onClick={handleNavItemClick}
-              >
-                {content[lang].contato}
-              </Link>
-            </li>
-            <li className="hidden sm:block">
-              <div className="flex items-center gap-2">
-                <div className={controlWrapperClass}>
-                  <ThemeToggle />
-                </div>
-                <div className={controlWrapperClass}>
-                  <LanguageToggle />
-                </div>
-              </div>
-            </li>
-          </ul>
+    <header className="sticky top-0 z-40 border-b border-line bg-[color-mix(in_srgb,var(--bg)_88%,transparent)] backdrop-blur-[10px]">
+      <div className="shell-padding mx-auto flex max-w-shell items-center justify-between gap-5 px-8 py-4">
+        <a href="#" className="flex shrink-0 items-center gap-2.5 font-mono text-xs uppercase tracking-[.14em]">
+          <span className="h-2 w-2 rounded-full bg-accent" />pedro.miguel
+        </a>
+        <nav className="hidden items-center gap-[22px] lg:flex">
+          {items.map(([href, label]) => <a key={href} href={href} className="text-[12.5px] text-muted transition hover:text-text">{label}</a>)}
         </nav>
+        <div className="flex shrink-0 items-center gap-2">
+          <LanguageToggle />
+          <ThemeToggle />
+          <Link to="/curriculo" className="rounded-lg border border-[var(--accent-border)] bg-[var(--accent-bg)] px-3.5 py-2.5 text-[12.5px] font-medium text-accentSoft">
+            {content[lang].curriculo}
+          </Link>
+        </div>
       </div>
     </header>
   );

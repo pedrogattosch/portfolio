@@ -1,94 +1,55 @@
+import { Link } from "react-router-dom";
 import GitHub from "../assets/icons/github.svg";
 import LinkedIn from "../assets/icons/linkedin.svg";
 import Foto from "../assets/images/foto-perfil.jpg";
 import { useLanguage } from "../hooks/useLanguage";
-import {
-  accentBadgeClass,
-  elevatedSecondaryActionClass,
-} from "./ui/styles";
+import { accentBadgeClass, primaryActionClass, secondaryActionClass } from "./ui/styles";
 
 const content = {
   pt: {
-    icon: "Olá, mundo! 👋",
-    titulo: "Pedro Miguel",
-    subtitulo: "Engenharia de Computação (UTFPR)",
-    descricao:
-      "Estudante de Engenharia de Computação na UTFPR, com foco em inteligência artificial e automação de processos. Atuo no desenvolvimento de soluções com Python, criando fluxos multiagentes. Também possuo experiência prática com desenvolvimento web e mobile, análise de dados e visão computacional.",
-    linkedin: "LinkedIn",
-    github: "GitHub",
+    badge: "Olá, mundo!",
+    bio: "Estudante de engenharia de computação na UTFPR, com foco em inteligência artificial, automação de processos e análise de dados. Desenvolvo soluções com Python, fluxos multiagentes e dashboards.",
+    resume: "Ver currículo", location: "Toledo, Paraná · Brasil",
+    stats: [["+15", "projetos publicados"], ["+3", "anos de experiência"], ["+5", "certificados"], ["+20", "tecnologias"]],
   },
   en: {
-    icon: "Hello, world! 👋",
-    titulo: "Pedro Miguel",
-    subtitulo: "Computer Engineering (UTFPR)",
-    descricao:
-      "Computer Engineering student at UTFPR, focused on artificial intelligence and process automation. I work on developing solutions with Python, creating multi-agent workflows. I also have practical experience with web and mobile development, data analysis, and computer vision.",
-    linkedin: "LinkedIn",
-    github: "GitHub",
+    badge: "Hello, world!",
+    bio: "Computer engineering student at UTFPR focused on artificial intelligence and process automation. I build Python solutions and multi-agent workflows, with practical experience in web, mobile, data, and computer vision.",
+    resume: "View resume", location: "Toledo, Paraná · Brazil",
+    stats: [["+15", "published projects"], ["+3", "years of experience"], ["+5", "certificates"], ["+20", "technologies"]],
   },
 };
 
-const socialLinks = [
-  {
-    href: "https://www.linkedin.com/in/pedrogattosch/",
-    icon: LinkedIn,
-    alt: "LinkedIn",
-    labelKey: "linkedin",
-  },
-  {
-    href: "https://github.com/pedrogattosch",
-    icon: GitHub,
-    alt: "GitHub",
-    labelKey: "github",
-  },
-];
-
 function Introduction() {
   const { lang } = useLanguage();
-
+  const copy = content[lang];
   return (
-    <section>
-      <div className="section-panel overflow-hidden px-6 py-10 sm:px-8 sm:py-12 lg:px-10">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(280px,360px)] lg:gap-12">
-          <div className="order-2 lg:order-1">
-            <div className={accentBadgeClass}>{content[lang].icon}</div>
-            <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {content[lang].titulo}
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg font-medium text-slate-100 sm:text-xl">
-              {content[lang].subtitulo}
-            </p>
-            <p className="section-copy mt-6 max-w-3xl text-base sm:text-lg">
-              {content[lang].descricao}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={elevatedSecondaryActionClass}
-                >
-                  <img src={link.icon} className="w-5 invert" alt={link.alt} />
-                  {content[lang][link.labelKey]}
+    <section className="bg-[image:var(--glow)]">
+      <div className="shell-padding mx-auto max-w-shell border-b border-line px-8 pb-14 pt-16">
+        <div className="grid items-center gap-14 md:grid-cols-[minmax(0,1fr)_300px]">
+          <div>
+            <span className={accentBadgeClass}>{copy.badge}</span>
+            <h1 className="mt-5 text-[clamp(42px,7vw,58px)] font-semibold leading-[1.05] tracking-[-.03em]">Pedro Miguel</h1>
+            <p className="mt-4 max-w-[56ch] text-base leading-[1.75] text-muted">{copy.bio}</p>
+            <div className="mt-7 flex flex-wrap gap-2.5">
+              <Link to="/curriculo" className={primaryActionClass}>{copy.resume}</Link>
+              {[["https://www.linkedin.com/in/pedrogattosch/", LinkedIn, "LinkedIn"], ["https://github.com/pedrogattosch", GitHub, "GitHub"]].map(([href, icon, label]) => (
+                <a key={label} href={href} target="_blank" rel="noreferrer" className={secondaryActionClass}>
+                  <img src={icon} alt="" className="h-[17px] w-[17px]" style={{ filter: "var(--icon-filter)" }} />{label}
                 </a>
               ))}
             </div>
           </div>
-
-          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-cyan-400/25 via-sky-400/10 to-transparent blur-2xl" />
-              <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.05] p-3 shadow-[0_25px_80px_rgba(2,6,23,0.55)]">
-                <img
-                  src={Foto}
-                  alt="Foto de perfil"
-                  className="h-72 w-72 rounded-[1.5rem] object-cover object-top sm:h-80 sm:w-80"
-                />
-              </div>
+          <figure className="relative m-0">
+            <div className="absolute inset-0 rounded-[18px] bg-[linear-gradient(150deg,rgba(34,211,238,.3),transparent_60%)] blur-[28px]" />
+            <div className="relative rounded-[18px] border border-lineStrong bg-chip p-2.5">
+              <img src={Foto} alt="Pedro Miguel" className="h-80 w-full rounded-xl object-cover object-top" />
             </div>
-          </div>
+            <figcaption className="mt-3 text-center font-mono text-[11px] text-faint">{copy.location}</figcaption>
+          </figure>
+        </div>
+        <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-[14px] border border-line bg-line md:grid-cols-4">
+          {copy.stats.map(([value, label]) => <div key={label} className="bg-panel px-5 py-5"><div className="text-[28px] font-semibold text-accentSoft">{value}</div><div className="mt-1.5 font-mono text-[10.5px] leading-[1.5] text-faint">{label}</div></div>)}
         </div>
       </div>
     </section>

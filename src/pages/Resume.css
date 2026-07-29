@@ -1,0 +1,32 @@
+.cv-page,
+body:has(.cv-page) {
+  background: #fff !important;
+}
+
+.cv-sheet {
+  width: 8.5in;
+  min-height: 11in;
+  margin: 24px auto;
+  padding: .5in;
+  box-sizing: border-box;
+  background: #fff;
+  color: #111;
+  box-shadow: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+@media screen and (max-width: 850px) {
+  .cv-sheet { width: calc(100% - 24px); height: auto; min-height: 0; margin: 12px; padding: 24px; }
+}
+
+@media print {
+  .cv-bar { display: none !important; }
+  @page { size: letter; margin: 0; }
+  html, body, #root { width: 8.49in; height: auto; min-height: 0; margin: 0; background: #fff !important; }
+  .cv-page { display: contents; }
+  .cv-sheet { width: 8.49in; height: auto; min-height: 0; box-shadow: none; margin: 0; padding: .5in; overflow: visible; }
+  .cv-content { grid-template-columns: 222px minmax(0, 1fr) !important; }
+  .cv-content > main { margin-top: 0 !important; }
+  .cv-block { break-inside: avoid; }
+  p, li { orphans: 3; widows: 3; }
+}

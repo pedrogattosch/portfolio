@@ -1,37 +1,12 @@
-export const sectionPanelClass = "section-panel px-6 py-8 sm:px-8 sm:py-10";
-
-export const navItemClass =
-  "rounded-full px-4 py-2 text-sm text-slate-300 transition duration-300 hover:bg-white/8 hover:text-white";
-
-export const controlWrapperClass =
-  "control-surface inline-flex rounded-full border p-1";
-
-export const secondaryActionClass =
-  "action-secondary inline-flex items-center gap-3 rounded-full border px-5 py-3 text-sm font-medium transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/30";
-
-export const elevatedSecondaryActionClass =
-  `${secondaryActionClass} shadow-[0_12px_30px_rgba(2,6,23,0.25)] transition-all hover:-translate-y-1`;
-
-export const primaryActionClass =
-  "action-primary inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-medium transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/30";
-
-export const accentBadgeClass =
-  "inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200";
-
-export const accentBadgeCompactClass =
-  "inline-flex rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200";
-
-export const insetPanelClass =
-  "rounded-[1.5rem] border border-white/10 bg-black/20 p-4";
-
-export const techTagClass =
-  "rounded-xl border border-slate-700/70 bg-slate-900/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-300";
-
-export const compactTechTagClass =
-  "rounded-xl border border-slate-700/70 bg-slate-900/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-300";
-
-export const inputFieldClass =
-  "w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 transition duration-300 focus:outline-none focus-visible:border-cyan-400/40 focus-visible:ring-2 focus-visible:ring-cyan-400/20";
-
-export const textAreaFieldClass =
-  `${inputFieldClass} min-h-[180px] rounded-[1.5rem]`;
+export const shellClass = "shell-padding mx-auto max-w-shell px-8";
+export const sectionClass = `${shellClass} py-14 border-b border-line`;
+export const sectionTitleClass = "text-[26px] font-semibold tracking-[-.02em] leading-tight";
+export const sectionIndexClass = "font-mono text-[11px] tracking-[.16em] text-faint";
+export const cardClass = "rounded-[14px] border border-lineStrong bg-chip";
+export const labelClass = "font-mono text-[11px] uppercase tracking-[.14em] text-faint";
+export const monoMetaClass = "font-mono text-xs text-faint";
+export const primaryActionClass = "inline-flex items-center justify-center gap-2.5 rounded-[10px] bg-accent px-5 py-3.5 text-[13.5px] font-semibold text-[var(--btn-text)] transition hover:brightness-110";
+export const secondaryActionClass = "inline-flex items-center gap-2.5 rounded-[10px] border border-lineStrong bg-chip px-5 py-3.5 text-[13.5px] font-medium text-text transition hover:border-[var(--accent-border)]";
+export const ghostActionClass = "inline-flex items-center gap-2 rounded-lg border border-lineStrong bg-chip px-3.5 py-2.5 text-[12.5px] font-medium text-text transition hover:border-[var(--accent-border)]";
+export const accentBadgeClass = "inline-flex items-center gap-2 rounded-full border border-[var(--accent-border)] bg-[var(--accent-bg)] px-3.5 py-[7px] font-mono text-[11px] font-medium uppercase tracking-[.18em] text-accentSoft";
+export const fieldClass = "w-full rounded-[10px] border border-lineStrong bg-[var(--field)] px-3.5 py-3.5 text-sm text-text outline-none placeholder:text-faint focus:border-[var(--accent-border)]";

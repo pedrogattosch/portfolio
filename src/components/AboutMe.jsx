@@ -1,94 +1,13 @@
+import { Fragment } from "react";
 import { useLanguage } from "../hooks/useLanguage";
-import GlassCard from "./ui/GlassCard";
 import Section from "./ui/Section";
 
-const content = {
-  pt: {
-    titulo: "Sobre mim",
-    eventos: [
-      {
-        data: "2026",
-        texto:
-          "Iniciei meu estágio na Inside Sistemas, minha primeira experiência profissional em tecnologia. Esse passo tem sido essencial para aplicar na prática o que venho construindo na faculdade e nos projetos paralelos.",
-      },
-      {
-        data: "2025, março",
-        texto:
-          "Após o período no Exército Brasileiro, retornei à Engenharia de Computação na UTFPR com objetivos profissionais mais claros. Desde então, tenho buscado integrar base teórica, prática e evolução constante na área de tecnologia.",
-      },
-      {
-        data: "2024",
-        texto:
-          "Atuei no Exército Brasileiro, na seção de informática, com manutenção de equipamentos essenciais para a operação da unidade. A experiência fortaleceu minha disciplina, resiliência e atuação sob pressão.",
-      },
-      {
-        data: "2023, março",
-        texto:
-          "Ingressei em Engenharia de Computação na UTFPR e ampliei minha visão além do front-end. Os primeiros semestres consolidaram minha base em programação e pensamento técnico.",
-      },
-      {
-        data: "2023",
-        texto:
-          "Comecei meus estudos em programação pelo front-end, etapa que despertou meu interesse pela área e marcou o início da minha trajetória em tecnologia.",
-      },
-    ],
-  },
-  en: {
-    titulo: "About me",
-    eventos: [
-      {
-        data: "2026",
-        texto:
-          "I started my internship at Inside Sistemas, my first professional experience in technology. This step has been essential for applying in practice what I have been building through university and side projects.",
-      },
-      {
-        data: "March, 2025",
-        texto:
-          "After my time in the Brazilian Army, I returned to Computer Engineering at UTFPR with clearer professional goals. Since then, I have been focused on connecting theory, practice, and continuous growth in technology.",
-      },
-      {
-        data: "2024",
-        texto:
-          "I worked in the IT section of the Brazilian Army, maintaining essential equipment for the unit's operation. The experience strengthened my discipline, resilience, and ability to perform under pressure.",
-      },
-      {
-        data: "March, 2023",
-        texto:
-          "I started Computer Engineering at UTFPR and expanded my perspective beyond front-end development. The first semesters helped build a solid foundation in programming and technical thinking.",
-      },
-      {
-        data: "2023",
-        texto:
-          "I began my programming studies through front-end development, which sparked my interest in the field and marked the beginning of my journey in technology.",
-      },
-    ],
-  },
+const events = {
+  pt: [["Jul. 2026", "Fui efetivado na Inside Sistemas para trabalhar com desenvolvimento de inteligência artificial e dados, criando automações, agentes e dashboards para apoiar processos e decisões."], ["Fev. 2026", "Iniciei minha trajetória na Inside Sistemas no suporte técnico, aprofundando meu conhecimento sobre ERP, regras de negócio e necessidades dos usuários."], ["Mar. 2025", "Retornei à engenharia de computação na UTFPR com objetivos profissionais mais claros e foco em integrar teoria, prática e evolução constante."], ["Mar. 2024", "Atuei na seção de informática do Exército Brasileiro. A experiência fortaleceu minha disciplina, resiliência e atuação sob pressão."], ["Mar. 2023", "Ingressei em engenharia de computação na UTFPR e comecei meus estudos em programação pelo front-end, consolidando minha base técnica."]],
+  en: [["Jul. 2026", "I was hired by Inside Sistemas as an AI and data analyst, building automations, agents, and dashboards to support processes and decision-making."], ["Feb. 2026", "I joined Inside Sistemas in technical support, deepening my understanding of ERP systems, business rules, and user needs."], ["Mar. 2025", "I returned to computer engineering at UTFPR with clearer professional goals and a focus on combining theory, practice, and continuous growth."], ["Mar. 2024", "I worked in the Brazilian Army IT department. The experience strengthened my discipline, resilience, and ability to perform under pressure."], ["Mar. 2023", "I started computer engineering at UTFPR and began studying programming through front-end development, building my technical foundation."]],
 };
-
 function AboutMe() {
   const { lang } = useLanguage();
-
-  return (
-    <Section id="sobre-mim" title={content[lang].titulo}>
-      <div className="space-y-5">
-        {content[lang].eventos.map((event) => (
-          <div
-            key={`${event.data}-${event.texto}`}
-            className="grid gap-4 sm:grid-cols-[7rem_minmax(0,1fr)] sm:items-start sm:gap-6"
-          >
-            <div className="pr-2 sm:pt-5 sm:text-right">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">
-                {event.data}
-              </h3>
-            </div>
-            <GlassCard className="p-5 sm:p-6">
-              <p className="section-copy">{event.texto}</p>
-            </GlassCard>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
+  return <Section id="sobre-mim" title={lang === "pt" ? "Sobre mim" : "About me"} index="05"><div className="grid grid-cols-[68px_26px_minmax(0,1fr)] gap-x-3 md:grid-cols-[92px_26px_minmax(0,1fr)] md:gap-x-5">{events[lang].map(([date, text], index) => { const first = index === 0; const last = index === events[lang].length - 1; return <Fragment key={date}><div className="pb-[30px] pt-6 text-right font-mono text-[13px] font-semibold tracking-[.1em] text-accentSoft">{date}</div><div className="relative flex justify-center"><span className="absolute w-px bg-lineStrong" style={{ top: first ? "31px" : 0, bottom: last ? "auto" : 0, height: last ? "31px" : "auto" }} /><span className="relative mt-[26px] h-[11px] w-[11px] rounded-full border-2 border-accent" style={{ background: first ? "var(--accent)" : "var(--bg)", boxShadow: "0 0 0 5px var(--accent-bg)" }} /></div><p className="max-w-[74ch] pb-[30px] pt-5 text-[14.5px] leading-[1.8] text-muted">{text}</p></Fragment>; })}</div></Section>;
 }
-
 export default AboutMe;
