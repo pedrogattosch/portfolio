@@ -23,9 +23,9 @@ function Resume() {
   const pt = lang === "pt";
   return (
     <div className="cv-page min-h-screen bg-white text-[#111]">
-      <div className="cv-bar mx-auto flex w-[8.5in] max-w-full items-center justify-between gap-6 bg-white px-0 pb-1 pt-4">
-        <button onClick={() => window.print()} className="rounded-md border border-white/15 bg-[#111] px-[18px] py-2.5 font-mono text-[13.5px] font-medium text-white">{pt ? "salvar currículo" : "save resume"}</button>
-        <div className="flex items-center gap-4"><ResumeLanguageToggle lang={lang} /><Link to="/" className="font-mono text-[13px] text-black/65">← {pt ? "voltar ao site" : "back to site"}</Link></div>
+      <div className="cv-bar mx-auto grid w-[8.5in] max-w-full gap-2.5 bg-white px-4 pb-1 pt-4 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-0">
+        <button onClick={() => window.print()} className="w-full rounded-md border border-white/15 bg-[#111] px-[18px] py-2.5 font-mono text-[13.5px] font-medium text-white sm:w-auto">{pt ? "salvar currículo" : "save resume"}</button>
+        <div className="flex items-center justify-between gap-4 sm:justify-end"><ResumeLanguageToggle lang={lang} /><Link to="/" className="font-mono text-[13px] text-black/65">← {pt ? "voltar ao site" : "back to site"}</Link></div>
       </div>
       <div className="cv-sheet font-sans">
         <h1 className="text-[29px] font-bold leading-[1.15] tracking-[-.01em]">Pedro Miguel Gatto Schardong</h1>

@@ -16,7 +16,8 @@ body:has(.cv-page) {
   -webkit-print-color-adjust: exact;
 }
 @media screen and (max-width: 850px) {
-  .cv-sheet { width: calc(100% - 24px); height: auto; min-height: 0; margin: 12px; padding: 24px; }
+  .cv-sheet { width: calc(100% - 24px); height: auto; min-height: 0; margin: 12px; padding: 20px; }
+  .cv-sheet h1 { font-size: 24px; }
 }
 
 @media print {

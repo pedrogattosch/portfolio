@@ -22,7 +22,7 @@ function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={content[lang][theme]}
       title={content[lang][theme]}
-      className="inline-flex h-9 min-w-9 items-center justify-center rounded-lg border border-lineStrong bg-chip px-2 text-base leading-none text-text"
+      className="inline-flex h-8 min-w-8 items-center justify-center rounded-lg border border-lineStrong bg-chip px-2 text-base leading-none text-text md:h-9 md:min-w-9"
     >
       {icon}
     </button>
