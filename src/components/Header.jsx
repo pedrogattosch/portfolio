@@ -14,18 +14,21 @@ function Header() {
   const { lang } = useLanguage();
   const { menuOpen, toggleMenu } = useToggleMenu();
   const items = [
-    ["#projetos", content[lang].projetos, "01"],
-    ["#tecnologias", content[lang].tecnologias, "02"],
-    ["#experiencia", content[lang].experiencia, "03"],
+    ["#experiencia", content[lang].experiencia, "01"],
+    ["#projetos", content[lang].projetos, "02"],
+    ["#tecnologias", content[lang].tecnologias, "03"],
     ["#certificacoes", content[lang].certificacoes, "04"],
     ["#sobre-mim", content[lang].sobre, "05"],
     ["#contato", content[lang].contato, "06"],
   ];
 
   useEffect(() => {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.setProperty("--menu-scrollbar-width", `${scrollbarWidth}px`);
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
+      document.body.style.removeProperty("--menu-scrollbar-width");
     };
   }, [menuOpen]);
 
@@ -41,11 +44,11 @@ function Header() {
         <div className="flex shrink-0 items-center gap-1.5 md:gap-2">
           <LanguageToggle />
           <ThemeToggle />
-          <Link to="/curriculo" className="inline-flex h-8 items-center rounded-lg border border-[var(--accent-border)] bg-[var(--accent-bg)] px-2.5 text-[11.5px] font-medium text-accentSoft md:h-auto md:px-3.5 md:py-2.5 md:text-[12.5px]">
-            <span className="lg:hidden">CV ↗</span>
+          <Link to="/curriculo" className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--accent-border)] bg-[var(--accent-bg)] text-[10.5px] font-medium text-accentSoft md:h-9 md:w-9 lg:h-auto lg:w-auto lg:px-3.5 lg:py-2.5 lg:text-[12.5px]">
+            <span className="lg:hidden">CV↗</span>
             <span className="hidden lg:inline">{content[lang].curriculo}</span>
           </Link>
-          <button onClick={toggleMenu} aria-label="Abrir menu" aria-expanded={menuOpen} className="inline-flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-lg border border-lineStrong bg-chip lg:hidden">
+          <button onClick={toggleMenu} aria-label="Abrir menu" aria-expanded={menuOpen} className="inline-flex h-8 w-8 flex-col items-center justify-center gap-1 rounded-lg border border-lineStrong bg-chip md:h-9 md:w-9 lg:hidden">
             <span className="block h-px w-[15px] bg-text" />
             <span className="block h-px w-[15px] bg-text" />
             <span className="block h-px w-[15px] bg-text" />
@@ -53,12 +56,12 @@ function Header() {
         </div>
       </div>
       {menuOpen && (
-        <div className="fixed inset-0 z-50 flex h-dvh flex-col bg-bg p-5 lg:hidden">
+        <div className="fixed bottom-0 left-0 top-0 z-50 flex h-dvh flex-col bg-bg px-8 pb-5 pt-3 md:pb-8 md:pt-4 lg:hidden" style={{ right: "var(--menu-scrollbar-width, 0px)" }}>
           <div className="mb-7 flex items-center justify-between">
             <span className="flex items-center gap-2.5 font-mono text-[11.5px] uppercase tracking-[.14em]">
               <span className="h-2 w-2 rounded-full bg-accent" />pedro.miguel
             </span>
-            <button onClick={toggleMenu} aria-label="Fechar menu" className="h-11 w-11 rounded-lg border border-lineStrong bg-chip text-[15px] text-text">✕</button>
+            <button onClick={toggleMenu} aria-label="Fechar menu" className="h-8 w-8 rounded-lg border border-lineStrong bg-chip text-[13px] text-text md:h-9 md:w-9">✕</button>
           </div>
           <div className="grid gap-1">
             {items.map(([href, label, index]) => (

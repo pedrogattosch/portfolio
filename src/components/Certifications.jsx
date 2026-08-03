@@ -1,4 +1,3 @@
-import Balta from "../assets/images/balta_io_logo.jpg";
 import Cisco from "../assets/images/cisco_logo.jpg";
 import FreeCodeCamp from "../assets/images/free_code_camp_logo.jpg";
 import { useLanguage } from "../hooks/useLanguage";
@@ -9,7 +8,6 @@ const certificates = [
   { title: "Python Essentials 1", provider: "Cisco Networking Academy", href: "https://www.credly.com/badges/087b5de7-6835-4f8e-9863-f39217dbec37/linked_in_profile", image: Cisco, initials: "C" },
   { title: "Python Essentials 2", provider: "Cisco Networking Academy", href: "https://www.credly.com/badges/dcec3e6c-c9a8-467e-9d69-d54904df97fb/linked_in_profile", image: Cisco, initials: "C" },
   { title: "Machine Learning with Python", provider: "freeCodeCamp", href: "https://www.freecodecamp.org/certification/fccdfba9584-cb95-4efa-8072-dc4ac32eb2b6/machine-learning-with-python-v7", image: FreeCodeCamp },
-  { title: "Fundamentos do C#", titleEn: "C# Fundamentals", provider: "balta.io", href: "https://balta.io/certificados/a8b72617-56ad-4daf-bd89-290c4e36c2c3", image: Balta },
 ];
 function Certifications() {
   const { lang } = useLanguage();
