@@ -8,6 +8,7 @@ const certificates = [
   { title: "Python Essentials 1", provider: "Cisco Networking Academy", href: "https://www.credly.com/badges/087b5de7-6835-4f8e-9863-f39217dbec37/linked_in_profile", image: Cisco, initials: "C" },
   { title: "Python Essentials 2", provider: "Cisco Networking Academy", href: "https://www.credly.com/badges/dcec3e6c-c9a8-467e-9d69-d54904df97fb/linked_in_profile", image: Cisco, initials: "C" },
   { title: "Machine Learning with Python", provider: "freeCodeCamp", href: "https://www.freecodecamp.org/certification/fccdfba9584-cb95-4efa-8072-dc4ac32eb2b6/machine-learning-with-python-v7", image: FreeCodeCamp },
+  { title: "Inglês — Intermediário", titleEn: "English — Intermediate", initials: "EN" },
 ];
 function Certifications() {
   const { lang } = useLanguage();

@@ -2,13 +2,20 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "../hooks/useLanguage";
 import "./Resume.css";
 
-const skillGroups = [
-  ["Python", "LLMs", "RAG", "Agentes de IA", "Sistemas multiagentes", "Machine learning"],
-  ["Pandas", "NumPy", "Matplotlib", "OpenCV", "Dash"],
-  ["FastAPI", "APIs REST", "SQL Server", "SQLite"],
-  ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
-  ["Git", "GitHub", "GitLab", "Docker", "Postman", "Swagger"],
-];
+const skillGroups = {
+  pt: [
+    ["Python", "LLMs", "RAG", "Agentes de IA", "Sistemas multiagentes", "Machine learning", "Pandas", "NumPy"],
+    ["React", "TypeScript", "Tailwind CSS"],
+    ["SQL Server", "SQLite"],
+    ["Git", "Docker", "Postman"],
+  ],
+  en: [
+    ["Python", "LLMs", "RAG", "AI agents", "Multi-agent systems", "Machine learning", "Pandas", "NumPy"],
+    ["React", "TypeScript", "Tailwind CSS"],
+    ["SQL Server", "SQLite"],
+    ["Git", "Docker", "Postman"],
+  ],
+};
 const titleClass =
   "mb-2.5 font-mono text-[10.5px] font-semibold tracking-[.14em] text-[#0e7490]";
 const chipClass =
@@ -72,8 +79,8 @@ function Resume() {
         </h1>
         <div className="mt-1.5 font-mono text-[13px] text-black/60">
           {pt
-            ? "Engenharia de Computação · UTFPR"
-            : "Computer Engineering · UTFPR"}
+            ? "Engenharia de computação · UTFPR"
+            : "Computer engineering · UTFPR"}
         </div>
         <div className="my-[13px] h-0.5 bg-[#111]" />
         <div className="cv-content grid items-start gap-x-8 md:grid-cols-[222px_minmax(0,1fr)]">
@@ -81,15 +88,21 @@ function Resume() {
             <section>
               <BlockTitle>{pt ? "RESUMO" : "SUMMARY"}</BlockTitle>
               <p className="text-xs leading-[1.55]">
-                {pt
-                  ? "Sou analista de IA e dados e estudante de engenharia de computação na UTFPR. Atuo no desenvolvimento de soluções com Python, LLMs, agentes de IA, RAG, machine learning e análise de dados, criando automações, dashboards e aplicações para apoiar processos e tomadas de decisão."
-                  : "I am an AI and data analyst and a computer engineering student at UTFPR. I develop solutions with Python, LLMs, AI agents, RAG, machine learning, and data analysis, creating automations, dashboards, and applications to support processes and decision-making."}
+                {pt ? (
+                  <>
+                    Analista de IA e dados com experiência no desenvolvimento de soluções com LLMs, agentes, RAG, automação e análise de dados. Atuo com Python no desenvolvimento de aplicações e dashboards utilizados em processos internos, com foco em transformar dados e conhecimento técnico em soluções para o negócio.
+                  </>
+                ) : (
+                  <>
+                    AI and Data Analyst with experience developing solutions with LLMs, agents, RAG, automation, and data analysis. I use Python to build applications and dashboards for internal processes, focusing on transforming data and technical knowledge into business solutions.
+                  </>
+                )}
               </p>
             </section>
             <section>
               <BlockTitle>{pt ? "HABILIDADES" : "SKILLS"}</BlockTitle>
               <div className="space-y-[5px]">
-                {skillGroups.map((group) => (
+                {skillGroups[lang].map((group) => (
                   <div
                     key={group.join("-")}
                     className="flex flex-wrap gap-[5px]"
@@ -111,6 +124,12 @@ function Resume() {
                 Python Essentials 2 — Cisco
                 <br />
                 Machine Learning with Python — freeCodeCamp
+              </p>
+            </section>
+            <section>
+              <BlockTitle>{pt ? "IDIOMAS" : "LANGUAGES"}</BlockTitle>
+              <p className="text-[11.5px] leading-5">
+                {pt ? "Inglês — Intermediário" : "English — Intermediate"}
               </p>
             </section>
             <section>
@@ -148,7 +167,7 @@ function Resume() {
               <BlockTitle>{pt ? "FORMAÇÃO" : "EDUCATION"}</BlockTitle>
               <div className="flex justify-between gap-4">
                 <h3 className="text-[13px] font-semibold text-[#0e7490]">
-                  {pt ? "Engenharia de Computação" : "Computer Engineering"}
+                  {pt ? "Engenharia de computação" : "Computer engineering"}
                 </h3>
                 <span className="font-mono text-[10.5px]">
                   {pt
@@ -171,9 +190,9 @@ function Resume() {
                     role="Analista de IA e dados · júnior"
                     meta="jul. 2026 · presente · Toledo, PR"
                     bullets={[
-                      "Desenvolvimento de dashboards e de um hub interno de dados, centralizando informações antes dispersas e transformando-as em indicadores para apoio à gestão.",
-                      "Desenvolvimento de agentes para automação e acompanhamento de tickets, contribuindo para reduzir a mediana do tempo de resolução de 23h para 18h.",
-                      "Desenvolvimento de assistentes com IA generativa, integrados às bases de código dos produtos da Inside para auxiliar usuários na resolução de dúvidas e problemas dos sistemas.",
+                      <>Desenvolvimento e centralização de <strong>mais de 5 dashboards</strong> em um hub interno, transformando dados dispersos em indicadores para acompanhamento da gestão.</>,
+                      <>Desenvolvimento de agentes para automação e acompanhamento de tickets, contribuindo para reduzir a mediana do tempo de resolução de <strong>23h para 18h</strong>.</>,
+                      <>Desenvolvimento de assistentes com LLMs e RAG para apoio aos usuários dos produtos da Inside, integrados às bases de código para auxiliar na investigação de dúvidas e problemas.</>,
                     ]}
                   />
                   <Experience
@@ -181,7 +200,7 @@ function Resume() {
                     role="Analista de suporte · estágio"
                     meta="fev. 2026 · jun. 2026 · Toledo, PR"
                     bullets={[
-                      "Reestruturação da documentação técnica dos sistemas da Inside, com atualização de mais de 250 artigos, tornando a base de conhecimento mais atual e confiável.",
+                      <>Reestruturação da documentação técnica dos sistemas da Inside, com atualização de <strong>mais de 250 artigos</strong>, tornando a base de conhecimento mais atual e confiável.</>,
                     ]}
                   />
                   <Experience
@@ -200,9 +219,9 @@ function Resume() {
                     role="AI and data analyst · junior"
                     meta="Jul. 2026 · present · Toledo, PR, Brazil"
                     bullets={[
-                      "Development of dashboards and an internal data hub, centralizing previously scattered information and turning it into indicators to support management decisions.",
-                      "Development of agents for ticket monitoring and process automation, contributing to a reduction in median resolution time from 23h to 18h.",
-                      "Development of generative AI assistants integrated with Inside product codebases to help users solve questions and system-related issues.",
+                      <>Development and centralization of <strong>more than 5 dashboards</strong> in an internal hub, transforming scattered data into indicators for management monitoring.</>,
+                      <>Development of agents for ticket monitoring and process automation, contributing to a reduction in median resolution time from <strong>23h to 18h</strong>.</>,
+                      <>Development of assistants with LLMs and RAGto support users of Inside products, integrated with the codebases to help investigate questions and issues.</>,
                     ]}
                   />
                   <Experience
@@ -210,7 +229,7 @@ function Resume() {
                     role="Support analyst · internship"
                     meta="Feb. 2026 · Jun. 2026 · Toledo, PR, Brazil"
                     bullets={[
-                      "Restructured the technical documentation of Inside's systems, updating more than 250 articles and making the knowledge base more current and reliable.",
+                      <>Restructured the technical documentation of Inside&apos;s systems, updating <strong>more than 250 articles</strong> and making the knowledge base more current and reliable.</>,
                     ]}
                   />
                   <Experience
@@ -231,11 +250,11 @@ function Resume() {
                 bullets={
                   pt
                     ? [
-                        "Fundação da Aquametria, empresa incubada na SprinT da UTFPR e originada do MVP campeão do Start Farm 2026.",
+                        <>Fundação da Aquametria, empresa incubada na SprinT da UTFPR e originada do <strong>MVP campeão do Start Farm 2026</strong>.</>,
                         "Desenvolvimento de solução para automatizar a biometria aquícola e fornecer dados contínuos aos produtores, apoiando o acompanhamento da produção e a tomada de decisão.",
                       ]
                     : [
-                        "Founder of Aquametria, a company incubated at UTFPR's SprinT and originated from the winning MVP at Start Farm 2026.",
+                        <>Founder of Aquametria, a company incubated at UTFPR&apos;s SprinT and originated from the <strong>winning MVP at Start Farm 2026</strong>.</>,
                         "Development of a solution to automate aquaculture biometrics and provide continuous data to producers, supporting production monitoring and decision-making.",
                       ]
                 }
@@ -270,8 +289,8 @@ function Experience({ company, role, meta, bullets }) {
       </div>
       <div className="mt-1 font-mono text-[10.5px] text-[#8a6d3b]">{meta}</div>
       <ul className="my-1.5 list-disc pl-4 text-[11.5px] leading-[1.5]">
-        {bullets.map((item) => (
-          <li key={item}>{item}</li>
+        {bullets.map((item, index) => (
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </article>
@@ -280,10 +299,10 @@ function Experience({ company, role, meta, bullets }) {
 function Project({ title, bullets }) {
   return (
     <article className="cv-block">
-      <h3 className="text-[12.5px] font-semibold text-[#0e7490]">{title}</h3>
+      <h3 className="font-mono text-[13px] font-semibold">{title}</h3>
       <ul className="mt-1 list-disc pl-4 text-[11.5px] leading-[1.5]">
-        {bullets.map((item) => (
-          <li key={item}>{item}</li>
+        {bullets.map((item, index) => (
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </article>

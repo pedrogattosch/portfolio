@@ -3,12 +3,10 @@ import { useLanguage } from "../hooks/useLanguage";
 import Section from "./ui/Section";
 
 const categories = [
-  ["IA e automação", "AI and automation", "Python, LLMs, RAG, agentes de IA, sistemas multiagentes, machine learning", "Python, LLMs, RAG, AI agents, multi-agent systems, machine learning"],
-  ["Dados e visão computacional", "Data and computer vision", "Pandas, NumPy, Matplotlib, OpenCV, Dash"],
-  ["Back-end", "Back end", "FastAPI, APIs REST"],
-  ["Front-end", "Front end", "React, TypeScript, JavaScript, HTML, CSS, Tailwind CSS"],
+  ["IA e dados", "AI and data", "Python, LLMs, RAG, Agentes de IA, Sistemas multiagentes, Machine learning, Pandas, NumPy", "Python, LLMs, RAG, AI agents, Multi-agent systems, Machine learning, Pandas, NumPy"],
+  ["Front-end complementar", "Complementary front end", "React, TypeScript, Tailwind CSS"],
   ["Banco de dados", "Databases", "SQL Server, SQLite"],
-  ["Ferramentas", "Tools", "Git, GitHub, GitLab, Docker, Postman, Swagger"],
+  ["Ferramentas", "Tools", "Git, Docker, Postman"],
 ];
 function Technologies() {
   const { lang } = useLanguage();
