@@ -6,8 +6,8 @@ import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
 
 const content = {
-  pt: { projetos: "Projetos", tecnologias: "Tecnologias", experiencia: "Experiência", certificacoes: "Certificações", sobre: "Sobre", contato: "Contato", curriculo: "Currículo ↗" },
-  en: { projetos: "Projects", tecnologias: "Technologies", experiencia: "Experience", certificacoes: "Certifications", sobre: "About", contato: "Contact", curriculo: "Resume ↗" },
+  pt: { projetos: "Projetos", tecnologias: "Habilidades", experiencia: "Experiência", certificacoes: "Certificações", sobre: "Sobre", contato: "Contato", curriculo: "Currículo ↗" },
+  en: { projetos: "Projects", tecnologias: "Skills", experiencia: "Experience", certificacoes: "Certifications", sobre: "About", contato: "Contact", curriculo: "Resume ↗" },
 };
 
 function Header() {

@@ -8,13 +8,13 @@ import { accentBadgeClass, primaryActionClass, secondaryActionClass } from "./ui
 const content = {
   pt: {
     badge: "Olá, mundo!",
-    bio: "Analista de IA e dados júnior na Inside Sistemas e estudante de engenharia de computação na UTFPR. Atuo no desenvolvimento de soluções com Python para IA, automação e dados, desde agentes e processamento de informações até APIs, dashboards e aplicações web.",
+    bio: "Sou analista de IA e dados e estudante de engenharia de computação na UTFPR. Atuo no desenvolvimento de soluções com Python, LLMs, agentes de IA, RAG, machine learning e análise de dados, criando automações, dashboards e aplicações para apoiar processos e tomadas de decisão.",
     resume: "Ver currículo", location: "Toledo, Paraná · Brasil",
     stats: [["+15", "projetos publicados"], ["+3", "anos de experiência"], ["+5", "certificados"], ["+20", "tecnologias"]],
   },
   en: {
     badge: "Hello, world!",
-    bio: "Junior AI and data analyst at Inside Sistemas and computer engineering student at UTFPR. I develop Python-based solutions for AI, automation and data, ranging from agents and information processing to APIs, dashboards and web applications.",
+    bio: "I am an AI and data analyst and a computer engineering student at UTFPR. I develop solutions with Python, LLMs, AI agents, RAG, machine learning, and data analysis, creating automations, dashboards, and applications to support processes and decision-making.",
     resume: "View resume", location: "Toledo, Paraná · Brazil",
     stats: [["+15", "published projects"], ["+3", "years of experience"], ["+5", "certificates"], ["+20", "technologies"]],
   },

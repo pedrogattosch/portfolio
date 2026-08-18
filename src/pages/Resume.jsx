@@ -3,10 +3,11 @@ import { useLanguage } from "../hooks/useLanguage";
 import "./Resume.css";
 
 const skillGroups = [
-  ["Python", "FastAPI", "LLMs", "RAG"],
-  ["Pandas", "NumPy", "OpenCV", "SQL Server"],
-  ["SQLite", "React", "TypeScript", "Tailwind CSS"],
-  ["Docker", "Git", "Postman"],
+  ["Python", "LLMs", "RAG", "Agentes de IA", "Sistemas multiagentes", "Machine learning"],
+  ["Pandas", "NumPy", "Matplotlib", "OpenCV", "Dash"],
+  ["FastAPI", "APIs REST", "SQL Server", "SQLite"],
+  ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+  ["Git", "GitHub", "GitLab", "Docker", "Postman", "Swagger"],
 ];
 const titleClass =
   "mb-2.5 font-mono text-[10.5px] font-semibold tracking-[.14em] text-[#0e7490]";
@@ -81,12 +82,12 @@ function Resume() {
               <BlockTitle>{pt ? "RESUMO" : "SUMMARY"}</BlockTitle>
               <p className="text-xs leading-[1.55]">
                 {pt
-                  ? "Analista de IA e dados júnior na Inside Sistemas e estudante de engenharia de computação na UTFPR. Atuo no desenvolvimento de soluções com Python para IA, automação e dados, desde agentes e processamento de informações até APIs, dashboards e aplicações web."
-                  : "Junior AI and data analyst at Inside Sistemas and computer engineering student at UTFPR. I develop Python solutions for AI, automation, and data, ranging from agents and information processing to APIs, dashboards, and web applications."}
+                  ? "Sou analista de IA e dados e estudante de engenharia de computação na UTFPR. Atuo no desenvolvimento de soluções com Python, LLMs, agentes de IA, RAG, machine learning e análise de dados, criando automações, dashboards e aplicações para apoiar processos e tomadas de decisão."
+                  : "I am an AI and data analyst and a computer engineering student at UTFPR. I develop solutions with Python, LLMs, AI agents, RAG, machine learning, and data analysis, creating automations, dashboards, and applications to support processes and decision-making."}
               </p>
             </section>
             <section>
-              <BlockTitle>{pt ? "TECNOLOGIAS" : "TECHNOLOGIES"}</BlockTitle>
+              <BlockTitle>{pt ? "HABILIDADES" : "SKILLS"}</BlockTitle>
               <div className="space-y-[5px]">
                 {skillGroups.map((group) => (
                   <div
