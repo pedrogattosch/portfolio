@@ -25,9 +25,10 @@ body:has(.cv-page) {
   @page { size: letter; margin: 0; }
   html, body, #root { width: 8.49in; height: auto; min-height: 0; margin: 0; background: #fff !important; }
   .cv-page { display: contents; }
-  .cv-sheet { width: 8.49in; height: auto; min-height: 0; box-shadow: none; margin: 0; padding: .5in; overflow: visible; }
+  .cv-sheet { width: 8.49in; height: auto; min-height: 0; box-shadow: none; margin: 0; padding: .45in .5in; overflow: visible; }
   .cv-content { grid-template-columns: 222px minmax(0, 1fr) !important; }
   .cv-content > main { margin-top: 0 !important; }
-  .cv-block { break-inside: avoid; }
+  .cv-content > main > section + section { margin-top: .5rem !important; }
+  .cv-block { margin-bottom: .4375rem !important; padding-bottom: .4375rem !important; break-inside: avoid; }
   p, li { orphans: 3; widows: 3; }
 }

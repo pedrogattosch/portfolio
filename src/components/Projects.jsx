@@ -1,26 +1,7 @@
+import profileContent from "../data/profileContent";
 import { useLanguage } from "../hooks/useLanguage";
 import Section from "./ui/Section";
 import { ghostActionClass } from "./ui/styles";
-
-const featuredProject = {
-  pt: {
-    title: "Aquametria",
-    badges: ["Fundador", "MVP campeão · Start Farm 2026"],
-    items: [
-      "Fundação da Aquametria, empresa incubada na SprinT da UTFPR e originada do MVP campeão do Start Farm 2026.",
-      "Desenvolvimento de solução para automatizar a biometria aquícola e fornecer dados contínuos aos produtores, apoiando o acompanhamento da produção e a tomada de decisão.",
-    ],
-  },
-  en: {
-    title: "Aquametria",
-    badges: ["Founder", "Winning MVP · Start Farm 2026"],
-    items: [
-      "Founder of Aquametria, a company incubated at UTFPR's SprinT and originated from the winning MVP at Start Farm 2026.",
-      "Development of a solution to automate aquaculture biometrics and provide continuous data to producers, supporting production monitoring and decision-making.",
-    ],
-  },
-  href: "https://start-farm.vercel.app/",
-};
 
 const secondaryProjects = [
   {
@@ -51,7 +32,7 @@ const secondaryProjects = [
 
 function Projects() {
   const { lang } = useLanguage();
-  const featured = featuredProject[lang];
+  const featured = profileContent[lang].project;
 
   return (
     <Section
@@ -78,7 +59,7 @@ function Projects() {
               </div>
             </div>
             <a
-              href={featuredProject.href}
+              href={featured.href}
               target="_blank"
               rel="noreferrer"
               className={`${ghostActionClass} shrink-0 self-start`}
@@ -87,8 +68,8 @@ function Projects() {
             </a>
           </div>
           <ul className="mt-5 max-w-[92ch] list-disc space-y-2 pl-[18px] text-sm leading-[1.75] text-muted">
-            {featured.items.map((item) => (
-              <li key={item}>{item}</li>
+            {featured.items.map(({ text }) => (
+              <li key={text}>{text}</li>
             ))}
           </ul>
         </article>

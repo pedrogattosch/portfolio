@@ -2,19 +2,18 @@ import { Link } from "react-router-dom";
 import GitHub from "../assets/icons/github.svg";
 import LinkedIn from "../assets/icons/linkedin.svg";
 import Foto from "../assets/images/foto-perfil.jpg";
+import profileContent from "../data/profileContent";
 import { useLanguage } from "../hooks/useLanguage";
 import { accentBadgeClass, primaryActionClass, secondaryActionClass } from "./ui/styles";
 
 const content = {
   pt: {
     badge: "Olá, mundo!",
-    bio: "Analista de IA e Dados com experiência no desenvolvimento de soluções com LLMs, agentes, RAG, automação e análise de dados. Atuo com Python no desenvolvimento de aplicações e dashboards utilizados em processos internos, com foco em transformar dados e conhecimento técnico em soluções para o negócio.",
     resume: "Ver currículo", location: "Toledo, Paraná · Brasil",
     stats: [["+15", "projetos publicados"], ["+3", "anos de experiência"], ["+5", "certificados"], ["+20", "tecnologias"]],
   },
   en: {
     badge: "Hello, world!",
-    bio: "AI and Data Analyst with experience developing solutions with LLMs, agents, RAG, automation, and data analysis. I use Python to build applications and dashboards for internal processes, focusing on transforming data and technical knowledge into business solutions.",
     resume: "View resume", location: "Toledo, Paraná · Brazil",
     stats: [["+15", "published projects"], ["+3", "years of experience"], ["+5", "certificates"], ["+20", "technologies"]],
   },
@@ -23,6 +22,7 @@ const content = {
 function Introduction() {
   const { lang } = useLanguage();
   const copy = content[lang];
+  const bio = profileContent[lang].summary.map(({ text }) => text).join(" ");
   return (
     <section className="bg-[image:var(--glow)]">
       <div className="shell-padding mx-auto max-w-shell border-b border-line px-8 pb-14 pt-9 md:pt-16">
@@ -30,7 +30,7 @@ function Introduction() {
           <div>
             <span className={accentBadgeClass}>{copy.badge}</span>
             <h1 className="mt-5 text-[clamp(42px,7vw,58px)] font-semibold leading-[1.05] tracking-[-.03em]">Pedro Miguel</h1>
-            <p className="mt-4 max-w-[56ch] text-base leading-[1.75] text-muted">{copy.bio}</p>
+            <p className="mt-4 max-w-[56ch] text-base leading-[1.75] text-muted">{bio}</p>
             <div className="mt-7 grid gap-2.5 sm:flex sm:flex-wrap">
               <Link to="/curriculo" className={`${primaryActionClass} w-full sm:w-auto`}>{copy.resume}</Link>
               <div className="grid grid-cols-2 gap-2.5 sm:contents">

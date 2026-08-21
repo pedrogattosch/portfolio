@@ -6,7 +6,7 @@ const events = {
   pt: [
     [
       "Ago. 2026",
-      "Fundei a Aquametria após o MVP da equipe conquistar o primeiro lugar no Start Farm 2026. A empresa foi posteriormente incubada na SprinT da UTFPR para desenvolver soluções voltadas à aquicultura.",
+      "Cofundei a Aquametria após o MVP da equipe conquistar o primeiro lugar no Start Farm 2026. A empresa foi posteriormente incubada na SprinT da UTFPR para desenvolver soluções voltadas à aquicultura.",
     ],
     [
       "Jul. 2026",
@@ -28,7 +28,7 @@ const events = {
   en: [
     [
       "Ago. 2026",
-      "I founded Aquametria after our team's MVP won first place at Start Farm 2026. The company was later incubated at UTFPR's SprinT to develop technology solutions for aquaculture.",
+      "I co-founded Aquametria after our team's MVP won first place at Start Farm 2026. The company was later incubated at UTFPR's SprinT to develop technology solutions for aquaculture.",
     ],
     [
       "Jul. 2026",

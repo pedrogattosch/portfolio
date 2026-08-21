@@ -1,21 +1,9 @@
 import { Link } from "react-router-dom";
+import profileContent from "../data/profileContent";
+import technologyCategories from "../data/technologyCategories";
 import { useLanguage } from "../hooks/useLanguage";
 import "./Resume.css";
 
-const skillGroups = {
-  pt: [
-    ["Python", "LLMs", "RAG", "Agentes de IA", "Sistemas multiagentes", "Machine learning", "Pandas", "NumPy"],
-    ["React", "TypeScript", "Tailwind CSS"],
-    ["SQL Server", "SQLite"],
-    ["Git", "Docker", "Postman"],
-  ],
-  en: [
-    ["Python", "LLMs", "RAG", "AI agents", "Multi-agent systems", "Machine learning", "Pandas", "NumPy"],
-    ["React", "TypeScript", "Tailwind CSS"],
-    ["SQL Server", "SQLite"],
-    ["Git", "Docker", "Postman"],
-  ],
-};
 const titleClass =
   "mb-2.5 font-mono text-[10.5px] font-semibold tracking-[.14em] text-[#0e7490]";
 const chipClass =
@@ -53,10 +41,12 @@ const Icon = ({ type }) => {
   );
 };
 const BlockTitle = ({ children }) => <h2 className={titleClass}>{children}</h2>;
+const formatMeta = ({ start, end, location }) => [start, end, location].join(" · ");
 
 function Resume() {
   const { lang } = useLanguage();
   const pt = lang === "pt";
+  const copy = profileContent[lang];
   return (
     <div className="cv-page min-h-screen bg-white text-[#111]">
       <div className="cv-bar mx-auto grid w-[8.5in] max-w-full gap-2.5 bg-white px-4 pb-1 pt-4 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-0">
@@ -79,39 +69,29 @@ function Resume() {
         </h1>
         <div className="mt-1.5 font-mono text-[13px] text-black/60">
           {pt
-            ? "Engenharia de computação · UTFPR"
-            : "Computer engineering · UTFPR"}
+            ? "Analista de IA e dados · Engenharia de computação (UTFPR)"
+            : "AI and data Analyst · Computer engineering (UTFPR)"}
         </div>
         <div className="my-[13px] h-0.5 bg-[#111]" />
         <div className="cv-content grid items-start gap-x-8 md:grid-cols-[222px_minmax(0,1fr)]">
           <aside className="space-y-5">
             <section>
-              <BlockTitle>{pt ? "RESUMO" : "SUMMARY"}</BlockTitle>
-              <p className="text-xs leading-[1.55]">
-                {pt ? (
-                  <>
-                    Analista de IA e dados com experiência no desenvolvimento de soluções com LLMs, agentes, RAG, automação e análise de dados. Atuo com Python no desenvolvimento de aplicações e dashboards utilizados em processos internos, com foco em transformar dados e conhecimento técnico em soluções para o negócio.
-                  </>
-                ) : (
-                  <>
-                    AI and Data Analyst with experience developing solutions with LLMs, agents, RAG, automation, and data analysis. I use Python to build applications and dashboards for internal processes, focusing on transforming data and technical knowledge into business solutions.
-                  </>
-                )}
-              </p>
-            </section>
-            <section>
               <BlockTitle>{pt ? "HABILIDADES" : "SKILLS"}</BlockTitle>
-              <div className="space-y-[5px]">
-                {skillGroups[lang].map((group) => (
-                  <div
-                    key={group.join("-")}
-                    className="flex flex-wrap gap-[5px]"
-                  >
-                    {group.map((skill) => (
-                      <span key={skill} className={chipClass}>
-                        {skill}
-                      </span>
-                    ))}
+              <div className="space-y-2">
+                {technologyCategories.map(({ label, skills }) => (
+                  <div key={label.pt}>
+                    <h3 className="mb-1 font-mono text-[9px] font-semibold uppercase tracking-[.1em] text-black/55">
+                      {label[lang]}
+                    </h3>
+                    <div className="flex flex-wrap gap-[5px]">
+                      {(Array.isArray(skills) ? skills : skills[lang]).map(
+                        (skill) => (
+                          <span key={skill} className={chipClass}>
+                            {skill}
+                          </span>
+                        ),
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -119,21 +99,21 @@ function Resume() {
             <section>
               <BlockTitle>{pt ? "CERTIFICAÇÕES" : "CERTIFICATIONS"}</BlockTitle>
               <p className="text-[11.5px] leading-5">
-                Python Essentials 1 — Cisco
+                Python Essentials 1 - Cisco
                 <br />
-                Python Essentials 2 — Cisco
+                Python Essentials 2 - Cisco
                 <br />
-                Machine Learning with Python — freeCodeCamp
+                Machine Learning with Python - freeCodeCamp
               </p>
             </section>
             <section>
               <BlockTitle>{pt ? "IDIOMAS" : "LANGUAGES"}</BlockTitle>
               <p className="text-[11.5px] leading-5">
-                {pt ? "Inglês — Intermediário" : "English — Intermediate"}
+                {pt ? "Inglês - Avançado" : "English - Advanced"}
               </p>
             </section>
             <section>
-              <BlockTitle>{pt ? "CONTATO" : "CONTACT"}</BlockTitle>
+              <BlockTitle>{pt ? "CONTATOS" : "CONTACTS"}</BlockTitle>
               <div className="space-y-2 font-mono text-[10.5px]">
                 <div className="flex items-center gap-2">
                   <Icon type="mail" />
@@ -164,101 +144,22 @@ function Resume() {
           </aside>
           <main className="mt-6 space-y-5 md:mt-0">
             <section>
+              <BlockTitle>{pt ? "RESUMO" : "SUMMARY"}</BlockTitle>
+              <ul className="cv-block mb-3 list-disc space-y-1.5 border-b border-dashed border-black/20 pb-3 pl-4 text-xs leading-[1.55]">
+                {copy.summary.map((item) => <li key={item.text}><HighlightedText content={item} /></li>)}
+              </ul>
+            </section>
+            <section>
               <BlockTitle>{pt ? "FORMAÇÃO" : "EDUCATION"}</BlockTitle>
-              <div className="flex justify-between gap-4">
-                <h3 className="text-[13px] font-semibold text-[#0e7490]">
-                  {pt ? "Engenharia de computação" : "Computer engineering"}
-                </h3>
-                <span className="font-mono text-[10.5px]">
-                  {pt
-                    ? "2023 — atual · Toledo, PR"
-                    : "2023 — present · Toledo, PR, Brazil"}
-                </span>
-              </div>
-              <p className="mt-1 text-[11.5px]">
-                {pt
-                  ? "Universidade Tecnológica Federal do Paraná, UTFPR"
-                  : "Federal University of Technology — Paraná, UTFPR"}
-              </p>
+              <ResumeEntry company={copy.education.institution} role={copy.education.degree} meta={formatMeta(copy.education)} />
             </section>
             <section>
               <BlockTitle>{pt ? "EXPERIÊNCIA" : "EXPERIENCE"}</BlockTitle>
-              {pt ? (
-                <>
-                  <Experience
-                    company="Inside Sistemas"
-                    role="Analista de IA e dados · júnior"
-                    meta="jul. 2026 · presente · Toledo, PR"
-                    bullets={[
-                      <>Desenvolvimento e centralização de <strong>mais de 5 dashboards</strong> em um hub interno, transformando dados dispersos em indicadores para acompanhamento da gestão.</>,
-                      <>Desenvolvimento de agentes para automação e acompanhamento de tickets, contribuindo para reduzir a mediana do tempo de resolução de <strong>23h para 18h</strong>.</>,
-                      <>Desenvolvimento de assistentes com LLMs e RAG para apoio aos usuários dos produtos da Inside, integrados às bases de código para auxiliar na investigação de dúvidas e problemas.</>,
-                    ]}
-                  />
-                  <Experience
-                    company="Inside Sistemas"
-                    role="Analista de suporte · estágio"
-                    meta="fev. 2026 · jun. 2026 · Toledo, PR"
-                    bullets={[
-                      <>Reestruturação da documentação técnica dos sistemas da Inside, com atualização de <strong>mais de 250 artigos</strong>, tornando a base de conhecimento mais atual e confiável.</>,
-                    ]}
-                  />
-                  <Experience
-                    company="Exército Brasileiro"
-                    role="Soldado"
-                    meta="mar. 2024 · jan. 2025 · Toledo, PR"
-                    bullets={[
-                      "Suporte técnico e manutenção de equipamentos e sistemas de informática, garantindo o funcionamento dos recursos tecnológicos da unidade militar.",
-                    ]}
-                  />
-                </>
-              ) : (
-                <>
-                  <Experience
-                    company="Inside Sistemas"
-                    role="AI and data analyst · junior"
-                    meta="Jul. 2026 · present · Toledo, PR, Brazil"
-                    bullets={[
-                      <>Development and centralization of <strong>more than 5 dashboards</strong> in an internal hub, transforming scattered data into indicators for management monitoring.</>,
-                      <>Development of agents for ticket monitoring and process automation, contributing to a reduction in median resolution time from <strong>23h to 18h</strong>.</>,
-                      <>Development of assistants with LLMs and RAGto support users of Inside products, integrated with the codebases to help investigate questions and issues.</>,
-                    ]}
-                  />
-                  <Experience
-                    company="Inside Sistemas"
-                    role="Support analyst · internship"
-                    meta="Feb. 2026 · Jun. 2026 · Toledo, PR, Brazil"
-                    bullets={[
-                      <>Restructured the technical documentation of Inside&apos;s systems, updating <strong>more than 250 articles</strong> and making the knowledge base more current and reliable.</>,
-                    ]}
-                  />
-                  <Experience
-                    company="Brazilian Army"
-                    role="Soldier"
-                    meta="Mar. 2024 · Jan. 2025 · Toledo, PR, Brazil"
-                    bullets={[
-                      "Provided technical support and maintenance for IT equipment and systems, helping ensure the operation of the unit's technology resources.",
-                    ]}
-                  />
-                </>
-              )}
+              {copy.experiences.map((item) => <ResumeEntry key={`${item.company}-${item.role}`} company={item.company} role={item.role} meta={formatMeta(item)} bullets={item.items} />)}
             </section>
             <section>
               <BlockTitle>{pt ? "PROJETO" : "PROJECT"}</BlockTitle>
-              <Project
-                title="Aquametria"
-                bullets={
-                  pt
-                    ? [
-                        <>Fundação da Aquametria, empresa incubada na SprinT da UTFPR e originada do <strong>MVP campeão do Start Farm 2026</strong>.</>,
-                        "Desenvolvimento de solução para automatizar a biometria aquícola e fornecer dados contínuos aos produtores, apoiando o acompanhamento da produção e a tomada de decisão.",
-                      ]
-                    : [
-                        <>Founder of Aquametria, a company incubated at UTFPR&apos;s SprinT and originated from the <strong>winning MVP at Start Farm 2026</strong>.</>,
-                        "Development of a solution to automate aquaculture biometrics and provide continuous data to producers, supporting production monitoring and decision-making.",
-                      ]
-                }
-              />
+              <Project title={copy.project.title} href={copy.project.href} bullets={copy.project.items} />
             </section>
           </main>
         </div>
@@ -273,14 +174,14 @@ function ResumeLanguageToggle({ lang }) {
     <button
       onClick={() => setLang(lang === "pt" ? "en" : "pt")}
       className="h-9 rounded-lg border border-black/20 bg-white px-2.5 font-mono text-[11px] text-black"
-      aria-label="Alternar idioma"
+      aria-label={lang === "pt" ? "Alternar idioma" : "Switch language"}
     >
       {lang.toUpperCase()}
     </button>
   );
 }
 
-function Experience({ company, role, meta, bullets }) {
+function ResumeEntry({ company, role, meta, bullets = [] }) {
   return (
     <article className="cv-block mb-3 border-b border-dashed border-black/20 pb-3">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -288,24 +189,50 @@ function Experience({ company, role, meta, bullets }) {
         <strong className="text-[12px] text-[#0e7490]">{role}</strong>
       </div>
       <div className="mt-1 font-mono text-[10.5px] text-[#8a6d3b]">{meta}</div>
-      <ul className="my-1.5 list-disc pl-4 text-[11.5px] leading-[1.5]">
-        {bullets.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
+      {bullets.length > 0 ? (
+        <ul className="my-1.5 list-disc pl-4 text-[11.5px] leading-[1.5]">
+          {bullets.map((item) => <li key={item.text}><HighlightedText content={item} /></li>)}
+        </ul>
+      ) : null}
+    </article>
+  );
+}
+function Project({ title, href, bullets }) {
+  const linkLabel = new URL(href).hostname;
+
+  return (
+    <article className="cv-block mb-3 border-b border-dashed border-black/20 pb-3">
+      <h3 className="font-mono text-[13px] font-semibold">
+        {title}{" "}
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-black/30 underline-offset-2"
+        >
+          ({linkLabel})
+        </a>
+      </h3>
+      <ul className="mt-1 list-disc pl-4 text-[11.5px] leading-[1.5]">
+        {bullets.map((item) => <li key={item.text}><HighlightedText content={item} /></li>)}
       </ul>
     </article>
   );
 }
-function Project({ title, bullets }) {
-  return (
-    <article className="cv-block">
-      <h3 className="font-mono text-[13px] font-semibold">{title}</h3>
-      <ul className="mt-1 list-disc pl-4 text-[11.5px] leading-[1.5]">
-        {bullets.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </article>
-  );
+function HighlightedText({ content }) {
+  const { text, highlights = [] } = content;
+  const parts = [];
+  let cursor = 0;
+
+  highlights.forEach((highlight) => {
+    const start = text.indexOf(highlight, cursor);
+    if (start === -1) return;
+    parts.push(text.slice(cursor, start));
+    parts.push(<strong key={`${highlight}-${start}`}>{highlight}</strong>);
+    cursor = start + highlight.length;
+  });
+
+  parts.push(text.slice(cursor));
+  return parts;
 }
 export default Resume;
