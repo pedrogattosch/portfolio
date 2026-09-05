@@ -10,7 +10,7 @@ const events = {
     ],
     [
       "Jul. 2026",
-      "Fui efetivado na Inside Sistemas para trabalhar com desenvolvimento de inteligência artificial e dados, criando automações, agentes e dashboards para apoiar processos e decisões.",
+      "Fui efetivado na Inside Sistemas para trabalhar com desenvolvimento de inteligência artificial, criando automações, agentes e dashboards para apoiar processos e decisões.",
     ],
     [
       "Fev. 2026",
@@ -32,7 +32,7 @@ const events = {
     ],
     [
       "Jul. 2026",
-      "I was hired by Inside Sistemas as a junior AI and data analyst, building automations, agents, and dashboards to support processes and decision-making.",
+      "I was hired by Inside Sistemas as a junior AI analyst, building automations, agents, and dashboards to support processes and decision-making.",
     ],
     [
       "Feb. 2026",

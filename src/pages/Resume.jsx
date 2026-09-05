@@ -1,8 +1,47 @@
 import { Link } from "react-router-dom";
-import profileContent from "../data/profileContent";
-import technologyCategories from "../data/technologyCategories";
+import { experiences } from "../components/Experience";
+import { featuredProject } from "../components/Projects";
+import { technologyCategories } from "../components/Technologies";
 import { useLanguage } from "../hooks/useLanguage";
 import "./Resume.css";
+
+const summaries = {
+  pt: {
+    text: "Analista de IA focado em Python, LLMs, RAG e agentes autônomos. Reduzi a mediana de resolução de chamados de 23h para 18h com agentes de automação, criei um hub de chatbots internos com +300 interações diárias e centralizei dados em 6 dashboards. Cofundador da Aquametria, MVP campeão do Start Farm 2026.",
+    highlights: [
+      "23h para 18h",
+      "+300 interações diárias",
+      "6 dashboards",
+      "MVP campeão do Start Farm 2026",
+    ],
+  },
+  en: {
+    text: "AI analyst focused on Python, LLMs, RAG, and agents in production. I cut the median ticket resolution time from 23 to 18 hours with automation agents, built an internal chatbot hub with more than 300 daily interactions, and centralized data into 6 dashboards. Co-founder of Aquametria, winning MVP at Start Farm 2026.",
+    highlights: [
+      "23 to 18 hours",
+      "more than 300 daily interactions",
+      "6 dashboards",
+      "winning MVP at Start Farm 2026",
+    ],
+  },
+};
+
+const educations = {
+  pt: {
+    institution: "UTFPR",
+    degree: "Engenharia de computação",
+    start: "2023",
+    end: "previsão: 2028",
+    location: "Toledo, PR",
+  },
+  en: {
+    institution: "UTFPR",
+    degree: "Computer engineering",
+    start: "2023",
+    end: "expected graduation: 2028",
+    location: "Toledo, PR, Brazil",
+  },
+};
 
 const titleClass =
   "mb-2.5 font-mono text-[10.5px] font-semibold tracking-[.14em] text-[#0e7490]";
@@ -41,12 +80,16 @@ const Icon = ({ type }) => {
   );
 };
 const BlockTitle = ({ children }) => <h2 className={titleClass}>{children}</h2>;
-const formatMeta = ({ start, end, location }) => [start, end, location].join(" · ");
+const formatMeta = ({ start, end, location }) =>
+  [start, end, location].join(" · ");
 
 function Resume() {
   const { lang } = useLanguage();
   const pt = lang === "pt";
-  const copy = profileContent[lang];
+  const summary = summaries[lang];
+  const education = educations[lang];
+  const experienceList = experiences[lang];
+  const project = featuredProject[lang];
   return (
     <div className="cv-page min-h-screen bg-white text-[#111]">
       <div className="cv-bar mx-auto grid w-[8.5in] max-w-full gap-2.5 bg-white px-4 pb-1 pt-4 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-0">
@@ -69,8 +112,8 @@ function Resume() {
         </h1>
         <div className="mt-1.5 font-mono text-[13px] text-black/60">
           {pt
-            ? "Analista de IA e dados · Engenharia de computação (UTFPR)"
-            : "AI and data Analyst · Computer engineering (UTFPR)"}
+            ? "Analista de IA · Engenharia de computação (UTFPR)"
+            : "AI analyst · Computer engineering (UTFPR)"}
         </div>
         <div className="my-[13px] h-0.5 bg-[#111]" />
         <div className="cv-content grid items-start gap-x-8 md:grid-cols-[222px_minmax(0,1fr)]">
@@ -145,21 +188,37 @@ function Resume() {
           <main className="mt-6 space-y-5 md:mt-0">
             <section>
               <BlockTitle>{pt ? "RESUMO" : "SUMMARY"}</BlockTitle>
-              <ul className="cv-block mb-3 list-disc space-y-1.5 border-b border-dashed border-black/20 pb-3 pl-4 text-xs leading-[1.55]">
-                {copy.summary.map((item) => <li key={item.text}><HighlightedText content={item} /></li>)}
-              </ul>
+              <p className="cv-block mb-3 border-b border-dashed border-black/20 pb-3 text-xs leading-[1.55]">
+                <HighlightedText content={summary} />
+              </p>
             </section>
             <section>
               <BlockTitle>{pt ? "FORMAÇÃO" : "EDUCATION"}</BlockTitle>
-              <ResumeEntry company={copy.education.institution} role={copy.education.degree} meta={formatMeta(copy.education)} />
+              <ResumeEntry
+                company={education.institution}
+                role={education.degree}
+                meta={formatMeta(education)}
+              />
             </section>
             <section>
               <BlockTitle>{pt ? "EXPERIÊNCIA" : "EXPERIENCE"}</BlockTitle>
-              {copy.experiences.map((item) => <ResumeEntry key={`${item.company}-${item.role}`} company={item.company} role={item.role} meta={formatMeta(item)} bullets={item.items} />)}
+              {experienceList.map((item) => (
+                <ResumeEntry
+                  key={`${item.company}-${item.role}`}
+                  company={item.company}
+                  role={item.role}
+                  meta={formatMeta(item)}
+                  bullets={item.items}
+                />
+              ))}
             </section>
             <section>
               <BlockTitle>{pt ? "PROJETO" : "PROJECT"}</BlockTitle>
-              <Project title={copy.project.title} href={copy.project.href} bullets={copy.project.items} />
+              <Project
+                title={project.title}
+                href={project.href}
+                bullets={project.items}
+              />
             </section>
           </main>
         </div>
@@ -191,7 +250,11 @@ function ResumeEntry({ company, role, meta, bullets = [] }) {
       <div className="mt-1 font-mono text-[10.5px] text-[#8a6d3b]">{meta}</div>
       {bullets.length > 0 ? (
         <ul className="my-1.5 list-disc pl-4 text-[11.5px] leading-[1.5]">
-          {bullets.map((item) => <li key={item.text}><HighlightedText content={item} /></li>)}
+          {bullets.map((item) => (
+            <li key={item.text}>
+              <HighlightedText content={item} />
+            </li>
+          ))}
         </ul>
       ) : null}
     </article>
@@ -214,7 +277,11 @@ function Project({ title, href, bullets }) {
         </a>
       </h3>
       <ul className="mt-1 list-disc pl-4 text-[11.5px] leading-[1.5]">
-        {bullets.map((item) => <li key={item.text}><HighlightedText content={item} /></li>)}
+        {bullets.map((item) => (
+          <li key={item.text}>
+            <HighlightedText content={item} />
+          </li>
+        ))}
       </ul>
     </article>
   );

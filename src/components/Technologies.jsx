@@ -1,7 +1,36 @@
 import { Fragment } from "react";
 import { useLanguage } from "../hooks/useLanguage";
-import technologyCategories from "../data/technologyCategories";
 import Section from "./ui/Section";
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const technologyCategories = [
+  {
+    label: { pt: "IA & Dados", en: "AI & Data" },
+    skills: {
+      pt: ["Python", "LLMs", "RAG", "Pandas", "NumPy"],
+      en: ["Python", "LLMs", "RAG", "Pandas", "NumPy"],
+    },
+  },
+  {
+    label: { pt: "Front-end", en: "Front-end" },
+    skills: ["React", "JavaScript", "Tailwind CSS"],
+  },
+  {
+    label: { pt: "Back-end", en: "Back-end" },
+    skills: {
+      pt: ["APIs REST", "FastAPI"],
+      en: ["APIs REST", "FastAPI"],
+    },
+  },
+  {
+    label: { pt: "Banco de dados", en: "Databases" },
+    skills: ["SQL Server", "SQLite", "PostgreSQL"],
+  },
+  {
+    label: { pt: "Ferramentas", en: "Tools" },
+    skills: ["Git", "Docker", "Postman", "Claude Code", "Codex"],
+  },
+];
 
 function Technologies() {
   const { lang } = useLanguage();

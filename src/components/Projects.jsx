@@ -1,7 +1,43 @@
-import profileContent from "../data/profileContent";
 import { useLanguage } from "../hooks/useLanguage";
 import Section from "./ui/Section";
 import { ghostActionClass } from "./ui/styles";
+
+const aquametriaHref = "https://start-farm.vercel.app/";
+const githubHref = "https://github.com/pedrogattosch?tab=repositories";
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const featuredProject = {
+  pt: {
+    title: "Aquametria",
+    badges: ["Cofundador", "MVP campeão · Start Farm 2026"],
+    href: aquametriaHref,
+    items: [
+      {
+        text: "Cofundador da Aquametria, empresa incubada na SprinT da UTFPR e originada do MVP campeão do Start Farm 2026, atuando na definição de prioridades técnicas e tomada de decisão da empresa.",
+        highlights: ["MVP campeão do Start Farm 2026"],
+      },
+      {
+        text: "Responsável pelo desenvolvimento de solução para substituir uma biometria manual realizada a cada 7 a 15 dias por acompanhamento mais frequente da biomassa, reduzindo esforço operacional e apoiando decisões de arraçoamento.",
+        highlights: ["7 a 15 dias"],
+      },
+    ],
+  },
+  en: {
+    title: "Aquametria",
+    badges: ["Co-founder", "Winning MVP · Start Farm 2026"],
+    href: aquametriaHref,
+    items: [
+      {
+        text: "Co-founder of Aquametria, a company incubated at UTFPR's SprinT that grew out of the winning MVP at Start Farm 2026, contributing to technical priority setting and company decision-making.",
+        highlights: ["winning MVP at Start Farm 2026"],
+      },
+      {
+        text: "Responsible for developing a solution to replace a manual biometric assessment performed every 7 to 15 days with more frequent biomass monitoring, reducing operational effort and supporting feeding decisions.",
+        highlights: ["7 to 15 days"],
+      },
+    ],
+  },
+};
 
 const secondaryProjects = [
   {
@@ -32,13 +68,23 @@ const secondaryProjects = [
 
 function Projects() {
   const { lang } = useLanguage();
-  const featured = profileContent[lang].project;
+  const featured = featuredProject[lang];
 
   return (
     <Section
       id="projetos"
       title={lang === "pt" ? "Projetos" : "Projects"}
       index="02"
+      action={
+        <a
+          href={githubHref}
+          target="_blank"
+          rel="noreferrer"
+          className={ghostActionClass}
+        >
+          {lang === "pt" ? "Ver todos os projetos ↗" : "View all projects ↗"}
+        </a>
+      }
     >
       <div className="grid gap-4">
         <article className="rounded-[14px] border border-[var(--accent-border)] bg-[var(--accent-bg)] px-[26px] py-7 md:px-8 md:py-8">

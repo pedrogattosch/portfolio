@@ -2,10 +2,20 @@ const aquametriaHref = "https://start-farm.vercel.app/";
 
 const profileContent = {
   pt: {
+    intro: [
+      {
+        text: "Analista de IA e estudante de engenharia de computação na UTFPR, com foco em Python, LLMs, RAG e agentes autônomos, levando soluções da prototipagem à produção.",
+      },
+    ],
     summary: [
       {
-        text: "Analista de IA e dados que leva soluções de LLMs, RAG e agentes de IA da prototipagem à produção, incluindo agentes que analisam mais de 200 tickets por dia e um hub de IA integrado a 10 projetos e 1.300 artigos técnicos.",
-        highlights: ["mais de 200 tickets por dia", "10 projetos", "1.300 artigos técnicos"],
+        text: "Analista de IA e estudante de eImpacto medido em produção: mediana de resolução de chamados de 23h para 18h, +3.000 chamados com proposta de resolução automática, +300 interações diárias em assistentes internos e 6 dashboards centralizando dados antes dispersos.",
+        highlights: [
+          "23h para 18h",
+          "+3.000 chamados",
+          "+300 interações diárias",
+          "6 dashboards",
+        ],
       },
     ],
     education: {
@@ -18,23 +28,27 @@ const profileContent = {
     experiences: [
       {
         company: "Inside Sistemas",
-        role: "Analista de IA e dados · júnior",
+        role: "Analista de IA · júnior",
         start: "jul. 2026",
         end: "presente",
         location: "Toledo, PR",
         featured: true,
         items: [
           {
-            text: "Desenvolvimento e centralização de mais de 5 dashboards em um hub interno, em colaboração com áreas de gestão, transformando dados dispersos em indicadores estratégicos.",
-            highlights: ["mais de 5 dashboards"],
+            text: "Desenvolvimento de 6 dashboards com +10 painéis em um portal único com SSO e controle de acesso por time, centralizando dados antes dispersos.",
+            highlights: ["6 dashboards", "+10 painéis"],
           },
           {
-            text: "Desenvolvimento de agentes para automação e acompanhamento de tickets, atuando junto à equipe de suporte para identificar gargalos no processo, contribuindo para reduzir a mediana do tempo de resolução de 23h para 18h.",
-            highlights: ["23h para 18h"],
+            text: "Desenvolvimento de +5 agentes autônomos para automação e apoio ao suporte na central de atendimento, entre eles o ticket-watcher, que reduziu a mediana de resolução de chamados de 23h para 18h, e o ticket-copilot, com proposta de resolução publicada em +3.000 chamados.",
+            highlights: [
+              "+5 agentes autônomos",
+              "23h para 18h",
+              "+3.000 chamados",
+            ],
           },
           {
-            text: "Desenvolvimento de assistentes com LLMs e RAG para apoio aos usuários dos produtos da Inside, com comunicação direta com times técnicos e de desenvolvimento para integração às bases de conhecimento e código, atendendo mais de 300 perguntas diariamente.",
-            highlights: ["mais de 300 perguntas diariamente"],
+            text: "Desenvolvimento de um hub de chatbots internos com LLMs e RAG, onde o usuário conversa em linguagem natural e recebe a resposta com base no código e na documentação do produto, integrados às bases de código e a artigos técnicos, com +60 usuários ativos e +300 interações diárias.",
+            highlights: ["+60 usuários ativos", "+300 interações diárias"],
           },
         ],
       },
@@ -46,8 +60,8 @@ const profileContent = {
         location: "Toledo, PR",
         items: [
           {
-            text: "Reestruturação da documentação técnica dos sistemas da Inside, com organização e atenção a detalhes na atualização de conteúdo técnico, atualizando mais de 250 artigos e tornando a base de conhecimento mais confiável.",
-            highlights: ["mais de 250 artigos"],
+            text: "Reestruturação da documentação técnica dos sistemas da Inside, com organização e atenção a detalhes na atualização de conteúdo técnico, atualizando +250 artigos e tornando a base de conhecimento mais confiável.",
+            highlights: ["+250 artigos"],
           },
         ],
       },
@@ -81,10 +95,23 @@ const profileContent = {
     },
   },
   en: {
+    intro: [
+      {
+        text: "I'm Pedro Miguel, an AI analyst and computer engineering student at UTFPR. I like to understand the problem before writing code and to turn manual processes into solutions people actually use every day, working with Python, LLMs, RAG, and AI agents.",
+      },
+    ],
     summary: [
       {
-        text: "AI and Data Analyst who takes LLM, RAG, and AI agent solutions from prototyping to production, including agents that analyze more than 200 tickets per day and an AI hub integrated with 10 projects and 1,300 technical articles.",
-        highlights: ["more than 200 tickets per day", "10 projects", "1,300 technical articles"],
+        text: "AI analyst and computer engineering student at UTFPR, focused on Python, LLMs, RAG, and AI agents, taking solutions from prototype to production.",
+      },
+      {
+        text: "Impact measured in production: median ticket resolution down from 23 to 18 hours, more than 3,000 tickets with an automatically proposed resolution, more than 300 daily interactions with internal assistants, and 6 dashboards centralizing previously scattered data.",
+        highlights: [
+          "23 to 18 hours",
+          "more than 3,000 tickets",
+          "more than 300 daily interactions",
+          "6 dashboards",
+        ],
       },
     ],
     education: {
@@ -97,23 +124,30 @@ const profileContent = {
     experiences: [
       {
         company: "Inside Sistemas",
-        role: "Junior AI and Data Analyst",
+        role: "Junior AI Analyst",
         start: "Jul. 2026",
         end: "present",
         location: "Toledo, PR, Brazil",
         featured: true,
         items: [
           {
-            text: "Developed and centralized more than 5 dashboards in an internal hub, collaborating with management teams to transform scattered data into strategic indicators.",
-            highlights: ["more than 5 dashboards"],
+            text: "Developed 6 dashboards with more than 10 panels in a single portal with SSO and team-based access control, centralizing previously scattered data.",
+            highlights: ["6 dashboards", "more than 10 panels"],
           },
           {
-            text: "Developed agents to automate and monitor tickets, working with the support team to identify process bottlenecks and helping reduce the median resolution time from 23 to 18 hours.",
-            highlights: ["23 to 18 hours"],
+            text: "Developed more than 5 AI agents for automation and support in the service desk, including ticket-watcher, which reduced the median ticket resolution time from 23 to 18 hours, and ticket-copilot, which published a proposed resolution on more than 3,000 tickets.",
+            highlights: [
+              "more than 5 AI agents",
+              "23 to 18 hours",
+              "more than 3,000 tickets",
+            ],
           },
           {
-            text: "Developed LLM- and RAG-powered assistants for users of Inside products, communicating directly with technical and development teams to integrate knowledge bases and code, answering more than 300 questions daily.",
-            highlights: ["more than 300 questions daily"],
+            text: "Developed an internal chatbot hub with LLMs and RAG, where users ask questions in natural language and get answers grounded in the product's code and documentation, integrated with code repositories and technical articles, with more than 60 active users and more than 300 interactions per day.",
+            highlights: [
+              "more than 60 active users",
+              "more than 300 interactions per day",
+            ],
           },
         ],
       },
