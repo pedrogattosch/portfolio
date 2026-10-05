@@ -3,7 +3,24 @@ import Section from "./ui/Section";
 import { ghostActionClass } from "./ui/styles";
 
 const aquametriaHref = "https://start-farm.vercel.app/";
+const financeAppProjectHref = "https://github.com/pedrogattosch/finance-app";
+const financeAppCodeHref = "https://github.com/pedrogattosch/finance-app/tree/main/frontend";
 const githubHref = "https://github.com/pedrogattosch?tab=repositories";
+
+const financeAppContent = {
+  pt: {
+    description: "Aplicativo de finanças pessoais para registrar receitas e despesas, acompanhar o orçamento diário e importar extratos PDF, CSV ou OFX com conferência antes de salvar.",
+    previewAlt: "Montagem do FinanceApp em telas de computador e celular, com saldo, orçamento e lançamentos.",
+    projectLabel: "Ver projeto ↗",
+    codeLabel: "Ver código ↗",
+  },
+  en: {
+    description: "Personal finance app to track income and expenses, follow a daily budget, and review PDF, CSV, or OFX statements before importing them.",
+    previewAlt: "FinanceApp desktop and mobile mockup showing balances, budget, and transactions.",
+    projectLabel: "View project ↗",
+    codeLabel: "View code ↗",
+  },
+};
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const featuredProject = {
@@ -66,9 +83,45 @@ const secondaryProjects = [
   },
 ];
 
+const budgetBars = [35, 52, 43, 66, 49, 78, 59, 90, 68, 100, 76, 86];
+
+function FinanceAppPreview({ alt }) {
+  return (
+    <figure className="finance-preview" role="img" aria-label={alt}>
+      <div className="finance-preview__desktop" aria-hidden="true">
+        <div className="finance-preview__browser"><span>● ● ●</span><span>FinanceApp</span></div>
+        <div className="finance-preview__workspace">
+          <div className="finance-preview__sidebar">
+            <span className="finance-preview__brand"><span className="finance-preview__logo">$</span> FinanceApp</span>
+            <span className="finance-preview__nav finance-preview__nav--active">▦ <span>Visão geral</span></span>
+            <span className="finance-preview__nav">☷ <span>Lançamentos</span></span>
+            <span className="finance-preview__nav">▤ <span>Orçamento diário</span></span>
+          </div>
+          <div className="finance-preview__dashboard">
+            <div className="finance-preview__heading"><strong>Visão geral</strong><span>Outubro ▾</span></div>
+            <div className="finance-preview__balance"><span>Saldo do mês</span><strong>R$ 4.280,50</strong></div>
+            <div className="finance-preview__stats"><span>↙ Receitas <strong>R$ 6.400,00</strong></span><span>↗ Despesas <strong>R$ 2.119,50</strong></span></div>
+            <div className="finance-preview__chart"><span>Orçamento diário</span><div>{budgetBars.map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div></div>
+          </div>
+        </div>
+      </div>
+      <div className="finance-preview__phone" aria-hidden="true">
+        <div className="finance-preview__phone-top"><span className="finance-preview__logo">$</span><span>FinanceApp</span><span>•••</span></div>
+        <span className="finance-preview__phone-label">Orçamento diário</span>
+        <strong className="finance-preview__phone-amount">R$ 138,08</strong>
+        <span className="finance-preview__phone-subtitle">disponível para hoje</span>
+        <div className="finance-preview__phone-progress"><span /></div>
+        <div className="finance-preview__phone-entry"><span>Mercado</span><strong>− R$ 86,90</strong></div>
+        <div className="finance-preview__phone-entry"><span>Receita</span><strong>+ R$ 320,00</strong></div>
+      </div>
+    </figure>
+  );
+}
+
 function Projects() {
   const { lang } = useLanguage();
   const featured = featuredProject[lang];
+  const financeApp = financeAppContent[lang];
 
   return (
     <Section
@@ -118,6 +171,24 @@ function Projects() {
               <li key={text}>{text}</li>
             ))}
           </ul>
+        </article>
+        <article className="grid overflow-hidden rounded-[14px] border border-line bg-panel lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="flex flex-col items-start justify-between gap-8 px-[26px] py-7 md:px-8 md:py-8">
+            <div>
+              <h3 className="text-[24px] font-semibold tracking-[-.02em] md:text-[28px]">FinanceApp</h3>
+              <p className="mt-4 max-w-[52ch] text-sm leading-[1.75] text-muted">{financeApp.description}</p>
+              <p className="mt-5 font-mono text-[11.5px] leading-relaxed text-faint">React · TypeScript · FastAPI · PostgreSQL</p>
+            </div>
+            <div className="flex flex-wrap gap-2.5">
+              <a href={financeAppProjectHref} target="_blank" rel="noreferrer" className={ghostActionClass}>
+                {financeApp.projectLabel}
+              </a>
+              <a href={financeAppCodeHref} target="_blank" rel="noreferrer" className={ghostActionClass}>
+                {financeApp.codeLabel}
+              </a>
+            </div>
+          </div>
+          <FinanceAppPreview alt={financeApp.previewAlt} />
         </article>
         <div className="grid overflow-hidden rounded-[14px] border border-line bg-line md:grid-cols-2 md:gap-px">
           {secondaryProjects.map((project) => {
