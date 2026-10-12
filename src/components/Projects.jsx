@@ -6,6 +6,20 @@ const aquametriaHref = "https://start-farm.vercel.app/";
 const financeAppProjectHref = "https://github.com/pedrogattosch/finance-app";
 const financeAppCodeHref = "https://github.com/pedrogattosch/finance-app/tree/main/frontend";
 const githubHref = "https://github.com/pedrogattosch?tab=repositories";
+const orquestraHref = "https://github.com/pedrogattosch/orquestra";
+
+const orquestraContent = {
+  pt: {
+    description: "Aplicativo desktop com uma tela infinita onde cada terminal é um bloco que se arrasta, redimensiona e liga a outros por setas, para acompanhar vários agentes de código (Claude Code, Codex) ao mesmo tempo, organizados em sessões.",
+    previewAlt: "Tela do Orquestra com três terminais de agentes ligados por setas de comando e dependência, e uma anotação.",
+    codeLabel: "Ver código ↗",
+  },
+  en: {
+    description: "Desktop app with an infinite canvas where each terminal is a block you drag, resize and connect to others with arrows, to follow several coding agents (Claude Code, Codex) at once, organized into sessions.",
+    previewAlt: "Orquestra canvas with three agent terminals linked by command and dependency arrows, plus a note.",
+    codeLabel: "View code ↗",
+  },
+};
 
 const financeAppContent = {
   pt: {
@@ -118,10 +132,49 @@ function FinanceAppPreview({ alt }) {
   );
 }
 
+function OrquestraTerminal({ variant, status, agent, folder, lines }) {
+  return (
+    <div className={`orquestra-preview__term orquestra-preview__term--${variant}`}>
+      <div className="orquestra-preview__term-head">
+        <i className={`orquestra-preview__status orquestra-preview__status--${status}`} />
+        <strong>{agent}</strong>
+        <span>{folder}</span>
+      </div>
+      <div className="orquestra-preview__term-body">
+        {lines.map((line) => <p key={line}>{line}</p>)}
+      </div>
+    </div>
+  );
+}
+
+function OrquestraPreview({ alt }) {
+  return (
+    <figure className="orquestra-preview" role="img" aria-label={alt}>
+      <div className="orquestra-preview__stage" aria-hidden="true">
+        <svg className="orquestra-preview__arrows" viewBox="0 0 160 100">
+          <defs>
+            <marker id="orq-cmd" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#3B5BDB" /></marker>
+            <marker id="orq-dep" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#B7791F" /></marker>
+          </defs>
+          <path d="M66 30 C78 30 82 27 92 27" stroke="#3B5BDB" strokeWidth=".8" fill="none" markerEnd="url(#orq-cmd)" />
+          <path d="M123 52 C123 68 119 77 112 77" stroke="#B7791F" strokeWidth=".8" strokeDasharray="2 1.5" fill="none" markerEnd="url(#orq-dep)" />
+        </svg>
+        <OrquestraTerminal variant="a" status="ok" agent="claude" folder="portfolio" lines={["> ajustar cards", "✓ Projects.jsx", "● rodando testes…"]} />
+        <OrquestraTerminal variant="b" status="ok" agent="codex" folder="api" lines={["> criar rota /lotes", "✓ 3 arquivos", "✓ testes ok"]} />
+        <OrquestraTerminal variant="c" status="idle" agent="claude" folder="docs" lines={["aguardando api…"]} />
+        <span className="orquestra-preview__chip orquestra-preview__chip--cmd">comando</span>
+        <span className="orquestra-preview__chip orquestra-preview__chip--dep">depende</span>
+        <span className="orquestra-preview__note">revisar antes do merge</span>
+      </div>
+    </figure>
+  );
+}
+
 function Projects() {
   const { lang } = useLanguage();
   const featured = featuredProject[lang];
   const financeApp = financeAppContent[lang];
+  const orquestra = orquestraContent[lang];
 
   return (
     <Section
@@ -189,6 +242,19 @@ function Projects() {
             </div>
           </div>
           <FinanceAppPreview alt={financeApp.previewAlt} />
+        </article>
+        <article className="grid overflow-hidden rounded-[14px] border border-line bg-panel lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="flex flex-col items-start justify-between gap-8 px-[26px] py-7 md:px-8 md:py-8">
+            <div>
+              <h3 className="text-[24px] font-semibold tracking-[-.02em] md:text-[28px]">Orquestra</h3>
+              <p className="mt-4 max-w-[52ch] text-sm leading-[1.75] text-muted">{orquestra.description}</p>
+              <p className="mt-5 font-mono text-[11.5px] leading-relaxed text-faint">Electron · Node.js · xterm.js · node-pty · WebSocket</p>
+            </div>
+            <a href={orquestraHref} target="_blank" rel="noreferrer" className={ghostActionClass}>
+              {orquestra.codeLabel}
+            </a>
+          </div>
+          <OrquestraPreview alt={orquestra.previewAlt} />
         </article>
         <div className="grid overflow-hidden rounded-[14px] border border-line bg-line md:grid-cols-2 md:gap-px">
           {secondaryProjects.map((project) => {

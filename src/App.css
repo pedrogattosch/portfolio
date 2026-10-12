@@ -124,6 +124,40 @@ body {
   .finance-preview { min-height: 370px; border-top: 0; border-left: 1px solid var(--line); }
 }
 
+.orquestra-preview {
+  display: flex;
+  min-height: 280px;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 22px;
+  border-top: 1px solid var(--line);
+  background: radial-gradient(#D6D6D1 1px, transparent 1.3px) 0 0 / 14px 14px, #F6F6F4;
+  color: #191918;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+.orquestra-preview__stage { position: relative; width: 100%; max-width: 600px; aspect-ratio: 16 / 10; container-type: inline-size; }
+.orquestra-preview__arrows { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.orquestra-preview__term { position: absolute; display: flex; flex-direction: column; overflow: hidden; border: 1px solid #E4E4E0; border-radius: 1.6cqw; background: #fff; box-shadow: 0 1.2cqw 3cqw rgba(25, 25, 24, .1); }
+.orquestra-preview__term--a { left: 5%; top: 12%; width: 36.25%; height: 40%; }
+.orquestra-preview__term--b { left: 58.75%; top: 8%; width: 36.25%; height: 44%; border-color: #C9D3F5; }
+.orquestra-preview__term--c { left: 31.25%; top: 60%; width: 37.5%; height: 34%; }
+.orquestra-preview__term-head { display: flex; align-items: center; gap: 1.2cqw; padding: 1.4cqw 1.8cqw; border-bottom: 1px solid #EEEEEA; font-size: 2.1cqw; white-space: nowrap; }
+.orquestra-preview__term-head span { margin-left: auto; color: #6B6B66; font-family: "IBM Plex Mono", monospace; font-size: 1.8cqw; }
+.orquestra-preview__status { width: 1.4cqw; height: 1.4cqw; flex: none; border-radius: 50%; }
+.orquestra-preview__status--ok { background: #1F9D55; }
+.orquestra-preview__status--idle { background: #D99A2B; }
+.orquestra-preview__term-body { display: flex; flex-direction: column; gap: .8cqw; padding: 1.6cqw 1.8cqw; color: #3D3D3A; font-family: "IBM Plex Mono", monospace; font-size: 1.85cqw; white-space: nowrap; }
+.orquestra-preview__term-body p { margin: 0; }
+.orquestra-preview__term-body p:first-child { color: #191918; }
+.orquestra-preview__chip { position: absolute; transform: translate(-50%, -50%); border-radius: 99px; padding: .5cqw 1.3cqw; font-family: "IBM Plex Mono", monospace; font-size: 1.7cqw; white-space: nowrap; }
+.orquestra-preview__chip--cmd { left: 49.4%; top: 21%; border: 1px solid #B9C6F2; background: #F3F5FD; color: #3B5BDB; }
+.orquestra-preview__chip--dep { left: 82%; top: 70%; border: 1px solid #E6CB98; background: #FBF6EC; color: #8A6216; }
+.orquestra-preview__note { position: absolute; left: 5%; top: 66%; width: 21%; padding: 1.6cqw; border-radius: 1cqw; background: #FFF4C2; color: #5C4A12; font-size: 2cqw; line-height: 1.3; transform: rotate(-2deg); box-shadow: 0 .8cqw 2cqw rgba(25, 25, 24, .08); }
+@media (min-width: 1024px) {
+  .orquestra-preview { border-top: 0; border-left: 1px solid var(--line); }
+}
+
 @media (max-width: 480px) {
   .finance-preview { min-height: 280px; }
   .finance-preview__sidebar { width: 23%; padding: 10px 5px; }
