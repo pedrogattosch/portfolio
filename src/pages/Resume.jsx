@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { experiences } from "../components/Experience";
-import { featuredProject } from "../components/Projects";
+import { featuredProject, orquestraResume } from "../components/Projects";
 import { technologyCategories } from "../components/Technologies";
 import { useLanguage } from "../hooks/useLanguage";
 import "./Resume.css";
@@ -88,8 +88,8 @@ function Resume() {
   const pt = lang === "pt";
   const summary = summaries[lang];
   const education = educations[lang];
-  const experienceList = experiences[lang];
-  const project = featuredProject[lang];
+  const experienceList = experiences[lang].filter((item) => !item.hideOnResume);
+  const projects = [orquestraResume[lang], featuredProject[lang]];
   return (
     <div className="cv-page min-h-screen bg-white text-[#111]">
       <div className="cv-bar mx-auto grid w-[8.5in] max-w-full gap-2.5 bg-white px-4 pb-1 pt-4 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-0">
@@ -213,12 +213,15 @@ function Resume() {
               ))}
             </section>
             <section>
-              <BlockTitle>{pt ? "PROJETO" : "PROJECT"}</BlockTitle>
-              <Project
-                title={project.title}
-                href={project.href}
-                bullets={project.items}
-              />
+              <BlockTitle>{pt ? "PROJETOS" : "PROJECTS"}</BlockTitle>
+              {projects.map((project) => (
+                <Project
+                  key={project.title}
+                  title={project.title}
+                  href={project.href}
+                  bullets={project.items}
+                />
+              ))}
             </section>
           </main>
         </div>
@@ -261,7 +264,8 @@ function ResumeEntry({ company, role, meta, bullets = [] }) {
   );
 }
 function Project({ title, href, bullets }) {
-  const linkLabel = new URL(href).hostname;
+  const { hostname, pathname } = new URL(href);
+  const linkLabel = `${hostname}${pathname}`.replace(/\/$/, "");
 
   return (
     <article className="cv-block mb-3 border-b border-dashed border-black/20 pb-3">

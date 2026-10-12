@@ -47,6 +47,7 @@ export const experiences = {
     },
     {
       company: "Exército Brasileiro",
+      hideOnResume: true,
       role: "Soldado",
       start: "mar. 2024",
       end: "jan. 2025",
@@ -103,6 +104,7 @@ export const experiences = {
     },
     {
       company: "Brazilian Army",
+      hideOnResume: true,
       role: "Soldier",
       start: "Mar. 2024",
       end: "Jan. 2025",

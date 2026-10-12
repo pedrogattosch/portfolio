@@ -67,6 +67,36 @@ export const featuredProject = {
   },
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
+export const orquestraResume = {
+  pt: {
+    title: "Orquestra",
+    href: orquestraHref,
+    items: [
+      {
+        text: "Aplicativo desktop que reúne agentes de código (Claude Code, Codex, etc.) em uma tela infinita, com terminais ligados por setas de comando e dependência.",
+      },
+      {
+        text: "Aumentou a produtividade ao permitir conduzir várias tarefas em paralelo, cada uma em seu worktree, com um terminal que abre e coordena os demais.",
+        highlights: ["várias tarefas em paralelo"],
+      },
+    ],
+  },
+  en: {
+    title: "Orquestra",
+    href: orquestraHref,
+    items: [
+      {
+        text: "Desktop app that brings coding agents (Claude Code, Codex, etc.) onto an infinite canvas, with terminals linked by command and dependency arrows.",
+      },
+      {
+        text: "Increased productivity by running several tasks in parallel, each on its own worktree, with a conductor terminal that opens and coordinates the others.",
+        highlights: ["several tasks in parallel"],
+      },
+    ],
+  },
+};
+
 const secondaryProjects = [
   {
     pt: [
