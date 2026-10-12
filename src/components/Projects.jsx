@@ -4,7 +4,6 @@ import { ghostActionClass } from "./ui/styles";
 
 const aquametriaHref = "https://start-farm.vercel.app/";
 const financeAppProjectHref = "https://github.com/pedrogattosch/finance-app";
-const financeAppCodeHref = "https://github.com/pedrogattosch/finance-app/tree/main/frontend";
 const githubHref = "https://github.com/pedrogattosch?tab=repositories";
 const orquestraHref = "https://github.com/pedrogattosch/orquestra";
 
@@ -12,12 +11,12 @@ const orquestraContent = {
   pt: {
     description: "Aplicativo desktop com uma tela infinita onde cada terminal é um bloco que se arrasta, redimensiona e liga a outros por setas, para acompanhar vários agentes de código (Claude Code, Codex) ao mesmo tempo, organizados em sessões.",
     previewAlt: "Tela do Orquestra com três terminais de agentes ligados por setas de comando e dependência, e uma anotação.",
-    codeLabel: "Ver código ↗",
+    projectLabel: "Ver projeto ↗",
   },
   en: {
     description: "Desktop app with an infinite canvas where each terminal is a block you drag, resize and connect to others with arrows, to follow several coding agents (Claude Code, Codex) at once, organized into sessions.",
     previewAlt: "Orquestra canvas with three agent terminals linked by command and dependency arrows, plus a note.",
-    codeLabel: "View code ↗",
+    projectLabel: "View project ↗",
   },
 };
 
@@ -26,13 +25,11 @@ const financeAppContent = {
     description: "Aplicativo de finanças pessoais para registrar receitas e despesas, acompanhar o orçamento diário e importar extratos PDF, CSV ou OFX com conferência antes de salvar.",
     previewAlt: "Montagem do FinanceApp em telas de computador e celular, com saldo, orçamento e lançamentos.",
     projectLabel: "Ver projeto ↗",
-    codeLabel: "Ver código ↗",
   },
   en: {
     description: "Personal finance app to track income and expenses, follow a daily budget, and review PDF, CSV, or OFX statements before importing them.",
     previewAlt: "FinanceApp desktop and mobile mockup showing balances, budget, and transactions.",
     projectLabel: "View project ↗",
-    codeLabel: "View code ↗",
   },
 };
 
@@ -232,14 +229,9 @@ function Projects() {
               <p className="mt-4 max-w-[52ch] text-sm leading-[1.75] text-muted">{financeApp.description}</p>
               <p className="mt-5 font-mono text-[11.5px] leading-relaxed text-faint">React · TypeScript · FastAPI · PostgreSQL</p>
             </div>
-            <div className="flex flex-wrap gap-2.5">
-              <a href={financeAppProjectHref} target="_blank" rel="noreferrer" className={ghostActionClass}>
-                {financeApp.projectLabel}
-              </a>
-              <a href={financeAppCodeHref} target="_blank" rel="noreferrer" className={ghostActionClass}>
-                {financeApp.codeLabel}
-              </a>
-            </div>
+            <a href={financeAppProjectHref} target="_blank" rel="noreferrer" className={ghostActionClass}>
+              {financeApp.projectLabel}
+            </a>
           </div>
           <FinanceAppPreview alt={financeApp.previewAlt} />
         </article>
@@ -251,7 +243,7 @@ function Projects() {
               <p className="mt-5 font-mono text-[11.5px] leading-relaxed text-faint">Electron · Node.js · xterm.js · node-pty · WebSocket</p>
             </div>
             <a href={orquestraHref} target="_blank" rel="noreferrer" className={ghostActionClass}>
-              {orquestra.codeLabel}
+              {orquestra.projectLabel}
             </a>
           </div>
           <OrquestraPreview alt={orquestra.previewAlt} />
