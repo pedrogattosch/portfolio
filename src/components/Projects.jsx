@@ -10,12 +10,12 @@ const orquestraHref = "https://github.com/pedrogattosch/orquestra";
 const orquestraContent = {
   pt: {
     description: "Aplicativo desktop com uma tela infinita onde cada terminal é um bloco que se arrasta, redimensiona e liga a outros por setas, para acompanhar vários agentes de código (Claude Code, Codex) ao mesmo tempo, organizados em sessões.",
-    previewAlt: "Tela do Orquestra com três terminais de agentes ligados por setas de comando e dependência, e uma anotação.",
+    previewAlt: "Tela do Orquestra com três terminais de agentes ligados por setas de comando e dependência.",
     projectLabel: "Ver projeto ↗",
   },
   en: {
     description: "Desktop app with an infinite canvas where each terminal is a block you drag, resize and connect to others with arrows, to follow several coding agents (Claude Code, Codex) at once, organized into sessions.",
-    previewAlt: "Orquestra canvas with three agent terminals linked by command and dependency arrows, plus a note.",
+    previewAlt: "Orquestra canvas with three agent terminals linked by command and dependency arrows.",
     projectLabel: "View project ↗",
   },
 };
@@ -153,15 +153,18 @@ function OrquestraPreview({ alt }) {
             <marker id="orq-cmd" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#3B5BDB" /></marker>
             <marker id="orq-dep" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#B7791F" /></marker>
           </defs>
-          <path d="M66 30 C78 30 82 27 92 27" stroke="#3B5BDB" strokeWidth=".8" fill="none" markerEnd="url(#orq-cmd)" />
-          <path d="M123 52 C123 68 119 77 112 77" stroke="#B7791F" strokeWidth=".8" strokeDasharray="2 1.5" fill="none" markerEnd="url(#orq-dep)" />
+          <g className="orquestra-preview__arrows-wide">
+            <path d="M66 30 C78 30 82 27 92 27" stroke="#3B5BDB" strokeWidth=".8" fill="none" markerEnd="url(#orq-cmd)" />
+            <path d="M123 52 C123 68 119 77 112 77" stroke="#B7791F" strokeWidth=".8" strokeDasharray="2 1.5" fill="none" markerEnd="url(#orq-dep)" />
+          </g>
+          <g className="orquestra-preview__arrows-narrow">
+            <path d="M74 27 C79 27 80 24 85 24" stroke="#3B5BDB" strokeWidth=".8" fill="none" markerEnd="url(#orq-cmd)" />
+            <path d="M130 53 C130 69 126 79 117 79" stroke="#B7791F" strokeWidth=".8" strokeDasharray="2 1.5" fill="none" markerEnd="url(#orq-dep)" />
+          </g>
         </svg>
         <OrquestraTerminal variant="a" status="ok" agent="claude" folder="portfolio" lines={["> ajustar cards", "✓ Projects.jsx", "● rodando testes…"]} />
         <OrquestraTerminal variant="b" status="ok" agent="codex" folder="api" lines={["> criar rota /lotes", "✓ 3 arquivos", "✓ testes ok"]} />
         <OrquestraTerminal variant="c" status="idle" agent="claude" folder="docs" lines={["aguardando api…"]} />
-        <span className="orquestra-preview__chip orquestra-preview__chip--cmd">comando</span>
-        <span className="orquestra-preview__chip orquestra-preview__chip--dep">depende</span>
-        <span className="orquestra-preview__note">revisar antes do merge</span>
       </div>
     </figure>
   );
