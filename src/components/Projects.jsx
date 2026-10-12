@@ -9,12 +9,12 @@ const orquestraHref = "https://orquestra-code.vercel.app/";
 
 const orquestraContent = {
   pt: {
-    description: "Aplicativo desktop com uma tela infinita onde cada terminal é um bloco que se arrasta, redimensiona e liga a outros por setas, para acompanhar vários agentes de código (Claude Code, Codex) ao mesmo tempo, organizados em sessões.",
+    description: "Aplicativo desktop com uma tela infinita onde cada terminal é um bloco que se arrasta, redimensiona e liga a outros por setas, para acompanhar vários agentes de código (Claude Code, Codex, etc.) ao mesmo tempo, organizados em sessões.",
     previewAlt: "Tela do Orquestra com três terminais de agentes ligados por setas de comando e dependência.",
     projectLabel: "Ver projeto ↗",
   },
   en: {
-    description: "Desktop app with an infinite canvas where each terminal is a block you drag, resize and connect to others with arrows, to follow several coding agents (Claude Code, Codex) at once, organized into sessions.",
+    description: "Desktop app with an infinite canvas where each terminal is a block you drag, resize and connect to others with arrows, to follow several coding agents (Claude Code, Codex, etc.) at once, organized into sessions.",
     previewAlt: "Orquestra canvas with three agent terminals linked by command and dependency arrows.",
     projectLabel: "View project ↗",
   },
