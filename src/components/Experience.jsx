@@ -51,7 +51,7 @@ export const experiences = {
       role: "Soldado",
       start: "mar. 2024",
       end: "jan. 2025",
-      location: "Toledo, PR",
+      location: "Cascavel, PR",
       items: [
         {
           text: "Suporte técnico e manutenção de equipamentos e sistemas de informática, garantindo o funcionamento dos recursos tecnológicos da unidade militar.",
@@ -108,7 +108,7 @@ export const experiences = {
       role: "Soldier",
       start: "Mar. 2024",
       end: "Jan. 2025",
-      location: "Toledo, PR, Brazil",
+      location: "Cascavel, PR, Brazil",
       items: [
         {
           text: "Provided technical support and maintenance for IT equipment and systems, helping ensure the operation of the unit's technology resources.",
