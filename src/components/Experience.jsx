@@ -19,7 +19,7 @@ export const experiences = {
           highlights: ["6 dashboards", "+10 painéis"],
         },
         {
-          text: "Desenvolvimento +5 agentes autônomos para automação e apoio ao suporte na central de atendimento, entre eles o ticket-watcher, que reduziu a mediana de resolução de chamados de 23h para 18h, e o ticket-copilot, com proposta de resolução publicada em +3.000 chamados.",
+          text: "Desenvolvimento de +5 agentes autônomos para automação e apoio ao suporte na central de atendimento, entre eles o ticket-watcher, que reduziu a mediana de resolução de chamados de 23h para 18h, e o ticket-copilot, com proposta de resolução publicada em +3.000 chamados.",
           highlights: [
             "+5 agentes autônomos",
             "23h para 18h",
