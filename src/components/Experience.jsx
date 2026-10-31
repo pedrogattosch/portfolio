@@ -15,19 +15,20 @@ export const experiences = {
       featured: true,
       items: [
         {
-          text: "Desenvolvimento de 6 dashboards com +10 painéis em um portal único com SSO e controle de acesso por time, centralizando dados antes dispersos.",
-          highlights: ["6 dashboards", "+10 painéis"],
+          text: "Desenvolvimento do Data Hub, portal interno com SSO e 5 módulos que reúne dados e rotinas dos times, como atividades e playbooks do CS, regras automáticas que criam tarefas e enviam e-mails e controle de acesso por tela.",
+          highlights: ["5 módulos"],
         },
         {
-          text: "Desenvolvimento de +5 agentes autônomos para automação e apoio ao suporte na central de atendimento, entre eles o ticket-watcher, que reduziu a mediana de resolução de chamados de 23h para 18h, e o ticket-copilot, com proposta de resolução publicada em +3.000 chamados.",
+          text: "Desenvolvimento de +5 agentes autônomos para automação e apoio ao suporte na central de atendimento, entre eles o ticket-watcher, que reduziu a mediana de resolução de chamados de 23 horas para 18 horas, o ticket-copilot, com proposta de resolução publicada em +3.000 chamados, e o ticket-resolve, com +50 ações públicas de resolução enviadas ao cliente com base no IA HUB.",
           highlights: [
             "+5 agentes autônomos",
-            "23h para 18h",
+            "23 horas para 18 horas",
             "+3.000 chamados",
+            "+50 ações públicas",
           ],
         },
         {
-          text: "Desenvolvimento de um hub de chatbots internos com LLMs e RAG, onde o usuário conversa em linguagem natural e recebe a resposta com base no código e na documentação do produto, integrados às bases de código e a artigos técnicos, com +60 usuários ativos e +300 interações diárias.",
+          text: "Desenvolvimento do IA HUB, hub de chatbots internos com LLMs e RAG, que responde em linguagem natural com base no código e na documentação do produto, com +60 usuários ativos e +300 interações diárias.",
           highlights: ["+60 usuários ativos", "+300 interações diárias"],
         },
       ],
@@ -69,19 +70,20 @@ export const experiences = {
       featured: true,
       items: [
         {
-          text: "Developed 6 dashboards with more than 10 panels in a single portal with SSO and team-based access control, centralizing previously scattered data.",
-          highlights: ["6 dashboards", "more than 10 panels"],
+          text: "Developed Data Hub, an internal portal with SSO and 5 modules that brings together the teams' data and routines, such as CS activities and playbooks, automated rules that create tasks and send emails, and per-screen access control.",
+          highlights: ["5 modules"],
         },
         {
-          text: "Developed more than 5 AI agents for automation and support in the service desk, including ticket-watcher, which reduced the median ticket resolution time from 23 to 18 hours, and ticket-copilot, which published a proposed resolution on more than 3,000 tickets.",
+          text: "Developed more than 5 AI agents for automation and support in the service desk, including ticket-watcher, which reduced the median ticket resolution time from 23 to 18 hours, and ticket-copilot, which published a proposed resolution on more than 3,000 tickets, and ticket-resolve, which has sent more than 50 public resolution replies to customers based on IA HUB.",
           highlights: [
             "more than 5 AI agents",
             "23 to 18 hours",
             "more than 3,000 tickets",
+            "more than 50 public resolution replies",
           ],
         },
         {
-          text: "Developed an internal chatbot hub with LLMs and RAG, where users ask questions in natural language and get answers grounded in the product's code and documentation, integrated with code repositories and technical articles, with more than 60 active users and more than 300 interactions per day.",
+          text: "Developed IA HUB, an internal chatbot hub with LLMs and RAG that answers natural-language questions based on the product's code and documentation, with more than 60 active users and more than 300 interactions per day.",
           highlights: [
             "more than 60 active users",
             "more than 300 interactions per day",
