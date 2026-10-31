@@ -3,7 +3,7 @@ import Section from "./ui/Section";
 import { ghostActionClass } from "./ui/styles";
 
 const aquametriaHref = "https://start-farm.vercel.app/";
-const financeAppProjectHref = "https://financeapp-site.vercel.app/";
+const financeAppProjectHref = "https://finance-app-site.vercel.app/";
 const githubHref = "https://github.com/pedrogattosch?tab=repositories";
 const orquestraHref = "https://orquestra-code.vercel.app/";
 
