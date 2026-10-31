@@ -41,7 +41,7 @@ export const featuredProject = {
     href: aquametriaHref,
     items: [
       {
-        text: "Cofundei a Aquametria, empresa incubada na SprinT da UTFPR e originada do MVP campeão do Start Farm 2026, e atuei na definição de prioridades técnicas e na tomada de decisão até set. 2026.",
+        text: "Cofundei a Aquametria, incubada na SprinT da UTFPR e originada do MVP campeão do Start Farm 2026, onde atuei nas decisões técnicas e de negócio até set. 2026.",
         highlights: ["MVP campeão do Start Farm 2026"],
       },
       {
@@ -56,7 +56,7 @@ export const featuredProject = {
     href: aquametriaHref,
     items: [
       {
-        text: "Co-founded Aquametria, a company incubated at UTFPR's SprinT that grew out of the winning MVP at Start Farm 2026, and contributed to technical priority setting and company decision-making until Sep. 2026.",
+        text: "Co-founded Aquametria, incubated at UTFPR's SprinT and born from the winning MVP at Start Farm 2026, working on technical and business decisions until Sep. 2026.",
         highlights: ["winning MVP at Start Farm 2026"],
       },
       {
