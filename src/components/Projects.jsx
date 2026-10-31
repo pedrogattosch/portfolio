@@ -37,30 +37,30 @@ const financeAppContent = {
 export const featuredProject = {
   pt: {
     title: "Aquametria",
-    badges: ["Cofundador", "MVP campeão · Start Farm 2026"],
+    badges: ["Cofundador · jun. a set. 2026", "MVP campeão · Start Farm 2026"],
     href: aquametriaHref,
     items: [
       {
-        text: "Cofundador da Aquametria, empresa incubada na SprinT da UTFPR e originada do MVP campeão do Start Farm 2026, atuando na definição de prioridades técnicas e tomada de decisão da empresa.",
+        text: "Cofundei a Aquametria, empresa incubada na SprinT da UTFPR e originada do MVP campeão do Start Farm 2026, e atuei na definição de prioridades técnicas e na tomada de decisão até set. 2026.",
         highlights: ["MVP campeão do Start Farm 2026"],
       },
       {
-        text: "Responsável pelo desenvolvimento de solução para substituir uma biometria manual realizada a cada 7 a 15 dias por acompanhamento mais frequente da biomassa, reduzindo esforço operacional e apoiando decisões de arraçoamento.",
+        text: "Fui responsável pelo desenvolvimento da solução para substituir uma biometria manual realizada a cada 7 a 15 dias por acompanhamento mais frequente da biomassa, reduzindo esforço operacional e apoiando decisões de arraçoamento.",
         highlights: ["7 a 15 dias"],
       },
     ],
   },
   en: {
     title: "Aquametria",
-    badges: ["Co-founder", "Winning MVP · Start Farm 2026"],
+    badges: ["Co-founder · Jun. to Sep. 2026", "Winning MVP · Start Farm 2026"],
     href: aquametriaHref,
     items: [
       {
-        text: "Co-founder of Aquametria, a company incubated at UTFPR's SprinT that grew out of the winning MVP at Start Farm 2026, contributing to technical priority setting and company decision-making.",
+        text: "Co-founded Aquametria, a company incubated at UTFPR's SprinT that grew out of the winning MVP at Start Farm 2026, and contributed to technical priority setting and company decision-making until Sep. 2026.",
         highlights: ["winning MVP at Start Farm 2026"],
       },
       {
-        text: "Responsible for developing a solution to replace a manual biometric assessment performed every 7 to 15 days with more frequent biomass monitoring, reducing operational effort and supporting feeding decisions.",
+        text: "Was responsible for developing a solution to replace a manual biometric assessment performed every 7 to 15 days with more frequent biomass monitoring, reducing operational effort and supporting feeding decisions.",
         highlights: ["7 to 15 days"],
       },
     ],

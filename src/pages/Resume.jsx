@@ -7,7 +7,7 @@ import "./Resume.css";
 
 const summaries = {
   pt: {
-    text: "Analista de IA focado em Python, LLMs, RAG e agentes autônomos. Reduzi a mediana de resolução de chamados de 23h para 18h com agentes de automação, criei um hub de chatbots internos com +300 interações diárias e centralizei dados em 6 dashboards. Cofundador da Aquametria, MVP campeão do Start Farm 2026.",
+    text: "Analista de IA focado em Python, LLMs, RAG e agentes autônomos. Reduzi a mediana de resolução de chamados de 23h para 18h com agentes de automação, criei um hub de chatbots internos com +300 interações diárias e centralizei dados em 6 dashboards. Cofundei a Aquametria, MVP campeão do Start Farm 2026.",
     highlights: [
       "23h para 18h",
       "+300 interações diárias",
@@ -16,7 +16,7 @@ const summaries = {
     ],
   },
   en: {
-    text: "AI analyst focused on Python, LLMs, RAG, and agents in production. I cut the median ticket resolution time from 23 to 18 hours with automation agents, built an internal chatbot hub with more than 300 daily interactions, and centralized data into 6 dashboards. Co-founder of Aquametria, winning MVP at Start Farm 2026.",
+    text: "AI analyst focused on Python, LLMs, RAG, and agents in production. I cut the median ticket resolution time from 23 to 18 hours with automation agents, built an internal chatbot hub with more than 300 daily interactions, and centralized data into 6 dashboards. Co-founded Aquametria, winning MVP at Start Farm 2026.",
     highlights: [
       "23 to 18 hours",
       "more than 300 daily interactions",
